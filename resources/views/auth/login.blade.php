@@ -9,8 +9,8 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-              <h1 class="text-white">Welcome!</h1>
-              <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.</p>
+              <h1 class="text-white">Bienvenue!</h1>
+              <p class="text-lead text-light">Réalisez une analyse compléte de votre site web grâce à nos différents outils et optimisez votre référencement google facilement.</p>
             </div>
           </div>
         </div>
