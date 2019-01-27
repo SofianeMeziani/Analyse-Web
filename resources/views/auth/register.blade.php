@@ -9,8 +9,8 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-              <h1 class="text-white">Welcome!</h1>
-              <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.</p>
+              <h1 class="text-white">Bienvenue!</h1>
+              <p class="text-lead text-light">Réalisez une analyse compléte de votre site web grâce à nos différents outils et optimisez votre référencement google facilement.</p>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Name" type="text">
+                    <input class="form-control" placeholder="Nom" type="text">
                   </div>
                 </div>
                 <div class="form-group">
@@ -50,7 +50,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password">
+                    <input class="form-control" placeholder="Mot de passe" type="password">
                   </div>
                 </div>
                 <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
@@ -59,13 +59,13 @@
                     <div class="custom-control custom-control-alternative custom-checkbox">
                       <input class="custom-control-input" id="customCheckRegister" type="checkbox">
                       <label class="custom-control-label" for="customCheckRegister">
-                        <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
+                        <span class="text-muted">J'accepte les <a href="#!">conditions d'utilisation</a></span>
                       </label>
                     </div>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary mt-4">Create account</button>
+                  <button type="submit" class="btn btn-primary mt-4">Céer un compte</button>
                 </div>
               </form>
 

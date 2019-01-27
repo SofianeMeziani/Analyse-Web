@@ -50,7 +50,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                             </div>
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Password">
+                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Mot de passe">
 
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
@@ -63,7 +63,7 @@
                     <div class="custom-control custom-control-alternative custom-checkbox">
                       <input class="custom-control-input" type="checkbox" id="remember" >
                       <label class="custom-control-label" for=" customCheckLogin">
-                        <span class="text-muted">Remember me</span>
+                        <span class="text-muted">Se souvenir de moi</span>
                       </label>
                     </div>
 
@@ -78,11 +78,11 @@
           <div class="row mt-3">
             <div class="col-6">
             @if (Route::has('password.request'))
-              <a href="{{ route('password.request') }}" class="text-light"><small>Forgot password?</small></a>
+              <a href="{{ route('password.request') }}" class="text-light"><small>Mot de passe oublié ?</small></a>
             @endif 
             </div>
             <div class="col-6 text-right">
-              <a href="/register" class="text-light"><small>Create new account</small></a>
+              <a href="/register" class="text-light"><small>Créer un compte</small></a>
             </div>
           </div>
         </div>
