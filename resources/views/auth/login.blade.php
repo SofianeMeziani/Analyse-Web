@@ -85,7 +85,7 @@
             </div>
 
             <div class="col-6 text-right">
-              <a href="/register" class="text-light"><small>Créer un compte</small></a>
+              <a href="./register" class="text-light"><small>Créer un compte</small></a>
             </div>
             
           </div>
