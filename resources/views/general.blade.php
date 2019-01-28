@@ -21,6 +21,7 @@
 <body>
 
   <!-- Sidenav -->
+  @if (Auth::user())
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
       <!-- Toggler -->
@@ -123,6 +124,7 @@
       </div>
     </div>
   </nav>
+  @endif
   <!-- Main content -->
   <div class="main-content">
     <!-- Top navbar -->

@@ -69,7 +69,7 @@
 
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary my-4">
-                            {{ __('Login') }}
+                            {{ __('Connexion') }}
                         </button>
                     </div>
                 </form>

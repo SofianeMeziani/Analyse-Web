@@ -98,7 +98,7 @@
             </div>
 
             <div class="col-6 text-right">
-              <a href="./login" class="text-light"><small>Login</small></a>
+              <a href="./login" class="text-light"><small>Connexion</small></a>
             </div>
             
           </div>
