@@ -206,7 +206,7 @@
   <script type="text/javascript">
     function logout() {
       form = document.getElementById("logout_form");
-      form.action = "/logout";
+      form.action = "./logout";
       form.submit();
     }
   </script>
