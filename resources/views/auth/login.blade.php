@@ -60,12 +60,12 @@
                         </div>
                     </div>
 
-                    <div class="custom-control custom-control-alternative custom-checkbox">
+                    <!-- <div class="custom-control custom-control-alternative custom-checkbox">
                       <input class="custom-control-input" type="checkbox" id="remember" >
                       <label class="custom-control-label" for=" customCheckLogin">
                         <span class="text-muted">Se souvenir de moi</span>
                       </label>
-                    </div>
+                    </div> -->
 
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary my-4">
@@ -75,15 +75,19 @@
                 </form>
             </div>
           </div>
+
           <div class="row mt-3">
+
             <div class="col-6">
             @if (Route::has('password.request'))
-              <a href="{{ route('password.request') }}" class="text-light"><small>Mot de passe oublié ?</small></a>
+              <!-- <a href="{{ route('password.request') }}" class="text-light"><small>Mot de passe oublié ?</small></a> -->
             @endif 
             </div>
+
             <div class="col-6 text-right">
               <a href="/register" class="text-light"><small>Créer un compte</small></a>
             </div>
+            
           </div>
         </div>
       </div>

@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
   <!-- Sidenav -->
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
@@ -132,56 +133,65 @@
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           
         </form>
+
         <!-- User -->
         @if (Auth::user())
-        <ul class="navbar-nav align-items-center d-none d-md-flex">
-          <li class="nav-item dropdown">
-            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div class="media align-items-center">
-                <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
-                </span>
-                
-                <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Bonjour {{Auth::user()->name}}</span>
+          <ul class="navbar-nav align-items-center d-none d-md-flex">
+            <li class="nav-item dropdown">
+              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="media align-items-center">
+                  <span class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
+                  </span>
+                  
+                  <div class="media-body ml-2 d-none d-lg-block">
+                    <span class="mb-0 text-sm  font-weight-bold">Bonjour {{Auth::user()->name}}</span>
+                  </div>
                 </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                <div class=" dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">Welcome!</h6>
+                </div>
+                <a href="./examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-single-02"></i>
+                  <span>My profile</span>
+                </a>
+                <a href="./examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-settings-gear-65"></i>
+                  <span>Settings</span>
+                </a>
+                <a href="./examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-calendar-grid-58"></i>
+                  <span>Activity</span>
+                </a>
+                <a href="./examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-support-16"></i>
+                  <span>Support</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a onclick="logout();" href="#" class="dropdown-item">
+                  <form id="logout_form" action="" method="POST">
+                    {{csrf_field()}}
+                  </form>
+                  <i class="ni ni-user-run"></i>
+                  <span>Logout</span>
+                </a>
               </div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-              <div class=" dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome!</h6>
-              </div>
-              <a href="./examples/profile.html" class="dropdown-item">
-                <i class="ni ni-single-02"></i>
-                <span>My profile</span>
-              </a>
-              <a href="./examples/profile.html" class="dropdown-item">
-                <i class="ni ni-settings-gear-65"></i>
-                <span>Settings</span>
-              </a>
-              <a href="./examples/profile.html" class="dropdown-item">
-                <i class="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
-              </a>
-              <a href="./examples/profile.html" class="dropdown-item">
-                <i class="ni ni-support-16"></i>
-                <span>Support</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a onclick= "{{Auth::logout()}}"; href="/" class="dropdown-item">
-                <i class="ni ni-user-run"></i>
-                <span>Logout</span>
-              </a>
-              
-            </div>
-            @endif
-          </li>
-        </ul>
+            </li>
+          </ul>
+        @endif
+
       </div>
     </nav>
-    
+    <!-- Header -->
+    @if (Auth::user())
+        <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+          
+        </div>
+    @endif
     <!-- Page content -->
-    @yield("content")
+   @yield("content") 
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
@@ -192,6 +202,14 @@
   <script src="./assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="./assets/js/argon.js?v=1.0.0"></script>
+
+  <script type="text/javascript">
+    function logout() {
+      form = document.getElementById("logout_form");
+      form.action = "/logout";
+      form.submit();
+    }
+  </script>
 </body>
 
 </html>
