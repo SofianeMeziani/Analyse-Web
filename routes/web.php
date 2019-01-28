@@ -10,10 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 
 //-----------HomeController--------------
 Route::get('/', "HomeController@index");
 
-Auth::routes();
+
+//-----------UserController--------------
+Route::get('/user', "UserController@account");
+
+
 
