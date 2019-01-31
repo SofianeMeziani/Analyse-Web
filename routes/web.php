@@ -18,6 +18,9 @@ Route::get('/', "HomeController@index");
 
 //-----------UserController--------------
 Route::get('/user', "UserController@account");
+Route::post('/update-personal-info', "UserController@updatePersonalInfo");
+Route::post('/update-password', "UserController@updatePassword");
+
 
 
 
