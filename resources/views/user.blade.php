@@ -10,7 +10,7 @@
             <div class="card-header bg-white border-0">
               <div class="row align-items-center"> 
                 <div class="col-8">
-                  <h3 class="mb-0">My account</h3>
+                  <h3 class="mb-0">Mon compte</h3>
                 </div>
                 <div class="col-4 text-right">
                   <button onclick="updatePersonalInfo(); return false;" class="btn btn-sm btn-primary">Enregistrer</button>
@@ -21,7 +21,7 @@
               <form action="" id="personalinfo_form" method="POST"> 
                 @csrf
                 <input type="hidden" name="user_id" value="{{$user->id}}">
-                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <h6 class="heading-small text-muted mb-4">Informations de l'utilisateur</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
@@ -108,12 +108,12 @@
             form.submit();
           }
         } else if (errors_2 == 0) {
-            swal("","veuillez entrer un mot de passe >= 6 ", "error");
+            swal("","Veuillez entrer un mot de passe >= 6", "error");
         } else {
             if (pass_old.value==""){
-              swal("","veuillez entrer votre mot de passe actuel correcte ", "error");
+              swal("","Veuillez entrer votre mot de passe actuel correct", "error");
             } else if (errors_2 == 1) {
-                swal("","Votre mot de passe de confirmation n'est pas correcte !", "error");
+                swal("","Votre mot de passe de confirmation n'est pas correct !", "error");
                 } else {
                     var form = document.getElementById("personalinfo_form");
                     form.action = "/update-password";
