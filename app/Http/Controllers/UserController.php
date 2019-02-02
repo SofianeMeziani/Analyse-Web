@@ -21,7 +21,6 @@ class UserController extends Controller
 	public function updatePersonalInfo(Request $request)
 	{
 		$data = $request->all();
-		// dd($data);
 		$user = User::find($data['user_id']);
 		$user->name = $data["name"];
 		$user->save();
