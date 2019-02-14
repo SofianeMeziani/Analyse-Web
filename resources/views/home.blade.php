@@ -2,7 +2,7 @@
                             
 
 @section("content")
-	<div class="container-fluid mt--7">
+  <div class="container-fluid mt--7">
       <div class="row">
         <div class="col-xl-12 order-xl-1">
           <div class="card bg-secondary shadow">
@@ -25,7 +25,7 @@
                       </div>
                     </div>
                     <div class="col-lg-2">
-                    	<button onclick="checkURL();" type="button" class="btn btn-primary btn-lg">Analyser</button>
+                      <button onclick="checkURL();" type="button" class="btn btn-primary btn-lg">Analyser</button>
                     </div>                    
                   </div>
                 </div>
@@ -37,18 +37,18 @@
     
 
     <script type="text/javascript">
-    	function checkURL() {
-    		var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-			var regex = new RegExp(expression);
-			var t = document.getElementById("url").value;
+      function checkURL() {
+        var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+      var regex = new RegExp(expression);
+      var t = document.getElementById("url").value;
 
-			if (t.match(regex)) {
-			  form = document.getElementById("url_form");
-			  form.action = "/analyse";
-			  form.submit();
-			} else {
-			  swal("","Veuillez entrer un lien valide", "error")
-			}
-    	}
+      if (t.match(regex)) {
+        form = document.getElementById("url_form");
+        form.action = "/analyse";
+        form.submit();
+      } else {
+        swal("","Veuillez entrer un lien valide", "error")
+      }
+      }
     </script>
 @endsection
