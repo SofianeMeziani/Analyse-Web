@@ -33,6 +33,8 @@ class AnalysisController extends Controller
     public function analyse(Request $request)
     {
         $url = $request->all()["url"];
+        $profondeur = $request->all()["Profondeur"];
+        $lienx = $request->all()["liensx"];
 
         if (strpos($url, "http")==0) {
             $url = "http://" . $url;
@@ -44,7 +46,7 @@ class AnalysisController extends Controller
        strip_tags 
         dd($t1 - $t0);*/
 
-        $profondeur = 3;
+        
         
         $result = $this->getLinks($url);
 
