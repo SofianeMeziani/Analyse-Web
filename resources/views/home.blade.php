@@ -18,20 +18,13 @@
               <form action="" id="url_form" method="POST"> 
                 @csrf
                 <div class="pl-lg-4">
+                  
                   <div class="row">
                     <div class="col-lg-10">
                       <div class="form-group">
                         <div class="row">
-                          <div class="col-md-8">
+                          <div class="col-md-12">
                             <input type="text" id="url" name="url" class="form-control form-control-alternative" value="" placeholder="Entrer le lien du site à analyser">
-                          </div>
-                          <div class="custom-control custom-checkbox col-md-2">
-                            <input class="custom-control-input" name="liensx" id="customCheck2" type="checkbox" checked>
-                            <label class="custom-control-label" for="customCheck2">Liens externes</label>
-                          </div>
-                          <div class="custom-control col-md-2">
-                            <label  for="customCheck2">Profondeur</label>
-                            <input class="custom-control-label" name="Profondeur" id="customCheck2" type="number" min="1" max="10" value="1">
                           </div>
                         </div>
                       </div>  
@@ -40,6 +33,24 @@
                       <button onclick="checkURL();" type="button" class="btn btn-primary btn-lg">Analyser</button>
                     </div>                    
                   </div>
+
+                  <br>
+
+                  <div class="container row">
+                    <div class="custom-control custom-checkbox col-sm">
+                      <input class="custom-control-input" name="liensx" id="customCheck2" type="checkbox" checked>
+                            <label class="custom-control-label" for="customCheck2">Liens externes</label>
+                    </div>
+                    <div class="col-sm">
+                      <label  for="customCheck2">Profondeur</label>
+                            <input class="custom-control-label" name="Profondeur" id="customCheck2" type="number" min="1" max="10" value="1">
+                    </div>
+                    <div class="col-sm">
+                      <label  for="customCheck2">Temps de rep moyen</label>
+                            <input class="custom-control-label" name="TempsRep" id="customCheck34" type="number" min="1" max="10" value="1">
+                    </div>
+                  </div>
+                  
                 </div>
               </form>
             </div>
