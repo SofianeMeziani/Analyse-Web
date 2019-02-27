@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use Illuminate\Http\Request;
+use DOMDocument;
 
 class AnalysisController extends Controller
 {
@@ -13,18 +14,41 @@ class AnalysisController extends Controller
         $this->middleware('auth');
     }
 
+    public function t_reponse ($url)
+    {
+
+        $time = microtime();
+        $time = explode(' ', $time);
+        $time = $time[1] + $time[0];
+        $start = $time;
+
+        $contents = file_get_contents($url);
+
+        $time = microtime();
+        $time = explode(' ', $time);
+        $time = $time[1] + $time[0];
+        $finish = $time;
+        $total_time = round(($finish - $start), 4);
+        return $total_time;
+
+    }
+
     public function getLinks($url) {
         $data=file_get_contents($url);
         $data = strip_tags($data,"<a>");
         $d = preg_split("/<\/a>/",$data);
 
         $result = array();
+        $pageltime = array();
         foreach ( $d as $k=>$u ){
-          if( strpos($u, "<a href=") !== FALSE ){
-             $u = preg_replace("/.*<a\s+href=\"/sm","",$u);
-             $u = preg_replace("/\".*/","",$u);
-             array_push($result, $u);
+            if( strpos($u, "<a href=") !== FALSE ){
+                $u = preg_replace("/.*<a\s+href=\"/sm","",$u);
+                $u = preg_replace("/\".*/","",$u);
+                if (!strpos($u, "/")==0){
+                    array_push($result, $u);
+                }
             }
+            //$pageltime = $this->t_reponse($u);
         }
 
         return $result;
@@ -35,16 +59,13 @@ class AnalysisController extends Controller
         $url = $request->all()["url"];
         $profondeur = $request->all()["Profondeur"];
         $lienx = $request->all()["liensx"];
+        $tmoyen = $request->all()["TempsRep"];
 
         if (strpos($url, "http")==0) {
             $url = "http://" . $url;
         }
 
-        /*$t0 = round(microtime(true) * 1000);
-        $contents = file_get_contents($url);
-        $t1 = round(microtime(true) * 1000);
-       strip_tags 
-        dd($t1 - $t0);*/
+        $ltime = $this->t_reponse($url);
 
         
         
@@ -61,18 +82,24 @@ class AnalysisController extends Controller
         }
 
         //$result = array_unique($result);
-        for($x = 0; $x < sizeof($result); $x++) {
-            echo $result[$x];
-            echo "<br>";
+        for($x = 1; $x < sizeof($result); $x++) {
+            
+            // echo $result[$x];
+            // echo "<br>";
         }
 
-        
-        return view('home');
+        $var ["urls"] = $result;
+        $var ["prof"] = $profondeur;
+        $var ["tdep"] = $tmoyen;
+        $var ["ltime"] = $ltime;
+
+        // dd($var);
+        return view('dashboard', $var);
     }
 
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
+    // public function dashboard()
+    // {
+    //     return view('dashboard');
+    // }
 
 }

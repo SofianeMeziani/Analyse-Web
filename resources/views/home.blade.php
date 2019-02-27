@@ -67,7 +67,7 @@
 
       if (t.match(regex)) {
         form = document.getElementById("url_form");
-        form.action = "/analyse";
+        form.action = "/dashboard";
         form.submit();
       } else {
         swal("","Veuillez entrer un lien valide", "error")
