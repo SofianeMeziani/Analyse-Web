@@ -48,10 +48,38 @@ class AnalysisController extends Controller
                     array_push($result, $u);
                 }
             }
-            //$pageltime = $this->t_reponse($u);
         }
+        return $result;
+    }
+
+    public function getLinkstime($urls) {
+        $result = array();
+        foreach ($urls as $value) {
+            array_push($result, $this->t_reponse($value));
+        }
+        return $result;
+    }
+
+    /*public function site_links($urls) {
+        foreach ($urls as $value) {
+            $links=$this->getLinks($value);
+        }
+        $result = array();
 
         return $result;
+    }*/
+
+    public function site_links($array,$profondeur) {
+        a:
+        foreach ($array[sizeof($array)-1] as $value) {
+            $links=$this->getLinks($value);
+        }
+        if (!empty($links)){ 
+            array_push($array, $links);
+            if (sizeof($array) <= $profondeur) 
+                goto a;
+        }
+        return $array;
     }
 
     public function analyse(Request $request)
@@ -61,15 +89,27 @@ class AnalysisController extends Controller
         $lienx = $request->all()["liensx"];
         $tmoyen = $request->all()["TempsRep"];
 
-        if (strpos($url, "http")==0) {
-            $url = "http://" . $url;
+        if (false === strpos($url, '://'))  {
+            $url = 'http://' . $url;
         }
 
-        $ltime = $this->t_reponse($url);
+       // $ltime = $this->t_reponse($url);
+
+        $result = $this->getLinks($url);
+
+        //$pageltime = $this->getLinkstime($result);
+
+        $links_array = array();
+        $d=array();
+        array_push($d, $url);
+        array_push($links_array , $d);
+        $links_array = $this->site_links($links_array,$profondeur);
+        // array_push($links_array , $result);
+        // array_push($links_array , $result);
+        dd($links_array);
 
         
-        
-        $result = $this->getLinks($url);
+
 
         // $website_0 = tableau(1) = $url
 
@@ -92,8 +132,9 @@ class AnalysisController extends Controller
         $var ["prof"] = $profondeur;
         $var ["tdep"] = $tmoyen;
         $var ["ltime"] = $ltime;
+        $var ["pageltime"] = $pageltime;
 
-        // dd($var);
+        //dd($var);
         return view('dashboard', $var);
     }
 

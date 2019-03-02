@@ -128,13 +128,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $i=0; ?>
                   @foreach ($urls as $key => $url)
                     <tr>
                       <th scope="row">
                         {{$url}}
                       </th>
                       <td>
-                        {{$ltime}}
+                        {{$pageltime[$i]}}
                       </td>
                       <td>
                         340
@@ -146,6 +147,7 @@
                         <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
                       </td>
                     </tr>
+                    <?php $i++; ?>
                   @endforeach
                 </tbody>
               </table>
