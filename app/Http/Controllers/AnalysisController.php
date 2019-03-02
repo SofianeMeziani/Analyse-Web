@@ -70,14 +70,21 @@ class AnalysisController extends Controller
     }*/
 
     public function site_links($array,$profondeur) {
+        $profondeur_max = 0;
+        $links = array();
         a:
         foreach ($array[sizeof($array)-1] as $value) {
-            $links=$this->getLinks($value);
+            $links_temp=$this->getLinks($value);
+            foreach ($links_temp as $value_temp) {
+                array_push($links, $value_temp);
+            }
         }
         if (!empty($links)){ 
-            array_push($array, $links);
+            array_push($array, array_unique($links));
             if (sizeof($array) <= $profondeur) 
                 goto a;
+        } else {
+            $profondeur_max = sizeof($array); // -1 ?;
         }
         return $array;
     }
