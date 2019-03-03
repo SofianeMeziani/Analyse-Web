@@ -70,9 +70,10 @@ class AnalysisController extends Controller
                 array_push($urls, $url) ;
             }
         }
-        dd(array_unique($urls));
+        $result = array_unique($urls);
+        // dd(array_unique($urls));
         // dd($urls);
-        return $url;
+        return $result;
     }
 
     public function getLinkstime($urls) {
@@ -123,11 +124,11 @@ class AnalysisController extends Controller
             $url = 'http://' . $url;
         }
 
-       // $ltime = $this->t_reponse($url);
+        $ltime = $this->t_reponse($url);
 
         $result = $this->getLinks($url);
 
-        //$pageltime = $this->getLinkstime($result);
+        $pageltime = $this->getLinkstime($result);
 
         $links_array = array();
         $d=array();
@@ -136,7 +137,7 @@ class AnalysisController extends Controller
         $links_array = $this->site_links($links_array,$profondeur);
         // array_push($links_array , $result);
         // array_push($links_array , $result);
-        dd($links_array);
+        // dd($links_array);
 
         
 
