@@ -98,6 +98,7 @@
                     <div class="col-sm">
                       <label  for="customCheck2">Profondeur</label>
                             <input class="custom-control-label" name="Profondeur" id="customCheck2" type="number" min="1" max="10" value="1">
+                            
                     </div>
                     <div class="col-sm">
                       <label  for="customCheck2">Temps de rep moyen</label>
