@@ -64,18 +64,6 @@
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
             </a>
-            <a href="./dashboard" class="dropdown-item">
-              <i class="ni ni-settings-gear-65"></i>
-              <span>Settings</span>
-            </a>
-            <a href="./examples/profile.html" class="dropdown-item">
-              <i class="ni ni-calendar-grid-58"></i>
-              <span>Activity</span>
-            </a>
-            <a href="./examples/profile.html" class="dropdown-item">
-              <i class="ni ni-support-16"></i>
-              <span>Support</span>
-            </a>
             <div class="dropdown-divider"></div>
             <a href="#!" class="dropdown-item">
               <i class="ni ni-user-run"></i>
@@ -89,38 +77,21 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-tv-2 text-primary"></i> Dashboard
+            <a class="nav-link" href="/">
+              <i class="ni ni-istanbul text-orange"></i> Accueil
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-planet text-blue"></i> Icons
+            <a class="nav-link" href="./user">
+              <i class="ni ni-single-02 text-yellow"></i> My profile
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-pin-3 text-orange"></i> Maps
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-single-02 text-yellow"></i> User profile
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-bullet-list-67 text-red"></i> Tables
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-key-25 text-info"></i> Login
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-circle-08 text-pink"></i> Register
+            <a class="nav-link" onclick="logout()" href="#">
+              <form id="logout_form" action="" method="POST">
+                    {{csrf_field()}}
+                  </form>
+              <i class="ni ni-key-25 text-info"></i> Deconnexion
             </a>
           </li>
         </ul>
@@ -156,24 +127,13 @@
               </a>
               <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                 <div class=" dropdown-header noti-title">
-                  <h6 class="text-overflow m-0">Welcome!</h6>
+                  <h6 class="text-overflow m-0">Bienvenue!</h6>
                 </div>
                 <a href="./user" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>
-                <a href="./dashboard" class="dropdown-item">
-                  <i class="ni ni-settings-gear-65"></i>
-                  <span>Settings</span>
-                </a>
-                <a href="./examples/profile.html" class="dropdown-item">
-                  <i class="ni ni-calendar-grid-58"></i>
-                  <span>Activity</span>
-                </a>
-                <a href="./examples/profile.html" class="dropdown-item">
-                  <i class="ni ni-support-16"></i>
-                  <span>Support</span>
-                </a>
+    
                 <div class="dropdown-divider"></div>
                 <a onclick="logout();" href="#" class="dropdown-item">
                   <form id="logout_form" action="" method="POST">
