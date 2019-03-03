@@ -84,27 +84,34 @@
                       </div>  
                     </div>
                     <div class="col-lg-2">
-                      <button onclick="checkURL();" type="button" class="btn btn-primary btn-lg">Analyser</button>
+                      <button onclick="checkURL();" type="button" class="btn btn-primary btn-md">Analyser</button>
                     </div>                    
                   </div>
 
-                  <br>
-
-                  <div class="container row">
-                    <div class="custom-control custom-checkbox col-sm">
-                      <input class="custom-control-input" name="liensx" id="customCheck2" type="checkbox" checked>
-                            <label class="custom-control-label" for="customCheck2">Liens externes</label>
-                    </div>
-                    <div class="col-sm">
-                      <label  for="customCheck2">Profondeur</label>
-                            <input class="custom-control-label" name="Profondeur" id="customCheck2" type="number" min="1" max="10" value="1">
-                            
-                    </div>
-                    <div class="col-sm">
-                      <label  for="customCheck2">Temps de rep moyen</label>
-                            <input class="custom-control-label" name="TempsRep" id="customCheck34" type="number" min="1" max="10" value="1">
-                    </div>
+                <div class="form-row col-md-10">
+                  <div class="form-group col-md-4">
+                    <label for="inputExternLinks">Liens externes</label>
+                    <select id="inputExternLinks" name="liensx" class="form-control form-control-sm">
+                      <option value="0" selected>Non</option>
+                      <option value="1">Oui</option>
+                    </select>
                   </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Profondeur</label>
+                    <select id="inputState" name="Profondeur" class="form-control form-control-sm">
+                      <option value="1" selected>1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputCity">Temps de rep moyen</label>
+                    <input type="number" name="TempsRep" class="form-control form-control-sm" id="inputCity" value="1">
+                  </div>   
+                </div>
+
                   
                 </div>
               </form>

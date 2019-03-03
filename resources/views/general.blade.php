@@ -83,7 +83,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./user">
-              <i class="ni ni-single-02 text-yellow"></i> My profile
+              <i class="ni ni-single-02 text-yellow"></i> Profil
             </a>
           </li>
           <li class="nav-item">
@@ -131,7 +131,7 @@
                 </div>
                 <a href="./user" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
-                  <span>My profile</span>
+                  <span>Profil</span>
                 </a>
     
                 <div class="dropdown-divider"></div>
@@ -140,7 +140,7 @@
                     {{csrf_field()}}
                   </form>
                   <i class="ni ni-user-run"></i>
-                  <span>Logout</span>
+                  <span>Deconnexion</span>
                 </a>
               </div>
             </li>
@@ -161,22 +161,22 @@
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
             <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2019 <a href="#" class="font-weight-bold ml-1" target="_blank">Analyse Web</a>
+              &copy; 2019 <a href="/" class="font-weight-bold ml-1">Analyse Web</a>
             </div>
           </div>
           <div class="col-xl-6">
             <ul class="nav nav-footer justify-content-center justify-content-xl-end">
               <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+                <a href="/" class="nav-link" >Accueil</a>
               </li>
               <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+                <a href="./user" class="nav-link">Profil</a>
               </li>
               <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
+                <a onclick="logout();" href="#" class="nav-link">Deconnexion</a>
+                <form id="logout_form" action="" method="POST">
+                    {{csrf_field()}}
+                  </form>
               </li>
             </ul>
           </div>
