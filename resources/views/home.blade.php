@@ -40,6 +40,9 @@
                          <div class="modal-body p-0">
                             <div class="card bg-secondary shadow border-0">
                                <div class="card-body px-lg-5 py-lg-5">
+                                <div class="text-center text-muted mb-4">
+                                    <small>Ajoutez le lien et le titre !</small>
+                                </div>
                                   <form role="form">
                                      <div class="form-group mb-3">
                                         <div class="input-group input-group-alternative">
@@ -62,6 +65,9 @@
                                           <span class="btn-inner--text">Ajouter</span>
                                           <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
                                         </button>
+
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+       
                                      </div>
                                   </form>
                                </div>
@@ -78,7 +84,7 @@
                             <div class="card bg-secondary shadow border-0">
                                <div class="card-body px-lg-5 py-lg-5">
                                 <div class="text-center text-muted mb-4">
-                                    <small>Cliquez sur les favoris a supprimer!</small>
+                                    <small>Cliquez sur les favoris a supprimer !</small>
                                 </div>
                                   <form role="form">
                                      <div class="">
@@ -93,6 +99,8 @@
                                         <button type="button" class="btn btn-danger col-md-12">
                                           YouTube 
                                         </button>
+                                        <br><br><br>
+                                        <button  type="button" class="btn btn-secondary col-md-12" data-dismiss="modal">Fermer</button>
                                      </div>
 
                                   </form>
