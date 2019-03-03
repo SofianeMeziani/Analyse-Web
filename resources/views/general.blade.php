@@ -129,6 +129,10 @@
                 <div class=" dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Bienvenue!</h6>
                 </div>
+                <a href="/" class="dropdown-item">
+                  <i class="ni ni-istanbul"></i>
+                  <span>Accueil</span>
+                </a>
                 <a href="./user" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>Profil</span>
