@@ -33,23 +33,46 @@ class AnalysisController extends Controller
 
     }
 
-    public function getLinks($url) {
-        $data=file_get_contents($url);
-        $data = strip_tags($data,"<a>");
-        $d = preg_split("/<\/a>/",$data);
+    // public function getLinks($url) {
+    //     $data=file_get_contents($url);
+    //     $data = strip_tags($data,"<a>");
+    //     $d = preg_split("/<\/a>/",$data);
 
-        $result = array();
-        $pageltime = array();
-        foreach ( $d as $k=>$u ){
-            if( strpos($u, "<a href=") !== FALSE ){
-                $u = preg_replace("/.*<a\s+href=\"/sm","",$u);
-                $u = preg_replace("/\".*/","",$u);
-                if (!strpos($u, "/")==0){
-                    array_push($result, $u);
-                }
+    //     $result = array();
+    //     $pageltime = array();
+    //     foreach ( $d as $k=>$u ){
+    //         if( strpos($u, "<a href=") !== FALSE ){
+    //             $u = preg_replace("/.*<a\s+href=\"/sm","",$u);
+    //             $u = preg_replace("/\".*/","",$u);
+    //             if (!strpos($u, "/")==0){
+    //                 array_push($result, $u);
+    //             }
+    //         }
+    //     }
+    //     return $result;
+    // }
+
+    // echo '<a href="'.$url.'">'.$url.'</a><br />';
+
+        public function getLinks($url) {
+        $urlContent = file_get_contents($url);
+        $urls = array();
+        $dom = new DOMDocument();
+        @$dom->loadHTML($urlContent);
+        $xpath = new \DOMXPath($dom);
+        $hrefs = $xpath->evaluate("/html/body//a");
+        for($i = 0; $i < $hrefs->length; $i++){
+            $href = $hrefs->item($i);
+            $url = $href->getAttribute('href');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            // validate url
+            if(!filter_var($url, FILTER_VALIDATE_URL) === false){
+                array_push($urls, $url) ;
             }
         }
-        return $result;
+        dd(array_unique($urls));
+        // dd($urls);
+        return $url;
     }
 
     public function getLinkstime($urls) {
