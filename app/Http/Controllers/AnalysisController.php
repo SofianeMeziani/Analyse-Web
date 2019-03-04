@@ -119,6 +119,11 @@ class AnalysisController extends Controller
         foreach ($array[sizeof($array)-1] as $value) {
             $links_temp=$this->getLinks($value);
             foreach ($links_temp as $value_temp) {
+
+                $pos = strpos($value_temp, "?");
+                if ($pos !== false) {
+                    $value_temp = substr($value_temp, 0, $pos);
+                }
                 array_push($links, $value_temp);
             }
         }
@@ -129,7 +134,7 @@ class AnalysisController extends Controller
         } else {
             $profondeur_max = sizeof($array); // -1 ?;
         }
-        dd($array);
+        //dd($array);
         return $array;
     }
 
@@ -180,7 +185,7 @@ class AnalysisController extends Controller
             // echo "<br>";
         }
 
-        $var ["urls"] = $result;
+        $var ["urls"] = $links_array;
         $var ["prof"] = $profondeur;
         $var ["tdep"] = $tmoyen;
         $var ["ltime"] = $ltime;

@@ -120,25 +120,27 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">Nom de la page</th>
-                    <th scope="col">Temps de rep</th>
-                    <th scope="col">Lien mort</th>
-                    <th scope="col">Err Ressources</th>
-                    <th scope="col">Err Balises</th>
+                    <th scope="col" >Nom de la page</th>
+                    <th scope="col" >Temps de rep</th>
+                    <th scope="col" >Lien mort</th>
+                    <th scope="col" >Err Ressources</th>
+                    <th scope="col" >Err Balises</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $i=0; ?>
-                  @foreach ($urls as $key => $url)
+                  <?php $i=-1; ?>
+                  @foreach ($urls as $url_array)
+                  <?php $i++; ?>
+                    @foreach ($url_array as $url)
                     <tr>
-                      <th scope="row">
+                      <td scope="row">
                         {{$url}}
-                      </th>
+                      </td>
                       <td>
                         
                       </td>
                       <td>
-                        340
+                        340 niv :<?php echo $i ?>
                       </td>
                       <td>
                         340
@@ -147,7 +149,8 @@
                         <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
                       </td>
                     </tr>
-                    <?php $i++; ?>
+                    <!--?php $i++; ?-->
+                  @endforeach
                   @endforeach
                 </tbody>
               </table>
