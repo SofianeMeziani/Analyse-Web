@@ -17,7 +17,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Nombre de pages</h5>
-                      <span class="h2 font-weight-bold mb-0">350</span>
+                      <span class="h2 font-weight-bold mb-0"><?php echo ($internal_links + $external_links); ?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -26,8 +26,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Internes : 310</span> <br>
-                    <span class="text-nowrap">Externes : 40</span>
+                    <span class="text-nowrap">Internes : <?php echo $internal_links; ?></span> <br>
+                    <span class="text-nowrap">Externes : <?php echo $external_links; ?></span>
                   </p>
                 </div>
               </div>
@@ -111,7 +111,7 @@
                   <h3 class="mb-0">Statistiques</h3>
                 </div>
                 <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                  <a href="#!" class="btn btn-sm btn-primary">Voir tout</a>
                 </div>
               </div>
             </div>
@@ -122,7 +122,7 @@
                   <tr>
                     <th scope="col" >Nom de la page</th>
                     <th scope="col" >Temps de rep</th>
-                    <th scope="col" >Lien mort</th>
+                    <th scope="col" >Niveau</th>
                     <th scope="col" >Err Ressources</th>
                     <th scope="col" >Err Balises</th>
                   </tr>
@@ -137,10 +137,10 @@
                         {{$url}}
                       </td>
                       <td>
-                        
+                        10
                       </td>
                       <td>
-                        340 niv :<?php echo $i ?>
+                        <?php echo $i ?>
                       </td>
                       <td>
                         340
