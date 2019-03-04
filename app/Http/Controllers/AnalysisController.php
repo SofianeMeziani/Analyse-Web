@@ -112,7 +112,7 @@ class AnalysisController extends Controller
         return $result;
     }*/
 
-    public function site_links($array,$profondeur,$original_link,&$internal_links,&$external_links) {
+    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links) {
 
         //$total_links = 0;
         $profondeur_max = 0;
@@ -132,9 +132,13 @@ class AnalysisController extends Controller
         }
         if (!empty($links)){ 
             $array_unique_links = array_unique($links);
-            foreach ($array_unique_links as $aLink) {
+            foreach ($array_unique_links as $key => $aLink) {
                 if (strpos($aLink, $original_link) === false){
-                    $external_links = $external_links + 1;
+                    if ($lienx == 0) {
+                        unset($array_unique_links[$key]);
+                    } else {
+                       $external_links = $external_links + 1; 
+                    }   
                 } else {
                     $internal_links = $internal_links + 1;
                 }
@@ -211,7 +215,7 @@ class AnalysisController extends Controller
         $d=array();
         array_push($d, $url);
         array_push($links_array , $d);
-        $links_array = $this->site_links($links_array,$profondeur,$original_link,$internal_links,$external_links);
+        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links);
         // array_push($links_array , $result);
         // array_push($links_array , $result);
         // dd($links_array);

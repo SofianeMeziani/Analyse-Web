@@ -136,8 +136,8 @@
                   <div class="form-group col-md-4">
                     <label for="inputExternLinks">Liens externes</label>
                     <select id="inputExternLinks" name="liensx" class="form-control form-control-sm">
-                      <option value="0" selected>Non</option>
-                      <option value="1">Oui</option>
+                      <option value="0">Non</option>
+                      <option value="1" selected="">Oui</option>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
