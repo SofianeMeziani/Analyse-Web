@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Http\Controllers;
 
 use Session;
@@ -14,6 +16,21 @@ class AnalysisController extends Controller
         $this->middleware('auth');
     }
 
+    public function file_get_contents_curl($url) {
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);       
+
+    $data = curl_exec($ch);
+    curl_close($ch);
+
+    return $data;
+}
+
     public function t_reponse ($url)
     {
 
@@ -22,7 +39,7 @@ class AnalysisController extends Controller
         $time = $time[1] + $time[0];
         $start = $time;
 
-        $contents = file_get_contents($url);
+        $contents = $this->file_get_contents_curl($url);
 
         $time = microtime();
         $time = explode(' ', $time);
@@ -54,8 +71,10 @@ class AnalysisController extends Controller
 
     // echo '<a href="'.$url.'">'.$url.'</a><br />';
 
+
+
         public function getLinks($url) {
-        $urlContent = file_get_contents($url);
+        $urlContent = $this->file_get_contents_curl($url);
         $urls = array();
         $dom = new DOMDocument();
         @$dom->loadHTML($urlContent);
@@ -173,5 +192,6 @@ class AnalysisController extends Controller
     // {
     //     return view('dashboard');
     // }
+
 
 }
