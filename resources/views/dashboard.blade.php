@@ -135,7 +135,7 @@
                         {{$url}}
                       </th>
                       <td>
-                        {{$pageltime[$i]}}
+                        
                       </td>
                       <td>
                         340

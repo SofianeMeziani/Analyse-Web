@@ -129,6 +129,7 @@ class AnalysisController extends Controller
         } else {
             $profondeur_max = sizeof($array); // -1 ?;
         }
+        dd($array);
         return $array;
     }
 
@@ -145,9 +146,10 @@ class AnalysisController extends Controller
 
         $ltime = $this->t_reponse($url);
 
+        // $result = $this->getLinks($url);
         $result = $this->getLinks($url);
 
-        $pageltime = $this->getLinkstime($result);
+        //$pageltime = $this->getLinkstime($result);
 
         $links_array = array();
         $d=array();
@@ -182,7 +184,7 @@ class AnalysisController extends Controller
         $var ["prof"] = $profondeur;
         $var ["tdep"] = $tmoyen;
         $var ["ltime"] = $ltime;
-        $var ["pageltime"] = $pageltime;
+        //$var ["pageltime"] = $pageltime;
 
         //dd($var);
         return view('dashboard', $var);
