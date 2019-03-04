@@ -111,7 +111,7 @@
                   <h3 class="mb-0">Statistiques</h3>
                 </div>
                 <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Voir tout</a>
+                  <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
                 </div>
               </div>
             </div>
@@ -156,8 +156,41 @@
               </table>
             </div>
           </div>
+          <br>
+          <div class="col text-right">
+                  <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
+                </div>
         </div>
       </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+        $('table tr:lt(11)').addClass('active');
+
+        $('a.load_more').on('click', function(e) {
+          e.preventDefault();  
+          var $rows = $('table tr');
+          var lastActiveIndex = $rows.filter('.active:last').index();
+          $rows.filter(':lt(' + (lastActiveIndex + 11) + ')').addClass('active');
+        });
+
+        $('.load_more').click(function () {
+    $('html, body').animate({
+        scrollTop:$(document).height()
+    }, 'slow');
+    return false;
+});
+      </script>
+
+      <style type="text/css">
+        table tr { display: none; }
+        table tr.active { display: table-row; }
+      </style>
+
+      
+
    
 	
 @endsection

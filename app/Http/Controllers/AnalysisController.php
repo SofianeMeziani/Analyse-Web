@@ -149,6 +149,22 @@ class AnalysisController extends Controller
         return $array;
     }
 
+    public function get_original_link ($url) {
+        // trouver la position du 3 eme slash
+        $pos1 = strpos($url, '/');
+        $pos2 = strpos($url, '/', $pos1 + 2);
+
+        // http://www.translate.google.com
+        $original_link = substr ($url ,0, $pos2);
+
+        // trouver la position du 2 eme point depuis la fin
+        $pos1 = strrpos ($original_link, '.');
+        $pos2 = strrpos ($original_link, '.', $pos1 - strlen($original_link) - 1);
+
+        // google.com
+        return substr ($original_link , $pos2 + 1);
+    }
+
     public function analyse(Request $request)
     {
 
@@ -187,19 +203,8 @@ class AnalysisController extends Controller
 
         //dd($url);
 
-        // trouver la position du 3 eme slash
-        $pos1 = strpos($url, '/');
-        $pos2 = strpos($url, '/', $pos1 + 2);
-
-        // http://www.translate.google.com
-        $original_link = substr ($url ,0, $pos2);
-
-        // trouver la position du 2 eme point depuis la fin
-        $pos1 = strrpos ($original_link, '.');
-        $pos2 = strrpos ($original_link, '.', $pos1 - strlen($original_link) - 1);
-
-        // google.com
-        $original_link = substr ($original_link , $pos2 + 1);
+        $original_link = $this->get_original_link($url);
+        
         //dd($original_link);
 
         $links_array = array();
