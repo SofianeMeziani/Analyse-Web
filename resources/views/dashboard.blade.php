@@ -134,7 +134,7 @@
                     @foreach ($url_array as $url)
                     <tr>
                       <td scope="row">
-                        {{$j}} - {{$url}}
+                        {{$j}} - <a href= <?php echo $url; ?> target="_blank">{{$url}}</a>
                       </td>
                       <td style="text-align: center; font-size: 16px">
                         <?php $loadT = $load_time[$j - 1]; 
@@ -201,7 +201,7 @@
       </script>
 
       <style type="text/css">
-        span .badge {width: 20%}
+        table a {color: #525f7f}
         table tr { display: none; }
         table tr.active { display: table-row; }
       </style>
