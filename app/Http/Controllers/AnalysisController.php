@@ -156,18 +156,18 @@ class AnalysisController extends Controller
 
     public function get_original_link ($url) {
         // trouver la position du 3 eme slash
-        $pos1 = strpos($url, '/');
-        $pos2 = strpos($url, '/', $pos1 + 2);
+        $pos1slash = strpos($url, '/');
+        $pos2slash = strpos($url, '/', $pos1slash + 2);
 
-        // http://www.translate.google.com
-        $original_link = substr ($url ,0, $pos2);
+        return substr ($url ,0, $pos2slash);
 
         // trouver la position du 2 eme point depuis la fin
-        $pos1 = strrpos ($original_link, '.');
-        $pos2 = strrpos ($original_link, '.', $pos1 - strlen($original_link) - 1);
+        //$pos1 = strrpos ($original_link, '.');
+        //$pos2 = strrpos ($original_link, '.', $pos1 - strlen($original_link) - 1);
 
-        // google.com
-        return substr ($original_link , $pos2 + 1);
+        //if ($pos2 === false) 
+        //return substr($original_link, $pos1slash + 1);
+        //return substr ($original_link , $pos2 + 1);
     }
 
     public function analyse(Request $request)
@@ -182,13 +182,14 @@ class AnalysisController extends Controller
             $url = 'http://' . $url;
         }
 
-        if (false === strpos($url, 'www.')) {
+        // a changer
+        /*if (false === strpos($url, 'www.')) {
             if (false === strpos($url, 'https')) {
                 $url = substr($url, 0, 7) . "www." . substr($url, 7);
             } else {
                 $url = substr($url, 0, 8) . "www." . substr($url, 8);
             }    
-        }
+        }*/
 
         if (strcmp ( substr($url, strlen($url) - 1) , '/') !== 0)  {
             $url = $url . '/';
