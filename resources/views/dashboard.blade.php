@@ -38,7 +38,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Temps de reponse</h5>
-                      <span class="h2 font-weight-bold mb-0">2,35</span>
+                      <span class="h2 font-weight-bold mb-0"><?php echo round((array_sum($load_time)/count($load_time)), 2); ?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -47,8 +47,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Minimum : 1,23 ms</span> <br>
-                    <span class="text-nowrap">Maximum : 4,76 ms</span>
+                    <span class="text-nowrap">Minimum : <?php echo round(min($load_time), 2); ?> ms</span> <br>
+                    <span class="text-nowrap">Maximum : <?php echo round (max($load_time), 2); ?> ms</span>
                   </p>
                 </div>
               </div>
@@ -120,11 +120,11 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" >Nom de la page</th>
-                    <th scope="col" >Temps de rep</th>
-                    <th scope="col" >Niveau</th>
-                    <th scope="col" >Err Ressources</th>
-                    <th scope="col" >Err Balises</th>
+                    <th scope="col" style="text-align: center;">Nom de la page</th>
+                    <th scope="col" style="text-align: center;">Temps de rep (ms)</th>
+                    <th scope="col" style="text-align: center;">Niveau</th>
+                    <th scope="col" style="text-align: center;">Err Ressources</th>
+                    <th scope="col" style="text-align: center;">Err Balises</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -136,16 +136,24 @@
                       <td scope="row">
                         {{$j}} - {{$url}}
                       </td>
-                      <td>
-                        10
+                      <td style="text-align: center; font-size: 16px">
+                        <?php $loadT = $load_time[$j - 1]; 
+                              if ($loadT < $tmoyen - 20) {
+                                ?> <span class="badge badge-success"><?php echo $loadT ?></span> <?php
+                                } else if ($loadT > $tmoyen + 20) {
+                                  ?> <span class="badge badge-danger"><?php echo $loadT ?></span> <?php
+                                } else {
+                                  ?> <span class="badge badge-warning"><?php echo $loadT ?></span> <?php
+                                }
+                        ?>
                       </td>
-                      <td>
+                      <td style="text-align: center;">
                         <?php echo $i ?>
                       </td>
-                      <td>
+                      <td style="text-align: center;">
                         340
                       </td>
-                      <td>
+                      <td style="text-align: center;">
                         <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
                       </td>
                     </tr>
@@ -193,6 +201,7 @@
       </script>
 
       <style type="text/css">
+        span .badge {width: 20%}
         table tr { display: none; }
         table tr.active { display: table-row; }
       </style>

@@ -46,7 +46,7 @@ class AnalysisController extends Controller
         $time = $time[1] + $time[0];
         $finish = $time;
         $total_time = round(($finish - $start), 4);
-        return $total_time;
+        return $total_time * 1000;
 
     }
 
@@ -112,9 +112,8 @@ class AnalysisController extends Controller
         return $result;
     }*/
 
-    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links) {
+    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time) {
 
-        //$total_links = 0;
         $profondeur_max = 0;
         $links = array();
         a:
@@ -138,9 +137,11 @@ class AnalysisController extends Controller
                         unset($array_unique_links[$key]);
                     } else {
                        $external_links = $external_links + 1; 
+                       array_push($load_time, $this->t_reponse($aLink));
                     }   
                 } else {
                     $internal_links = $internal_links + 1;
+                    array_push($load_time, $this->t_reponse($aLink));
                 }
             }
             array_push($array, $array_unique_links);
@@ -195,7 +196,9 @@ class AnalysisController extends Controller
 
         //dd($url);
 
-        $ltime = $this->t_reponse($url);
+        $load_time = array();
+        array_push($load_time, $this->t_reponse($url));
+        //$ltime = $this->t_reponse($url);
 
         // $result = $this->getLinks($url);
         $result = $this->getLinks($url);
@@ -211,11 +214,13 @@ class AnalysisController extends Controller
         
         //dd($original_link);
 
+
         $links_array = array();
         $d=array();
         array_push($d, $url);
         array_push($links_array , $d);
-        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links);
+        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time);
+
         // array_push($links_array , $result);
         // array_push($links_array , $result);
         // dd($links_array);
@@ -241,9 +246,10 @@ class AnalysisController extends Controller
         }
 
         $var ["urls"] = $links_array;
+        $var ["tmoyen"] = $tmoyen;
         $var ["prof"] = $profondeur;
         $var ["tdep"] = $tmoyen;
-        $var ["ltime"] = $ltime;
+        $var ["load_time"] = $load_time;
         $var ["internal_links"] = $internal_links;
         $var ["external_links"] = $external_links;
         //$var ["pageltime"] = $pageltime;

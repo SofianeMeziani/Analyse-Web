@@ -152,7 +152,7 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputCity">Temps de rep moyen (ms)</label>
-                    <input type="number" name="TempsRep" class="form-control form-control-sm" id="inputCity" value="1">
+                    <input type="number" name="TempsRep" class="form-control form-control-sm" id="inputCity" value="200" min="0">
                   </div>   
                 </div>
 
