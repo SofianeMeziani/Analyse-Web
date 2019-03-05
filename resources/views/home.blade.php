@@ -151,7 +151,7 @@
                     </select>
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="inputCity">Temps de rep moyen</label>
+                    <label for="inputCity">Temps de rep moyen (ms)</label>
                     <input type="number" name="TempsRep" class="form-control form-control-sm" id="inputCity" value="1">
                   </div>   
                 </div>

@@ -128,13 +128,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $i=-1; ?>
+                  <?php $i=-1; $j=1?>
                   @foreach ($urls as $url_array)
                   <?php $i++; ?>
                     @foreach ($url_array as $url)
                     <tr>
                       <td scope="row">
-                        {{$url}}
+                        {{$j}} - {{$url}}
                       </td>
                       <td>
                         10
@@ -149,7 +149,7 @@
                         <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
                       </td>
                     </tr>
-                    <!--?php $i++; ?-->
+                    <?php $j++; ?>
                   @endforeach
                   @endforeach
                 </tbody>
@@ -159,6 +159,7 @@
           <br>
           <div class="col text-right">
                   <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
+                  <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
                 </div>
         </div>
       </div>
@@ -173,12 +174,19 @@
           e.preventDefault();  
           var $rows = $('table tr');
           var lastActiveIndex = $rows.filter('.active:last').index();
-          $rows.filter(':lt(' + (lastActiveIndex + 11) + ')').addClass('active');
+          $rows.filter(':lt(' + (lastActiveIndex + 12) + ')').addClass('active');
         });
 
         $('.load_more').click(function () {
     $('html, body').animate({
         scrollTop:$(document).height()
+    }, 'slow');
+    return false;
+});
+
+        $('.go_up').click(function () {
+    $('html, body').animate({
+        scrollTop:0
     }, 'slow');
     return false;
 });
