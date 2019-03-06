@@ -14,6 +14,9 @@ Auth::routes();
 
 //-----------HomeController--------------
 Route::get('/', "HomeController@index");
+Route::post('/create','HomeController@insert');
+Route::post('/del','HomeController@del_fav');
+
 //Route::get("/dashboard", "AnalysisController@dashboard");
 Route::post("/dashboard", "AnalysisController@analyse");
 
