@@ -84,6 +84,35 @@ class AnalysisController extends Controller
         return $result;
     }
 
+    public function syntaxe_verif($url)
+    {
+        //require __DIR__.'/AnalyseWebCompilation';
+        //dd (getcwd());
+        
+        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
+        file_put_contents("tags.txt", "");
+        file_put_contents("tags.txt", $this->format_html($url));
+        
+        $result = array();
+        $res = shell_exec('./ex1 2>&1');
+        
+
+        if (strlen($res) == 3) {
+            array_push($result, "CORRECT");
+        } else {
+            $pos1 = strpos($res, '.');
+            $pos2 = strpos($res, '.', $pos1 + 1);
+            // balise
+            array_push($result, substr ( $res , 0 , $pos1 ));
+            // ouverture
+            array_push($result, intval( substr ( $res , $pos1 + 1 , $pos2 - $pos1 - 1)));
+            // fermeture prevue
+            array_push($result, intval( substr ( $res , $pos2 + 1 , strlen($res) - $pos2 )));
+        }
+        
+        return ($result);
+    }
+
     public function getLinks($url) 
     {
         $urlContent = $this->file_get_contents_curl($url);
@@ -114,7 +143,7 @@ class AnalysisController extends Controller
         return $result;
     }
 
-    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link) 
+    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link, &$syntaxe_errors) 
     {
         $profondeur_max = 0;
         $links = array();
@@ -141,11 +170,13 @@ class AnalysisController extends Controller
                        $external_links = $external_links + 1; 
                        array_push($load_time, $this->t_reponse($aLink));
                        array_push($broken_link, $this->broken_link($aLink));
+                       array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
                     }   
                 } else {
                     $internal_links = $internal_links + 1;
                     array_push($load_time, $this->t_reponse($aLink));
                     array_push($broken_link, $this->broken_link($aLink));
+                    array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
                 }
             }
             array_push($array, $array_unique_links);
@@ -175,6 +206,30 @@ class AnalysisController extends Controller
         //return substr ($original_link , $pos2 + 1);
     }
 
+    // supprimer les commentaires conditionnels
+    public function format_html($url){
+
+        $html = $this->file_get_contents_curl($url);
+
+        $html = preg_replace('/<!--(.|\s)*?-->/', '', $html);
+        $html = str_replace('\r\n', '', $html);
+
+
+        return ($html);
+    }
+
+/*    public function analyse2(Request $request){
+        $array = array('abbr', 'a', 'acronym', 'address', 'applet', 'article', 'aside', 'audio', 'b', 'bdi','div', 'bdo', 'big', 'blockquote', 'body', 'button','canvas','caption','center', 'cite', 'code', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'dir', 'dl', 'dt', 'em', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'i', 'iframe', 'ins', 'kbd', 'label', 'legend', 'li', 'main', 'mark', 'meter', 'nav', 'noframes', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'picture', 'pre', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'section', 'select', 'small', 'span', 'strike', 'strong', 'style', 'sub', 'summary', 'sup', 'svg', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'tt', 'u', 'ul', 'var', 'video', 'wbr', 'script');
+
+        foreach ($array as $value) {
+
+            echo "| OUVRANTE_".$value." { inserer(stack, \"".$value."\"); } FERMANTE_".$value." { retirer(stack, \"".$value."\"); }";
+            echo "<br>";
+
+        }
+        
+    }*/
+
     public function analyse(Request $request)
     {
 
@@ -202,11 +257,17 @@ class AnalysisController extends Controller
 
         //dd($url);
 
+        $this->syntaxe_verif($url);
+
         $load_time = array();
         array_push($load_time, $this->t_reponse($url));
 
         $broken_link = array();
         array_push($broken_link, $this->broken_link($url));
+
+        $syntaxe_errors = array();
+        array_push($syntaxe_errors, $this->syntaxe_verif($url));
+
 
         //$ltime = $this->t_reponse($url);
 
@@ -225,9 +286,10 @@ class AnalysisController extends Controller
         $d=array();
         array_push($d, $url);
         array_push($links_array , $d);
-        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link);
+        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link,$syntaxe_errors);
 
         // dd($links_array);
+
 
         $var ["urls"] = $links_array;
         $var ["tmoyen"] = $tmoyen;
@@ -235,6 +297,7 @@ class AnalysisController extends Controller
         $var ["tdep"] = $tmoyen;
         $var ["load_time"] = $load_time;
         $var ["broken_link"] = $broken_link;
+        $var ["syntaxe_errors"] = $syntaxe_errors;
         $var ["internal_links"] = $internal_links;
         $var ["external_links"] = $external_links;
         //$var ["pageltime"] = $pageltime;

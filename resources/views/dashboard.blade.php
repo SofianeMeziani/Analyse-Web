@@ -124,7 +124,7 @@
                     <th scope="col" style="text-align: center;">Temps de rep (ms)</th>
                     <th scope="col" style="text-align: center;">Niveau</th>
                     <th scope="col" style="text-align: center;">Status</th>
-                    <th scope="col" style="text-align: center;">Err Balises</th>
+                    <th scope="col" style="text-align: center;">Syntaxe</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -153,8 +153,9 @@
                         <td style="text-align: center;">
                           {{$broken_link[$j-1]}}
                         </td>
-                        <td style="text-align: center;">
-                          <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
+                        <td style="text-align: center; font-size: 16px">
+                          <?php if (strcmp(($syntaxe_errors[$j - 1])[0], "CORRECT") == 0){ ?> <span class="badge badge-success"><?php echo "Correcte";
+                           ?></span> <?php } else { ?> <span class="badge badge-danger"><?php echo "Fausse"; ?></span> <?php } ?>
                         </td>
                       </tr>
                       <?php $j++; ?>

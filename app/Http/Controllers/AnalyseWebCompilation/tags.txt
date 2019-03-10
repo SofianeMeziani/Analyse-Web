@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>Site institutionnel</title>
+    <link>http://www.univ-rouen.fr</link>
+    <description>Les 10 dernières actualités</description>
+    <item>
+      <title>Remise des diplômes - promotion 2018</title>
+      <link>http://esitech.univ-rouen.fr/remise-des-diplomes-promotion-2018-627912.kjsp</link>
+      <description>L'ESITech a remis les diplômes à sa deuxième promotion. Les 32 étudiantes et étudiants ont reçu le parchemin qui marque la fin des 3 années de cycle d'ingénieur. La cérémonie a commencé par les interventions de :&lt;ul&gt;    &lt;li&gt;M. Claude Rozé, directeur de l'école,&lt;/li&gt;    &lt;li&gt;M. Bernard Boudot, président du Conseil d'Ecole,&lt;/li&gt;    &lt;li&gt;M. Mourad Boukhalfa, directeur de l'INSA Rouen Normandie,&lt;/li&gt;    &lt;li&gt;M. Joël Alexandre, président de l'Université de Rouen Normandie.&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;M. Stéphane Thiroloix, président et CEO de la société AlogoThérapix, ancien président de la filière Polepharma, a ensuite présenté aux diplômés quelques rélexions personnelles sur le milieu professionnel, le déroulement d'une carrière, les différences entre monde académique et monde professionnel et à tenté de répondre, par avance, aux interrogations que peuvent se poser de futurs (ou déjà) cadres lors de leur parcours dans l'entreprise.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;div style="text-align: center;"&gt;&lt;img src="http://www.univ-rouen.fr/medias/photo/remise-diplomes-chapeaux_1552147842564-gif" style="margin: 0px 5px;" alt="" title="Remise des diplômes 2018" width="516" height="387" /&gt;&lt;/div&gt;</description>
+      <pubDate>Fri, 08 Mar 2019 23:00:00 GMT</pubDate>
+      <guid>http://esitech.univ-rouen.fr/remise-des-diplomes-promotion-2018-627912.kjsp</guid>
+      <dc:creator>claude.roze@univ-rouen.fr (Claude Roze)</dc:creator>
+      <dc:date>2019-03-08T23:00:00Z</dc:date>
+      <media:content fileSize="104448" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/remise-des-diplomes-carrousel_1552147535432-jpg">
+        <media:description />
+        <media:title />
+      </media:content>
+    </item>
+    <item>
+      <title>Conférence " Ingénieure-ingénieur, pourquoi pas toi ?"</title>
+      <link>http://m.univ-rouen.fr/site-mobile-fr/conference-ingenieure-ingenieur-pourquoi-pas-toi--627915.kjsp</link>
+      <description>&lt;p&gt;Chaque année, à l'occasion de la journée des droits des femmes, les 7 écoles d'ingénieurs de la métropole rouennaise, le CESI, l’ESIGELEC, l'ESITech, l’INSA Rouen Normandie et 		UniLaSalle,  proposent, en partenariat avec le Rectorat de région, l’Onisep, la  Direction Régionale aux Droits des Femmes et à l’Égalité entre les  femmes et les hommes et l’association « Elles Bougent » une  conférence-débat suivie d’ateliers participatifs qui ont pour but de  faire découvrir les métiers de l’ingénieur à des jeunes élèves de lycée. Cette année, des écoles de l'agglomération de Caen y participaient également.&lt;br /&gt;&lt;br /&gt;Après la conférence, des ateliers étaient organisés permettant de montrer des réalisations faites par des élèves ingénieurs aux lycéens. L'ESITech a présenté la "main bionique", prothèse de bras actionné par des servo-moteurs, commandé par un capteur placé sur le haut du bras.&lt;br /&gt;&lt;br /&gt; &lt;/p&gt;</description>
+      <pubDate>Fri, 08 Mar 2019 23:00:00 GMT</pubDate>
+      <guid>http://m.univ-rouen.fr/site-mobile-fr/conference-ingenieure-ingenieur-pourquoi-pas-toi--627915.kjsp</guid>
+      <dc:creator>claude.roze@univ-rouen.fr (Claude Roze)</dc:creator>
+      <dc:date>2019-03-08T23:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>Semaine du cerveau : exposition BU Sciences MSA</title>
+      <link>http://documentation.univ-rouen.fr/semaine-du-cerveau-exposition-bu-sciences-msa-627870.kjsp</link>
+      <description>À l'occasion de la &lt;a  class="lien_externe" title="https://www.semaineducerveau.fr/ (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="https://www.semaineducerveau.fr/" &gt;&lt;strong&gt;semaine du cerveau&lt;/strong&gt;&lt;/a&gt;, la &lt;strong&gt;&lt;a href="/bu-sciences-et-techniques-326708.kjsp?RH=1383419355589&amp;RF=1382033421417" &gt;bibliothèque universitaire des Sciences et Techniques de Mont-Saint-Aignan&lt;/a&gt;&lt;/strong&gt;       expose en avant-première les modèles anatomiques de cerveau de la       BU Santé. Accompagnés de leur légende, ces modèles permettent de comprendre       les différentes parties et les fonctions du cerveau humain.&lt;br /&gt;La BU vous propose aussi une &lt;a  class="lien_externe" title="http://flora.univ-rouen.fr/flora/jsp/system/win_main.jsp?success=jsp/system/win_main.jsp&amp;failure=jsp/error.jsp&amp;profile=anonymous&amp;connectionSiteId=1&amp;connectionSiteLabel=Site%201 (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="http://flora.univ-rouen.fr/flora/jsp/system/win_main.jsp?success=jsp/system/win_main.jsp&amp;failure=jsp/error.jsp&amp;profile=anonymous&amp;connectionSiteId=1&amp;connectionSiteLabel=Site%201" &gt;&lt;strong&gt;sélection d'ouvrages&lt;/strong&gt;&lt;/a&gt; sur l'anatomie       cérébrale pour compléter votre exploration du cerveau et des quiz pour tester vos connaissances.&lt;br /&gt;Bonne exploration !</description>
+      <pubDate>Fri, 08 Mar 2019 16:37:00 GMT</pubDate>
+      <guid>http://documentation.univ-rouen.fr/semaine-du-cerveau-exposition-bu-sciences-msa-627870.kjsp</guid>
+      <dc:creator>christelle.quillet@univ-rouen.fr (Christelle Quillet)</dc:creator>
+      <dc:date>2019-03-08T16:37:00Z</dc:date>
+      <media:content fileSize="51200" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/cerveau-a-lunettes-2019_1552064147864-jpg">
+        <media:description />
+        <media:title>Semaine du cerveau 2019</media:title>
+      </media:content>
+    </item>
+    <item>
+      <title>Concert de Mezerg à la BU Lettres [Festival Les Pluriels]</title>
+      <link>http://documentation.univ-rouen.fr/concert-de-mezerg-a-la-bu-lettres-festival-les-pluriels--627818.kjsp</link>
+      <description>&lt;p&gt;Envie d’une expérience musicale originale ? L’artiste &lt;a  class="lien_externe" title="https://www.facebook.com/Mezerg (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="https://www.facebook.com/Mezerg" &gt;&lt;strong&gt;Mezerg&lt;/strong&gt;&lt;/a&gt; sera en concert le vendredi 15 mars&lt;br /&gt;à 12h, à la &lt;a href="/bu-lettres-shs-staps-326706.kjsp?RH=1383419355589&amp;RF=1382033283554" &gt;&lt;strong&gt;BU Lettres, SHS, STAPS&lt;/strong&gt;&lt;/a&gt; (salle Maupassant). Venez découvrir cet artiste et son PianoBoomBoom, un instrument unique en son genre qui mêle électronique et acoustique. &lt;br /&gt;C'est gratuit !&lt;/p&gt;</description>
+      <pubDate>Fri, 08 Mar 2019 15:28:00 GMT</pubDate>
+      <guid>http://documentation.univ-rouen.fr/concert-de-mezerg-a-la-bu-lettres-festival-les-pluriels--627818.kjsp</guid>
+      <dc:creator>christelle.quillet@univ-rouen.fr (Christelle Quillet)</dc:creator>
+      <dc:date>2019-03-08T15:28:00Z</dc:date>
+      <media:content fileSize="41984" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/mezerg-et-son-pianoboumboum_1552061216933-jpg">
+        <media:description />
+        <media:title>Concert de Mezerg à la BU Lettres</media:title>
+      </media:content>
+    </item>
+    <item>
+      <title>Portraits sonores d'Antoine Berland [Festival Les Pluriels]</title>
+      <link>http://documentation.univ-rouen.fr/portraits-sonores-d-antoine-berland-festival-les-pluriels--627789.kjsp</link>
+      <description>Laissez vous tenter par une minute d’expérience auditive unique. Le compositeur &lt;strong&gt;&lt;a  class="lien_externe" title="antoine berland (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="https://www.antoineberland.com/bio-et-contact" &gt;Antoine Berland&lt;/a&gt;&lt;/strong&gt; vous propose ses &lt;strong&gt;&lt;a  class="lien_externe" title="portraits sonores (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="https://www.antoineberland.com/les-portraits-sonores" &gt;Portraits Sonores&lt;/a&gt;&lt;/strong&gt;, avec pour seul instrument la voix. Des dispositifs d’écoute seront disponibles en libre-service dans les bibliothèques. </description>
+      <pubDate>Fri, 08 Mar 2019 14:00:00 GMT</pubDate>
+      <guid>http://documentation.univ-rouen.fr/portraits-sonores-d-antoine-berland-festival-les-pluriels--627789.kjsp</guid>
+      <dc:creator>christelle.quillet@univ-rouen.fr (Christelle Quillet)</dc:creator>
+      <dc:date>2019-03-08T14:00:00Z</dc:date>
+      <media:content fileSize="41984" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/portraits-sonores-d-antoine-berland_1552062774614-jpg">
+        <media:description />
+        <media:title>Portraits sonores d'Antoine Berland 2019</media:title>
+      </media:content>
+    </item>
+    <item>
+      <title>Jouons ensemble aux mathématiques&lt;br /&gt;du 11 au 30 mars</title>
+      <link>http://documentation.univ-rouen.fr/jouons-ensemble-aux-mathematiques-br-du-11-au-30-mars-627728.kjsp</link>
+      <description>Dans le cadre de la &lt;strong&gt;semaine nationale des mathématiques&lt;/strong&gt;, la &lt;a href="http://documentation.univ-rouen.fr/bu-sciences-et-techniques-326708.kjsp" &gt;BU de Sciences et techniques du Madrillet&lt;/a&gt; vous invite à découvrir une exposition :&lt;br /&gt;&lt;ul&gt;    &lt;li&gt;&lt;a  class="lien_externe" title="ouvrages pour se détendre (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="http://flora.univ-rouen.fr/flora" &gt;ouvrages pour se détendre&lt;/a&gt; : jeux, énigmes...&lt;/li&gt;    &lt;li&gt;&lt;strong&gt;escape game sur place ou à emporter&lt;/strong&gt; : connaissez-vous les escape book ? Tout seul ou à plusieurs, tentez de résoudre les défis proposés dans le temps défini !&lt;/li&gt;    &lt;li&gt;mathématiques sans frontières : un &lt;strong&gt;quiz &lt;/strong&gt;à emporter vous permettra de faire le tour du monde en 5 jeux, qui seront aussi exposés grâce au partenariat de la ludothèque de Saint-Étienne-du-Rouvray.&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;Nous vous espérons nombreux !</description>
+      <pubDate>Thu, 07 Mar 2019 15:47:00 GMT</pubDate>
+      <guid>http://documentation.univ-rouen.fr/jouons-ensemble-aux-mathematiques-br-du-11-au-30-mars-627728.kjsp</guid>
+      <dc:creator>laurent.rameil@univ-rouen.fr (Laurent Rameil)</dc:creator>
+      <dc:date>2019-03-07T15:47:00Z</dc:date>
+      <media:content fileSize="38912" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/semaine-math-carrousel_1551973620932-jpg">
+        <media:description />
+        <media:title>Semaine des mathématiques</media:title>
+      </media:content>
+    </item>
+    <item>
+      <title>Election des étudiants au Conseil d'Administration de l'IUT de Rouen</title>
+      <link>http://iutrouen.univ-rouen.fr/election-des-etudiants-au-conseil-d-administration-de-l-iut-de-rouen-627705.kjsp</link>
+      <description>&lt;strong&gt;SCRUTIN du mardi 2 avril 2019&lt;br /&gt;De 9 h à 17 h&lt;br /&gt;Nombre de sièges à pourvoir : 10 titulaires, 10 suppléants&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:16px;"&gt;&lt;strong&gt;Dépôt des candidatures&lt;/strong&gt;&lt;/span&gt; – chaque liste de candidats doit être composée alternativement d’un candidat de chaque sexe (minimum 10 candidats, maximum 20 candidats).&lt;br /&gt;Le dépôt des candidatures est obligatoire. Les listes doivent être présentées selon le modèle annexe 4 (à retirer au secrétariat du département), précisant l’ordre de classement des candidats et éventuellement l’appartenance ou le soutien dont bénéficie la liste. Les listes doivent être accompagnées des déclarations individuelles de candidatures annexe 4 bis (à retirer au secrétariat du département) originaux datés et signés par chaque candidat et accompagnés des photocopies des léocartes recto-verso des candidats ou à défaut d’un certificat de scolarité.&lt;br /&gt;&lt;em&gt;&lt;strong&gt;Attention :&lt;/strong&gt;&lt;/em&gt; Les listes de candidats auxquelles ne sont pas jointes les déclarations individuelles de candidatures portant impérativement la signature des candidats ne sont pas recevables. Chaque liste de candidats doit comporter le nom d’un délégué, qui est également candidat, afin de représenter la liste au sein du comité électoral consultatif. Le délégué de liste peut être différent de la personne habilitée à déposer la liste.&lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:16px;"&gt;&lt;strong&gt;Date limite de dépot des listes&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;Les listes de candidatures et les déclarations individuelles devront être déposées ou adressées par lettre recommandée avec accusé de réception auprès de la direction de l’IUT (1, rue Lavoisier Mont-Saint-Aignan - bâtiment A – 3ème étage) &lt;strong&gt;avant le mardi 26 mars 2019 - 16 H 00&lt;/strong&gt;.&lt;br /&gt;Attention : Une liste de candidats qui n’est pas recevable au moment où elle est déposée ne peut pas être régularisée au-delà de la date limite de dépôt des listes. Les professions de foi (non obligatoires) seront diffusées sur le site web de l’université et doivent être déposées en même temps que les candidatures a&lt;strong&gt;u plus tard &lt;/strong&gt;&lt;strong&gt;le mardi 26 mars 2019 - 16 H 00.&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:16px;"&gt;&lt;strong&gt;Bureaux de vote&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;Les étudiants voteront dans leur Institut sur leur site géographique.&lt;br /&gt;Pour pouvoir voter les étudiants doivent présenter leur Léocarte ; à défaut un certificat de scolarité et une pièce d’identité comportant une photo.&lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:16px;"&gt;&lt;strong&gt;Vote par procuration &lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;Tout étudiant désirant voter par procuration doit retirer auprès de la direction de la composante un imprimé. Lors de ce retrait, il doit justifier de son identité.&lt;br /&gt;La procuration doit être signée par le mandant, écrite lisiblement (sans rature ni surcharge) et mentionner le nom et prénom du mandataire, sous peine de nullité. &lt;strong&gt;La procuration doit être enregistrée par la direction de la composante au plus tard lundi 26 novembre 2018 – 12 heures. &lt;/strong&gt;Le mandataire doit être inscrit sur la même liste électorale que la personne qui donne procuration (le mandant). Nul ne peut être porteur de plus de deux procurations. La présentation d’une procuration transmise par télécopie ou par voie électronique n’est pas admise. Seul un original, revêtu de la signature du mandant, permet de vérifier l’authenticité de la procuration.</description>
+      <pubDate>Thu, 07 Mar 2019 14:26:00 GMT</pubDate>
+      <guid>http://iutrouen.univ-rouen.fr/election-des-etudiants-au-conseil-d-administration-de-l-iut-de-rouen-627705.kjsp</guid>
+      <dc:creator>helene.leonard@univ-rouen.fr (Helene Leonard)</dc:creator>
+      <dc:date>2019-03-07T14:26:00Z</dc:date>
+      <media:content fileSize="47104" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/carrousel-elections_1542211787816-jpg">
+        <media:description />
+        <media:title />
+      </media:content>
+    </item>
+    <item>
+      <title>AfterSchool de l'IUT de Rouen</title>
+      <link>http://iutrouen.univ-rouen.fr/afterschool-de-l-iut-de-rouen-625687.kjsp</link>
+      <description>Des interventions courtes et riches sur la dimension professionnalisante des DUT et des Licences Professionnelles :&lt;br /&gt;- Intégrer le marché de l’emploi normand à Bac+2 / Bac+3, c'est possible ?&lt;br /&gt;- Comment utiliser les réseaux sociaux dans la recherche d’un emploi ?&lt;br /&gt;- Comment se Former Tout au Long de la Vie ?&lt;br /&gt;&lt;br /&gt;Avec des témoignages d'anciens étudiants de l'IUT,  et le tout en musique grâce aux groupes The Hoodies - Nova.&lt;br /&gt;&lt;br /&gt;3 cartes cadeaux FNAC d'une valeur de 50 € chacune seront à gagner lors d'un tirage au sort à la fin de la manifestation !&lt;br /&gt;&lt;br /&gt;&lt;span style="font-size:16px;text-align:center;"&gt;&lt;strong&gt;&gt;&gt; Inscription obligatoire via le lien reçu dans votre boîte mail étudiante &lt;&lt;&lt;br /&gt;&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt; &lt;img src="http://www.univ-rouen.fr/medias/photo/programme-afterschool-800px_1550752644618-jpg" style="width:600px;height:818px;margin:0px 5px;border:0px solid;text-align:center;" alt="Programme de l'AfterSchool" title="Programme de l'AfterSchool" /&gt;&lt;br /&gt;</description>
+      <pubDate>Thu, 07 Mar 2019 08:16:00 GMT</pubDate>
+      <guid>http://iutrouen.univ-rouen.fr/afterschool-de-l-iut-de-rouen-625687.kjsp</guid>
+      <dc:creator>helene.leonard@univ-rouen.fr (Helene Leonard)</dc:creator>
+      <dc:date>2019-03-07T08:16:00Z</dc:date>
+      <media:content fileSize="31744" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/afterschool-carrousel_1550767169273-jpg">
+        <media:description />
+        <media:title />
+      </media:content>
+    </item>
+    <item>
+      <title>Élections des représentants des étudiants et des personnels aux conseils de Normandie Université</title>
+      <link>http://www.univ-rouen.fr/version-francaise/navigation/elections-des-representants-des-etudiants-et-des-personnels-aux-conseils-de-normandie-universite-627665.kjsp</link>
+      <description>Afin de renouveler les &lt;strong&gt;conseils centraux de Normandie Université (&lt;/strong&gt;&lt;strong&gt;Conseil d'administration et &lt;/strong&gt;&lt;strong&gt;Conseil académique)&lt;/strong&gt;, des élections au suffrage direct sont organisées en mars et en juin 2019. Tous les étudiants et personnels des 6 établissements membres de Normandie Université, les universités de Caen Normandie, Le Havre Normandie et de Rouen Normandie, de l’ENSICAEN, de l’INSA Rouen Normandie, de l’Ensa Normandie et de Normandie Université sont appelés à voter.&lt;br /&gt;&lt;br /&gt;Les élections se dérouleront en deux journées distinctes :&lt;br /&gt;&lt;ul&gt;    &lt;li&gt;Les&lt;strong&gt; étudiants&lt;/strong&gt; sont appelés à voter le &lt;strong&gt;mardi 19 mars 2019&lt;/strong&gt;&lt;/li&gt;    &lt;li&gt;Les enseignants, enseignants-chercheurs, chercheurs et personnels non enseignants sont appelés à voter le mardi 4 juin 2019&lt;/li&gt;&lt;/ul&gt;Des bureaux de vote seront ouverts &lt;strong&gt;de 9h à 17h dans chaque établissement&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;&lt;a  class="lien_externe" title="http://www.normandie-univ.fr/elections-2019-normandie-universite-57785.kjsp (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="http://www.normandie-univ.fr/elections-2019-normandie-universite-57785.kjsp" &gt;&lt;strong&gt;&gt; Plus d'informations&lt;/strong&gt;&lt;/a&gt;</description>
+      <pubDate>Wed, 06 Mar 2019 23:00:00 GMT</pubDate>
+      <guid>http://www.univ-rouen.fr/version-francaise/navigation/elections-des-representants-des-etudiants-et-des-personnels-aux-conseils-de-normandie-universite-627665.kjsp</guid>
+      <dc:creator>clement.chertier@univ-rouen.fr (Clement Chertier)</dc:creator>
+      <dc:date>2019-03-06T23:00:00Z</dc:date>
+      <media:content fileSize="32768" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/elections-comue-2019_1551956160822-jpg">
+        <media:description />
+        <media:title />
+      </media:content>
+    </item>
+    <item>
+      <title>Job Dating Alternance - Métiers de l'Energie</title>
+      <link>http://iutrouen.univ-rouen.fr/job-dating-alternance-metiers-de-l-energie-627572.kjsp</link>
+      <description>&lt;strong&gt;&lt;br /&gt;&lt;strong&gt;Vous êtes une entreprise&lt;/strong&gt;, &lt;/strong&gt;vous recherchez des  alternants pour la rentrée de septembre ?   Participez mercredi 3 avril  de 17 h à 19 h au «  job dating spécial alternance » de l’IUT de Rouen  et rencontrez les candidats de nos DUT (bac+2) et licences  professionnelles (bac+3)*.  &lt;br /&gt;Un moment de convivialité clôturera les échanges de cette première prise de contact.&lt;br /&gt;Merci de confirmer votre participation à &lt;a href="javascript:melA('nora.mahious','','','univ-rouen.fr');" &gt;nora.mahious@univ-rouen.fr&lt;/a&gt;, chargée du développement et des relations entreprise avant le 27 mars 2019.&lt;strong&gt;&lt;br /&gt;&lt;br /&gt;Vous êtes lycéen ou étudiant&lt;/strong&gt; et envisagez d’intégrer un DUT ou une licence professionnelle en alternance en lien avec les métiers de l’énergie* ? Vous recherchez un contrat d’alternance ? &lt;br /&gt;Réservez votre mercredi 3 avril, pour un  « job dating spécial alternance » de 17 h à 19 h au CFA-CFC  de l’université de Rouen Normandie ! &lt;br /&gt;Apportez CV et lettres de motivation pour une prise de contact avec les entreprises présentes. Des échanges qui déboucheront probablement sur un contrat.&lt;br /&gt;Pour participer, inscrivez-vous obligatoirement via le formulaire en ligne suivant :                                                                                   &lt;a  class="lien_externe" title="https://enquetes.univ-rouen.fr/723917?lang=fr (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="https://enquetes.univ-rouen.fr/723917?lang=fr" target="_blank"&gt;https://enquetes.univ-rouen.fr/723917?lang=fr&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;&lt;div style="text-align: center;"&gt;&lt;br /&gt;&lt;strong&gt;Job Dating Alternance Métiers de l’Energie&lt;br /&gt;Mercredi 3 avril 17 h &gt; 19 h&lt;br /&gt;Salle 1 – &lt;a  class="lien_externe" title="cfa-cfc de l’université de rouen normandie (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="https://goo.gl/maps/aaCDURqY8G72" &gt;CFA-CFC de l’université de Rouen Normandie&lt;/a&gt;&lt;br /&gt;17, rue Lavoisier – Mont-Saint-Aignan&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Un événement organisé par l’IUT de Rouen, en partenariat avec &lt;a  class="lien_externe" title="normandie energies (nouvelle fenêtre)" onclick="window.open(this.href);return false;" href="https://www.normandie-energies.com/" &gt;Normandie Energies&lt;/a&gt; et le &lt;a href="/" &gt;Centre de Formation Continue et par Alternance&lt;/a&gt; de l’université de Rouen Normandie.&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;*Les formations proposées par l’IUT de Rouen : &lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/dut-genie-chimique-genie-des-procedes-351507.kjsp" &gt;DUT Génie Chimique – Génie des Procédés&lt;/a&gt;&lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/dut-genie-electrique-et-informatique-industrielle-351508.kjsp" &gt;DUT Génie Electrique et Informatique Industrielle&lt;/a&gt; &lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/dut-genie-thermique-et-energie-351506.kjsp" &gt;DUT Génie Thermique et Energie &lt;/a&gt;&lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/dut-mesures-physiques-351512.kjsp" &gt;DUT Mesures Physiques&lt;/a&gt;&lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/licence-professionnelle-maintenance-et-technologie-electronique-instrumentation-aeronautique-spatial-et-transports-543191.kjsp" &gt;Licence professionnelle Electronique, Instrumentation – Aéronautique, Spatial et Transports&lt;/a&gt;&lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/licence-professionnelle-energie-et-propulsion-energies-et-systemes-de-mobilites-durables-620502.kjsp" &gt;Licence professionnelle Energies et Systèmes de Mobilités Durables&lt;/a&gt;&lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/licence-professionnelle-metiers-du-btp-performance-energetique-et-environnementale-des-batiments-543193.kjsp" &gt;Licence professionnelle Performance Energétique et Environnementale des Bâtiments&lt;/a&gt;&lt;br /&gt;•	&lt;a href="http://iutrouen.univ-rouen.fr/licence-professionnelle-securite-des-biens-et-des-personnes-securite-des-procedes-industriels-545274.kjsp" &gt;Licence professionnelle Sécurité des Procédés Industriels&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;</description>
+      <pubDate>Wed, 06 Mar 2019 16:45:00 GMT</pubDate>
+      <guid>http://iutrouen.univ-rouen.fr/job-dating-alternance-metiers-de-l-energie-627572.kjsp</guid>
+      <dc:creator>helene.leonard@univ-rouen.fr (Helene Leonard)</dc:creator>
+      <dc:date>2019-03-06T16:45:00Z</dc:date>
+      <media:content fileSize="24576" type="image/jpeg" url="http://www.univ-rouen.fr/medias/photo/job-dating-energie-carrousel_1551891042986-jpg">
+        <media:description />
+        <media:title />
+      </media:content>
+    </item>
+  </channel>
+</rss>
+
+

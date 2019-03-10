@@ -19,7 +19,7 @@ class CreateFavoriteTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->string('link');
-            $table->timestamps()->nullable();
+            $table->timestamps();
         });
     }
 
