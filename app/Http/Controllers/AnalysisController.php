@@ -16,24 +16,24 @@ class AnalysisController extends Controller
         $this->middleware('auth');
     }
 
-    public function file_get_contents_curl($url) {
-    $ch = curl_init();
+    public function file_get_contents_curl($url) 
+    {
+        $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);       
+        curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);       
 
-    $data = curl_exec($ch);
-    curl_close($ch);
+        $data = curl_exec($ch);
+        curl_close($ch);
 
-    return $data;
-}
+        return $data;
+    }
 
     public function t_reponse ($url)
     {
-
         $time = microtime();
         $time = explode(' ', $time);
         $time = $time[1] + $time[0];
@@ -47,33 +47,45 @@ class AnalysisController extends Controller
         $finish = $time;
         $total_time = round(($finish - $start), 4);
         return $total_time * 1000;
-
     }
 
-    // public function getLinks($url) {
-    //     $data=file_get_contents($url);
-    //     $data = strip_tags($data,"<a>");
-    //     $d = preg_split("/<\/a>/",$data);
+    public function check_url($url) 
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+        curl_setopt($ch , CURLOPT_RETURNTRANSFER, 1);
+        $data = curl_exec($ch);
+        $headers = curl_getinfo($ch);
+        curl_close($ch);
+        return $headers['http_code'];
+    }
 
-    //     $result = array();
-    //     $pageltime = array();
-    //     foreach ( $d as $k=>$u ){
-    //         if( strpos($u, "<a href=") !== FALSE ){
-    //             $u = preg_replace("/.*<a\s+href=\"/sm","",$u);
-    //             $u = preg_replace("/\".*/","",$u);
-    //             if (!strpos($u, "/")==0){
-    //                 array_push($result, $u);
-    //             }
-    //         }
-    //     }
-    //     return $result;
-    // }
+    public function broken_link($url)
+    {
+        $check_url_status = $this->check_url($url);
+        if ($check_url_status == '200')
+           $result = "Link Works";
+        else
+        {
+            if ($check_url_status == '404')
+                $result = "paga not found";
+            if ($check_url_status == 'bad host')
+                $result = "bad host";
+            if ($check_url_status == '400')
+                $result = "bad request";
+            if ($check_url_status == 'Malformed URL')
+                $result = "Malformed URL";
+            if ($check_url_status == 'bad code')
+                $result = "bad code";
+            else 
+                $result = "broken link";
+        }
+        return $result;
+    }
 
-    // echo '<a href="'.$url.'">'.$url.'</a><br />';
-
-
-
-        public function getLinks($url) {
+    public function getLinks($url) 
+    {
         $urlContent = $this->file_get_contents_curl($url);
         $urls = array();
         $dom = new DOMDocument();
@@ -90,12 +102,11 @@ class AnalysisController extends Controller
             }
         }
         $result = array_unique($urls);
-        // dd(array_unique($urls));
-        // dd($urls);
         return $result;
     }
 
-    public function getLinkstime($urls) {
+    public function getLinkstime($urls) 
+    {
         $result = array();
         foreach ($urls as $value) {
             array_push($result, $this->t_reponse($value));
@@ -103,17 +114,8 @@ class AnalysisController extends Controller
         return $result;
     }
 
-    /*public function site_links($urls) {
-        foreach ($urls as $value) {
-            $links=$this->getLinks($value);
-        }
-        $result = array();
-
-        return $result;
-    }*/
-
-    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time) {
-
+    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link) 
+    {
         $profondeur_max = 0;
         $links = array();
         a:
@@ -138,10 +140,12 @@ class AnalysisController extends Controller
                     } else {
                        $external_links = $external_links + 1; 
                        array_push($load_time, $this->t_reponse($aLink));
+                       array_push($broken_link, $this->broken_link($aLink));
                     }   
                 } else {
                     $internal_links = $internal_links + 1;
                     array_push($load_time, $this->t_reponse($aLink));
+                    array_push($broken_link, $this->broken_link($aLink));
                 }
             }
             array_push($array, $array_unique_links);
@@ -154,7 +158,8 @@ class AnalysisController extends Controller
         return $array;
     }
 
-    public function get_original_link ($url) {
+    public function get_original_link ($url) 
+    {
         // trouver la position du 3 eme slash
         $pos1slash = strpos($url, '/');
         $pos2slash = strpos($url, '/', $pos1slash + 2);
@@ -199,6 +204,10 @@ class AnalysisController extends Controller
 
         $load_time = array();
         array_push($load_time, $this->t_reponse($url));
+
+        $broken_link = array();
+        array_push($broken_link, $this->broken_link($url));
+
         //$ltime = $this->t_reponse($url);
 
         // $result = $this->getLinks($url);
@@ -209,48 +218,23 @@ class AnalysisController extends Controller
         $internal_links = 1;
         $external_links = 0;
 
-        //dd($url);
-
         $original_link = $this->get_original_link($url);
-        
-        //dd($original_link);
 
 
         $links_array = array();
         $d=array();
         array_push($d, $url);
         array_push($links_array , $d);
-        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time);
+        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link);
 
-        // array_push($links_array , $result);
-        // array_push($links_array , $result);
         // dd($links_array);
-
-        
-
-
-        // $website_0 = tableau(1) = $url
-
-        for($i = 1; $i <= $profondeur; $i++){
-
-            // create variable website_i
-
-            // pour j <- 0 jusqu'a taille(website_i-1) faire website_i.add(getLinks(website_i-1(j))) ... et supprimer les doublons
-
-        }
-
-        //$result = array_unique($result);
-        for($x = 1; $x < sizeof($result); $x++) {
-            
-            // echo $result[$x];
-            // echo "<br>";
-        }
 
         $var ["urls"] = $links_array;
         $var ["tmoyen"] = $tmoyen;
         $var ["prof"] = $profondeur;
         $var ["tdep"] = $tmoyen;
         $var ["load_time"] = $load_time;
+        $var ["broken_link"] = $broken_link;
         $var ["internal_links"] = $internal_links;
         $var ["external_links"] = $external_links;
         //$var ["pageltime"] = $pageltime;
@@ -258,11 +242,6 @@ class AnalysisController extends Controller
         //dd($var);
         return view('dashboard', $var);
     }
-
-    // public function dashboard()
-    // {
-    //     return view('dashboard');
-    // }
 
 
 }

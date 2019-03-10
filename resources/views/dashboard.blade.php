@@ -123,42 +123,42 @@
                     <th scope="col" style="text-align: center;">Nom de la page</th>
                     <th scope="col" style="text-align: center;">Temps de rep (ms)</th>
                     <th scope="col" style="text-align: center;">Niveau</th>
-                    <th scope="col" style="text-align: center;">Err Ressources</th>
+                    <th scope="col" style="text-align: center;">Status</th>
                     <th scope="col" style="text-align: center;">Err Balises</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $i=-1; $j=1?>
                   @foreach ($urls as $url_array)
-                  <?php $i++; ?>
+                    <?php $i++; ?>
                     @foreach ($url_array as $url)
-                    <tr>
-                      <td scope="row">
-                        {{$j}} - <a href= <?php echo $url; ?> target="_blank">{{$url}}</a>
-                      </td>
-                      <td style="text-align: center; font-size: 16px">
-                        <?php $loadT = $load_time[$j - 1]; 
-                              if ($loadT < $tmoyen - 20) {
-                                ?> <span class="badge badge-success"><?php echo $loadT ?></span> <?php
-                                } else if ($loadT > $tmoyen + 20) {
-                                  ?> <span class="badge badge-danger"><?php echo $loadT ?></span> <?php
-                                } else {
-                                  ?> <span class="badge badge-warning"><?php echo $loadT ?></span> <?php
-                                }
-                        ?>
-                      </td>
-                      <td style="text-align: center;">
-                        <?php echo $i ?>
-                      </td>
-                      <td style="text-align: center;">
-                        340
-                      </td>
-                      <td style="text-align: center;">
-                        <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                      </td>
-                    </tr>
-                    <?php $j++; ?>
-                  @endforeach
+                      <tr>
+                        <td scope="row">
+                          {{$j}} - <a href= <?php echo $url; ?> target="_blank">{{$url}}</a>
+                        </td>
+                        <td style="text-align: center; font-size: 16px">
+                          <?php $loadT = $load_time[$j - 1]; 
+                                if ($loadT < $tmoyen - 20) {
+                                  ?> <span class="badge badge-success"><?php echo $loadT ?></span> <?php
+                                  } else if ($loadT > $tmoyen + 20) {
+                                    ?> <span class="badge badge-danger"><?php echo $loadT ?></span> <?php
+                                  } else {
+                                    ?> <span class="badge badge-warning"><?php echo $loadT ?></span> <?php
+                                  }
+                          ?>
+                        </td>
+                        <td style="text-align: center;">
+                          <?php echo $i ?>
+                        </td>
+                        <td style="text-align: center;">
+                          {{$broken_link[$j-1]}}
+                        </td>
+                        <td style="text-align: center;">
+                          <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
+                        </td>
+                      </tr>
+                      <?php $j++; ?>
+                    @endforeach
                   @endforeach
                 </tbody>
               </table>
@@ -166,15 +166,13 @@
           </div>
           <br>
           <div class="col text-right">
-                  <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
-                  <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
-                </div>
+            <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
+            <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
+          </div>
         </div>
       </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script type="text/javascript">
         $('table tr:lt(11)').addClass('active');
 
@@ -186,18 +184,18 @@
         });
 
         $('.load_more').click(function () {
-    $('html, body').animate({
-        scrollTop:$(document).height()
-    }, 'slow');
-    return false;
-});
+          $('html, body').animate({
+              scrollTop:$(document).height()
+          }, 'slow');
+          return false;
+        });
 
         $('.go_up').click(function () {
-    $('html, body').animate({
-        scrollTop:0
-    }, 'slow');
-    return false;
-});
+          $('html, body').animate({
+              scrollTop:0
+          }, 'slow');
+          return false;
+        });
       </script>
 
       <style type="text/css">
@@ -206,8 +204,4 @@
         table tr.active { display: table-row; }
       </style>
 
-      
-
-   
-	
 @endsection
