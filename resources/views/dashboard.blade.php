@@ -170,9 +170,52 @@
             <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
             <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
           </div>
+
+          <?php if(strcmp($syntaxe_errors[0][0], "CORRECT") !== 0){ ?>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Erreur de syntaxe </label>
+            <?php chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
+                $myFile = "tags.txt";
+                $lines = file($myFile);
+                $num_ligne = $syntaxe_errors[0][1]; ?>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" readonly><?php 
+                if ($num_ligne > 1){
+                  echo ($num_ligne-2)." |   ".$lines[$num_ligne-2];
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                } else if ($num_ligne > 0) {
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                }
+                echo ($num_ligne)." |   ".$lines[$num_ligne];
+                echo ($num_ligne+1)." |   ".$lines[$num_ligne+1]; 
+                echo ($num_ligne+2)." |   ".$lines[$num_ligne+2]; 
+               ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> n'est pas fermee correctement (ligne <?php echo $num_ligne ?>).</textarea>
+          </div>
+
+          <br>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Correction </label>
+            <?php chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
+                $myFile = "tags.txt";
+                $lines = file($myFile);
+                $num_ligne = $syntaxe_errors[0][2]; ?>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" readonly><?php 
+                if ($num_ligne > 1){
+                  echo ($num_ligne-2)." |   ".$lines[$num_ligne-2];
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                } else if ($num_ligne > 0) {
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                }
+                echo ($num_ligne)." |   ".$lines[$num_ligne];
+                echo ($num_ligne+1)." |   ".$lines[$num_ligne+1]; 
+                echo ($num_ligne+2)." |   ".$lines[$num_ligne+2]; 
+               ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> devrait etre fermee a la ligne (ligne <?php echo $num_ligne ?>).</textarea>
+          </div>
+        <?php } ?>
+
         </div>
       </div>
-
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script type="text/javascript">
         $('table tr:lt(11)').addClass('active');

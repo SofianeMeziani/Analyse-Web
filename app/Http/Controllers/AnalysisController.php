@@ -91,8 +91,32 @@ class AnalysisController extends Controller
         
         chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
         file_put_contents("tags.txt", "");
-        file_put_contents("tags.txt", $this->format_html($url));
-        
+/*
+        //$html = $this->format_html($url);
+
+        //$html = $this->file_get_contents_curl($url);
+
+
+        $dom = new DOMDocument('1.0', 'UTF-8');
+
+        $dom->preserveWhiteSpace = false;
+       // $dom->loadHTML($html,LIBXML_HTML_NOIMPLIED);
+        @$dom->loadHTML($html);
+        $dom->formatOutput = true;
+*/
+
+        //return ($dom->saveXML($dom->documentElement));
+
+
+        //file_put_contents("tags.txt", $dom->saveXML($dom->documentElement));
+        //file_put_contents("tags.txt",  $this->format_html($url));
+
+        $htmlcontent =  $this->format_html($url);
+        $htmlcontent = str_replace("><", ">\n<", $htmlcontent);
+       // $htmlcontent = str_replace("\n\n", "\n<", $htmlcontent);
+
+        file_put_contents("tags.txt",  $htmlcontent);
+                
         $result = array();
         $res = shell_exec('./ex1 2>&1');
         
@@ -105,9 +129,9 @@ class AnalysisController extends Controller
             // balise
             array_push($result, substr ( $res , 0 , $pos1 ));
             // ouverture
-            array_push($result, intval( substr ( $res , $pos1 + 1 , $pos2 - $pos1 - 1)));
+            array_push($result, intval( substr ( $res , $pos1 + 1 , $pos2 - $pos1 - 1)) - 1);
             // fermeture prevue
-            array_push($result, intval( substr ( $res , $pos2 + 1 , strlen($res) - $pos2 )));
+            array_push($result, intval( substr ( $res , $pos2 + 1 , strlen($res) - $pos2 )) - 1);
         }
         
         return ($result);
@@ -214,6 +238,20 @@ class AnalysisController extends Controller
         $html = preg_replace('/<!--(.|\s)*?-->/', '', $html);
         $html = str_replace('\r\n', '', $html);
 
+        //$dom = new DOMDocument();
+        //@$dom->loadHTML($html);
+        //$xpath = new \DOMXPath($dom);
+        //$hrefs = $xpath->evaluate("/html/body//a")
+        /*$dom = new DOMDocument('1.0', 'UTF-8');
+
+        $dom->preserveWhiteSpace = false;
+       // $dom->loadHTML($html,LIBXML_HTML_NOIMPLIED);
+        @$dom->loadHTML($html);
+        $dom->formatOutput = true;
+
+
+        return ($dom->saveXML($dom->documentElement));*/
+
 
         return ($html);
     }
@@ -289,6 +327,12 @@ class AnalysisController extends Controller
         $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link,$syntaxe_errors);
 
         // dd($links_array);
+        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
+        file_put_contents("tags.txt", "");
+        $htmlcontent =  $this->format_html($url);
+        $htmlcontent = str_replace("><", ">\n<", $htmlcontent);
+
+        file_put_contents("tags.txt",  $htmlcontent);
 
 
         $var ["urls"] = $links_array;
