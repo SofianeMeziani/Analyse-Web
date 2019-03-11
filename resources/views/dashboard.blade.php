@@ -181,14 +181,14 @@
                 $num_ligne = $syntaxe_errors[0][1]; ?>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" readonly><?php 
                 if ($num_ligne > 1){
-                  echo ($num_ligne-2)." |   ".$lines[$num_ligne-2];
-                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                  echo ($num_ligne-2)." |   ".$lines[$num_ligne-2-1];
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1-1];
                 } else if ($num_ligne > 0) {
-                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1-1];
                 }
-                echo ($num_ligne)." |   ".$lines[$num_ligne];
-                echo ($num_ligne+1)." |   ".$lines[$num_ligne+1]; 
-                echo ($num_ligne+2)." |   ".$lines[$num_ligne+2]; 
+                echo ($num_ligne)." |   ".$lines[$num_ligne-1];
+                echo ($num_ligne+1)." |   ".$lines[$num_ligne+1-1]; 
+                echo ($num_ligne+2)." |   ".$lines[$num_ligne+2-1]; 
                ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> n'est pas fermee correctement (ligne <?php echo $num_ligne ?>).</textarea>
           </div>
 
@@ -202,14 +202,14 @@
                 $num_ligne = $syntaxe_errors[0][2]; ?>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" readonly><?php 
                 if ($num_ligne > 1){
-                  echo ($num_ligne-2)." |   ".$lines[$num_ligne-2];
-                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                  echo ($num_ligne-2)." |   ".$lines[$num_ligne-2-1];
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1-1];
                 } else if ($num_ligne > 0) {
-                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1];
+                  echo ($num_ligne-1)." |   ".$lines[$num_ligne-1-1];
                 }
-                echo ($num_ligne)." |   ".$lines[$num_ligne];
-                echo ($num_ligne+1)." |   ".$lines[$num_ligne+1]; 
-                echo ($num_ligne+2)." |   ".$lines[$num_ligne+2]; 
+                echo ($num_ligne)." |   ".$lines[$num_ligne-1];
+                echo ($num_ligne+1)." |   ".$lines[$num_ligne+1-1]; 
+                echo ($num_ligne+2)." |   ".$lines[$num_ligne+2-1]; 
                ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> devrait etre fermee a la ligne (ligne <?php echo $num_ligne ?>).</textarea>
           </div>
         <?php } ?>

@@ -129,9 +129,9 @@ class AnalysisController extends Controller
             // balise
             array_push($result, substr ( $res , 0 , $pos1 ));
             // ouverture
-            array_push($result, intval( substr ( $res , $pos1 + 1 , $pos2 - $pos1 - 1)) - 1);
+            array_push($result, intval( substr ( $res , $pos1 + 1 , $pos2 - $pos1 - 1)));
             // fermeture prevue
-            array_push($result, intval( substr ( $res , $pos2 + 1 , strlen($res) - $pos2 )) - 1);
+            array_push($result, intval( substr ( $res , $pos2 + 1 , strlen($res) - $pos2 )));
         }
         
         return ($result);
