@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+		<script src="https://bugs.php.net/js/package-affected.js">
+</script>	<base href="https://bugs.php.net/">
+	<title>PHP :: Report - New</title>
+	<link rel="shortcut icon" href="https://bugs.php.net/images/favicon.ico">
+	<link rel="stylesheet" href="https://bugs.php.net/css/style.css">
+</head>
+
+<body>
+
+<table id="top" class="head" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="head-logo">
+			<a href="/">
+<img src="images/logo.png" alt="Bugs" vspace="2" hspace="2">
+</a>
+		</td>
+
+		<td class="head-menu">
+			<a href="https://php.net/">php.net</a>&nbsp;|&nbsp;
+			<a href="https://php.net/support.php">support</a>&nbsp;|&nbsp;
+			<a href="https://php.net/docs.php">documentation</a>&nbsp;|&nbsp;
+			<a href="report.php">report a bug</a>&nbsp;|&nbsp;
+			<a href="search.php">advanced search</a>&nbsp;|&nbsp;
+			<a href="search-howto.php">search howto</a>&nbsp;|&nbsp;
+			<a href="stats.php">statistics</a>&nbsp;|&nbsp;
+			<a href="random">random bug</a>&nbsp;|&nbsp;
+			<a href="login.php">login</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="head-search" colspan="2">
+			<form method="get" action="search.php">
+				<p class="head-search">
+					<input type="hidden" name="cmd" value="display">
+					<small>go to bug id or search bugs for</small>
+					<input class="small" type="text" name="search_for" value="" size="30">
+					<input type="image" src="images/small_submit_white.gif" alt="search" style="vertical-align: middle;">
+				</p>
+			</form>
+		</td>
+	</tr>
+</table>
+
+<table class="middle" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="content">
+
+	<p>
+		Before you report a bug, make sure to search for similar bugs using the &quot;Bug List&quot; link.
+		Also, read the instructions for <a target="top" href="how-to-report.php">how to report a bug that someone will want to help fix</a>.
+	</p>
+
+	<p>
+		If you aren't sure that what you're about to report is a bug, you should ask for help using one of the means for support
+		<a href="https://php.net/support.php">listed here</a>.
+	</p>
+
+	<p>
+		<strong>Failure to follow these instructions may result in your bug simply being marked as &quot;not a bug.&quot;</strong>
+	</p>
+
+	<p>Report <img src="images/pear_item.gif">
+<b>PEAR</b> related bugs <a href="https://pear.php.net/bugs/">here</a>
+</p>
+
+	<p>
+		<strong>If you feel this bug concerns a security issue, e.g. a buffer overflow, weak encryption, etc, then email
+
+		<a  href='&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x73;&#101;&#x63;&#117;&#x72;&#105;&#x74;&#121;&#x40;&#112;&#x68;&#112;&#x2e;&#110;&#x65;&#116;&#x3f;&#115;&#x75;&#98;&#x6a;&#101;&#x63;&#116;&#x3d;&#37;&#x35;&#66;&#x53;&#69;&#x43;&#85;&#x52;&#73;&#x54;&#89;&#x25;&#53;&#x44;&#43;&#x70;&#111;&#x73;&#115;&#x69;&#98;&#x6c;&#101;&#x2b;&#110;&#x65;&#119;&#x2b;&#98;&#x75;&#103;&#x25;&#50;&#x31;'>security@php.net</a>		who will assess the situation or use <strong>Security</strong> as bug type in the form below.</strong>
+	</p>
+
+	<form method="post" action="report.php?package=" name="bugreport" id="bugreport" enctype="multipart/form-data">
+		<input type="hidden" name="in[did_luser_search]" value="0">
+		<table class="form-holder" cellspacing="1">
+			<tr>
+				<th class="form-label_left">Y<span class="accesskey">o</span>ur email address:<br>
+<strong>MUST BE VALID</strong>
+</th>
+					<td class="form-input">
+						<input type="text" size="20" maxlength="40" name="in[email]" value="" accesskey="o">
+					</td>
+				</th>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">
+<span class="accesskey">P</span>assword:</th>
+				<td class="form-input">
+					<input type="password" size="20" maxlength="20" name="in[passwd]" value="" accesskey="p">
+<br>
+					You <strong>must</strong> enter any password here, which will be stored for this bug report.<br>
+					This password allows you to come back and modify your submitted bug report at a later date.
+					[<a href="bug-pwd-finder.php">Lost a bug password?</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">PHP version:</th>
+				<td class="form-input">
+					<select name="in[php_version]">
+						<option value="">--Please Select--</option>
+<option>7.3.3</option>
+<option>7.3Git-2019-03-11 (Git)</option>
+<option>7.3Git-2019-03-11 (snap)</option>
+<option>7.2.16</option>
+<option>7.2Git-2019-03-11 (Git)</option>
+<option>7.2Git-2019-03-11 (snap)</option>
+<option>7.1.27</option>
+<option>7.1Git-2019-03-11 (Git)</option>
+<option>7.1Git-2019-03-11 (snap)</option>
+<option>master-Git-2019-03-11 (Git)</option>
+<option>master-Git-2019-03-11 (snap)</option>
+<option>Next Major Version</option>
+<option>Next Minor Version</option>
+<option>Irrelevant</option>
+<option value="earlier">Earlier? Upgrade first!</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">Package affected:</th>
+				<td class="form-input">
+					<select name="in[package_name]">
+						<option value="none">--Please Select--</option>
+<optgroup label="General Issues"
+>
+<option value="*General Issues">General Issues</option>
+<option value="Doc Build problem">Doc Build (PhD) problem</option>
+<option value="Documentation problem">Documentation problem</option>
+<option value="Translation problem">Documentation translation problem</option>
+<option value="Filter related">Filter related</option>
+<option value="Online Doc Editor problem">Online Documentation Editor problem</option>
+<option value="opcache">Opcache</option>
+<option value="Output Control">Output Control</option>
+<option value="Performance problem">Performance problem</option>
+<option value="PHAR related">PHAR related</option>
+<option value="PHP-GTK related">PHP-GTK related</option>
+<option value="Systems problem">PHP.net Systems Operation problem</option>
+<option value="Website problem">PHP.net Website problem</option>
+<option value="Reflection related">Reflection related</option>
+<option value="Reproducible crash">Reproducible crash</option>
+<option value="Scripting Engine problem">Scripting Engine problem</option>
+<option value="Session related">Session related</option>
+<option value="SPL related">SPL related</option>
+<option value="Streams related">Streams related</option>
+<option value="Testing related">Testing related</option>
+</optgroup>
+<optgroup label="PDO related"
+>
+<option value="PDO related">PDO related</option>
+<option value="PDO Core">PDO Core</option>
+<option value="PDO DBlib">PDO DBlib</option>
+<option value="PDO Firebird">PDO Firebird</option>
+<option value="PDO MySQL">PDO MySQL</option>
+<option value="PDO OCI">PDO OCI</option>
+<option value="PDO ODBC">PDO ODBC</option>
+<option value="PDO PgSQL">PDO PgSQL</option>
+<option value="PDO SQLite">PDO SQLite</option>
+</optgroup>
+<optgroup label="Compile Issues"
+>
+<option value="*Compile Issues">Compile Issues</option>
+<option value="Compile Failure">Compile Failure</option>
+<option value="Compile Warning">Compile Warning</option>
+</optgroup>
+<optgroup label="Configuration Issues"
+>
+<option value="*Configuration Issues">Configuration Issues</option>
+<option value="Dynamic loading">Dynamic loading</option>
+<option value="PHP options/info functions">PHP options/info functions</option>
+<option value="Safe Mode/open_basedir">Safe Mode/open_basedir related</option>
+<option value="Windows Installer">Windows Installer related</option>
+</optgroup>
+<optgroup label="Web Server problem"
+>
+<option value="*Web Server problem">Web Server problem</option>
+<option value="Apache related">Apache related</option>
+<option value="Apache2 related">Apache2 related</option>
+<option value="CGI/CLI related">CGI/CLI related</option>
+<option value="FPM related">FPM related</option>
+<option value="IIS related">IIS related</option>
+<option value="iPlanet related">iPlanet related</option>
+<option value="Other web server">Other web server</option>
+<option value="Built-in web server">PHP built-in web server related</option>
+<option value="PWS related">PWS related</option>
+<option value="Servlet related">Servlet related</option>
+</optgroup>
+<optgroup label="Calendar problems"
+>
+<option value="*Calendar problems">Calendar problems</option>
+<option value="Calendar related">Calendar related</option>
+<option value="Date/time related">Date/time related</option>
+</optgroup>
+<optgroup label="Compression related"
+>
+<option value="*Compression related">Compression related</option>
+<option value="Bzip2 Related">Bzip2 Related</option>
+<option value="Zip Related">Zip Related</option>
+<option value="Zlib related">Zlib related</option>
+</optgroup>
+<optgroup label="Directory/Filesystem functions"
+>
+<option value="*Directory/Filesystem functions">Directory/Filesystem functions</option>
+<option value="Directory function related">Directory function related</option>
+<option value="Filesystem function related">Filesystem function related</option>
+</optgroup>
+<optgroup label="Directory Services problems"
+>
+<option value="*Directory Services problems">Directory Services problems</option>
+<option value="LDAP related">LDAP related</option>
+</optgroup>
+<optgroup label="Database Functions"
+>
+<option value="*Database Functions">Database Functions</option>
+<option value="Adabas-D related">Adabas-D related</option>
+<option value="DBM/DBA related">DBM/DBA related</option>
+<option value="DBX related">DBX related</option>
+<option value="FrontBase related">FrontBase related</option>
+<option value="Ingres II related">Ingres II related</option>
+<option value="InterBase related">InterBase related</option>
+<option value="mSQL related">mSQL related</option>
+<option value="MSSQL related">MSSQL related</option>
+<option value="MySQL related">MySQL related</option>
+<option value="MySQLi related">MySQLi related</option>
+<option value="OCI8 related">OCI8 related</option>
+<option value="ODBC related">ODBC related</option>
+<option value="Oracle related">Oracle related</option>
+<option value="PostgreSQL related">PostgreSQL related</option>
+<option value="Solid related">Solid related</option>
+<option value="SQLite related">SQLite related</option>
+<option value="Sybase-ct (ctlib) related">Sybase-ct (ctlib) related</option>
+</optgroup>
+<optgroup label="Data Exchange functions"
+>
+<option value="*Data Exchange functions">Data Exchange functions</option>
+<option value="JSON related">JSON related</option>
+<option value="WDDX related">WDDX related</option>
+</optgroup>
+<optgroup label="Extensibility Functions"
+>
+<option value="*Extensibility Functions">Extensibility Functions</option>
+<option value="COM related">COM related</option>
+<option value="Java related">Java related</option>
+<option value="ncurses related">ncurses related</option>
+<option value="PCNTL related">PCNTL related</option>
+<option value="POSIX related">POSIX functions related</option>
+<option value="Program Execution">Program Execution</option>
+<option value="Readline related">Readline related</option>
+<option value="Semaphore related">Semaphore related</option>
+<option value="Win32API related">Win32API related</option>
+</optgroup>
+<optgroup label="Graphics related"
+>
+<option value="*Graphics related">Graphics related</option>
+<option value="EXIF related">EXIF related</option>
+<option value="GD related">GD related</option>
+<option value="GetImageSize related">GetImageSize related</option>
+<option value="Ming related">Ming related</option>
+</optgroup>
+<optgroup label="Languages/Translation"
+>
+<option value="*Languages/Translation">Languages/Translation</option>
+<option value="Gettext related">Gettext related</option>
+<option value="ICONV related">ICONV related</option>
+<option value="mbstring related">MBstring related</option>
+<option value="Recode related">Recode related</option>
+</optgroup>
+<optgroup label="Mail Related"
+>
+<option value="*Mail Related">Mail Related</option>
+<option value="IMAP related">IMAP related</option>
+<option value="Mail related">mail function related</option>
+</optgroup>
+<optgroup label="Math Functions"
+>
+<option value="*Math Functions">Math Functions</option>
+<option value="BC math related">BC math related</option>
+<option value="GNU MP related">GNU MP related</option>
+<option value="Math related">Math related</option>
+</optgroup>
+<optgroup label="Encryption and hash functions"
+>
+<option value="*Encryption and hash functions">Encryption and hash functions</option>
+<option value="hash related">hash related</option>
+<option value="mcrypt related">mcrypt related</option>
+<option value="mhash related">mhash related</option>
+<option value="OpenSSL related">OpenSSL related</option>
+</optgroup>
+<optgroup label="Network Functions"
+>
+<option value="*Network Functions">Network Functions</option>
+<option value="FTP related">FTP related</option>
+<option value="HTTP related">HTTP related</option>
+<option value="Network related">Network related</option>
+<option value="SNMP related">SNMP related</option>
+<option value="Sockets related">Sockets related</option>
+</optgroup>
+<optgroup label="PDF functions"
+>
+<option value="*PDF functions">PDF functions</option>
+<option value="PDF related">PDF related</option>
+</optgroup>
+<optgroup label="Programming Data Structures"
+>
+<option value="*Programming Data Structures">Programming Data Structures</option>
+<option value="Arrays related">Arrays related</option>
+<option value="Class/Object related">Class/Object related</option>
+<option value="Strings related">Strings related</option>
+<option value="Variables related">Variables related</option>
+</optgroup>
+<optgroup label="Regular Expressions"
+>
+<option value="*Regular Expressions">Regular Expressions</option>
+<option value="PCRE related">PCRE related</option>
+<option value="Regexps related">Regexps related</option>
+</optgroup>
+<optgroup label="Spelling functions"
+>
+<option value="*Spelling functions">Spelling functions</option>
+<option value="Enchant related">Enchant related</option>
+<option value="Pspell related">Pspell related</option>
+</optgroup>
+<optgroup label="XML functions"
+>
+<option value="*XML functions">XML functions</option>
+<option value="DOM XML related">DOM XML related</option>
+<option value="SimpleXML related">SimpleXML related</option>
+<option value="SOAP related">SOAP related</option>
+<option value="Tidy">Tidy</option>
+<option value="XML Reader">XML Reader</option>
+<option value="XML related">XML related</option>
+<option value="XML Writer">XML Writer</option>
+<option value="XMLRPC-EPI related">XMLRPC-EPI related</option>
+<option value="XSLT related">XSLT related</option>
+</optgroup>
+<optgroup label="URL Functions"
+>
+<option value="*URL Functions">URL Functions</option>
+<option value="cURL related">cURL related</option>
+<option value="URL related">URL related</option>
+</optgroup>
+<optgroup label="Unicode Issues"
+>
+<option value="*Unicode Issues">Unicode Issues</option>
+<option value="I18N and L10N related">I18N and L10N related</option>
+<option value="Unicode Engine related">Unicode Engine related</option>
+</optgroup>
+<optgroup label="Unknown/Other Function"
+>
+<option value="Unknown/Other Function">Unknown/Other Function</option>
+</optgroup>
+<optgroup label="PECL"
+>
+<option value="PECL">PECL</option>
+<option value="amfext">amfext</option>
+<option value="amqp">amqp</option>
+<option value="APC">APC</option>
+<option value="apd">apd</option>
+<option value="APM">APM</option>
+<option value="archive">archive</option>
+<option value="ares">ares</option>
+<option value="automap">automap</option>
+<option value="axis2">axis2</option>
+<option value="bbcode">bbcode</option>
+<option value="bcompiler">bcompiler</option>
+<option value="big_int">big_int</option>
+<option value="Bitset">Bitset</option>
+<option value="BLENC">BLENC</option>
+<option value="bloomy">bloomy</option>
+<option value="bz2">bz2</option>
+<option value="cairo">cairo</option>
+<option value="cairo_wrapper">cairo_wrapper</option>
+<option value="chdb">chdb</option>
+<option value="cld">cld</option>
+<option value="clucene">clucene</option>
+<option value="coin_acceptor">coin_acceptor</option>
+<option value="colorer">colorer</option>
+<option value="crack">crack</option>
+<option value="cvsclient">cvsclient</option>
+<option value="cybercash">cybercash</option>
+<option value="cyrus">cyrus</option>
+<option value="date_time">date_time</option>
+<option value="dbase">dbase</option>
+<option value="DBDO">DBDO</option>
+<option value="dbplus">dbplus</option>
+<option value="DBus">DBus</option>
+<option value="dbx">dbx</option>
+<option value="dio">dio</option>
+<option value="docblock">docblock</option>
+<option value="drizzle">drizzle</option>
+<option value="DTrace">DTrace</option>
+<option value="ecasound">ecasound</option>
+<option value="eio">eio</option>
+<option value="esmtp">esmtp</option>
+<option value="event">event</option>
+<option value="expect">expect</option>
+<option value="fann">fann</option>
+<option value="ffi">ffi</option>
+<option value="filter">filter</option>
+<option value="fpdf">fpdf</option>
+<option value="FreeImage">FreeImage</option>
+<option value="fribidi">fribidi</option>
+<option value="funcall">funcall</option>
+<option value="fuse">fuse</option>
+<option value="GDChart">GDChart</option>
+<option value="gearman">gearman</option>
+<option value="geoip">geoip</option>
+<option value="gmagick">gmagick</option>
+<option value="gnupg">gnupg</option>
+<option value="gupnp">gupnp</option>
+<option value="haru">haru</option>
+<option value="hash">hash</option>
+<option value="hidef">hidef</option>
+<option value="html_parse">html_parse</option>
+<option value="htscanner">htscanner</option>
+<option value="ibm_db2">ibm_db2</option>
+<option value="id3">id3</option>
+<option value="idn">idn</option>
+<option value="igbinary">igbinary</option>
+<option value="imagick">imagick</option>
+<option value="imlib2">imlib2</option>
+<option value="inclued">inclued</option>
+<option value="informix">informix</option>
+<option value="ingres">ingres</option>
+<option value="inotify">inotify</option>
+<option value="intercept">intercept</option>
+<option value="intl">intl</option>
+<option value="isis">isis</option>
+<option value="json">json</option>
+<option value="kadm5">kadm5</option>
+<option value="KTaglib">KTaglib</option>
+<option value="lapack">lapack</option>
+<option value="lchash">lchash</option>
+<option value="leveldb">leveldb</option>
+<option value="libevent">libevent</option>
+<option value="lua">lua</option>
+<option value="lzf">lzf</option>
+<option value="mailparse">mailparse</option>
+<option value="markdown">markdown</option>
+<option value="maxdb">maxdb</option>
+<option value="mcve">mcve</option>
+<option value="mdbtools">mdbtools</option>
+<option value="memcache">memcache</option>
+<option value="memcached">memcached</option>
+<option value="memtrack">memtrack</option>
+<option value="meta">meta</option>
+<option value="ming">ming</option>
+<option value="mnogosearch">mnogosearch</option>
+<option value="mogilefs">mogilefs</option>
+<option value="mongo">mongo</option>
+<option value="mongodb">mongodb</option>
+<option value="mono">mono</option>
+<option value="mqseries">mqseries</option>
+<option value="msgpack">msgpack</option>
+<option value="mysql">mysql</option>
+<option value="mysqlnd_memcache">mysqlnd_memcache</option>
+<option value="mysqlnd_ms">mysqlnd_ms</option>
+<option value="mysqlnd_qc">mysqlnd_qc</option>
+<option value="mysqlnd_uh">mysqlnd_uh</option>
+<option value="ncurses">ncurses</option>
+<option value="newt">newt</option>
+<option value="oauth">oauth</option>
+<option value="oggvorbis">oggvorbis</option>
+<option value="openal">openal</option>
+<option value="operator">operator</option>
+<option value="optimizer">optimizer</option>
+<option value="PAM">PAM</option>
+<option value="panda">panda</option>
+<option value="Paradox">Paradox</option>
+<option value="params">params</option>
+<option value="Parse_Tree">Parse_Tree</option>
+<option value="parsekit">parsekit</option>
+<option value="pcsc">pcsc</option>
+<option value="pdflib">pdflib</option>
+<option value="PDO_4D">PDO_4D</option>
+<option value="PDO_IBM">PDO_IBM</option>
+<option value="PDO_INFORMIX">PDO_INFORMIX</option>
+<option value="pdo_sqlsrv">pdo_sqlsrv</option>
+<option value="pdo_user">pdo_user</option>
+<option value="PECL bug system">PECL bug system</option>
+<option value="PECL website">PECL website</option>
+<option value="PECL_Gen">PECL_Gen</option>
+<option value="pecl_http">pecl_http</option>
+<option value="perforce">perforce</option>
+<option value="perl">perl</option>
+<option value="PHK">PHK</option>
+<option value="PHPScript">PHPScript</option>
+<option value="POP3">POP3</option>
+<option value="printer">printer</option>
+<option value="proctitle">proctitle</option>
+<option value="ps">ps</option>
+<option value="pthreads">pthreads</option>
+<option value="python">python</option>
+<option value="radius">radius</option>
+<option value="rar">rar</option>
+<option value="rpmreader">rpmreader</option>
+<option value="rrd">rrd</option>
+<option value="runkit">runkit</option>
+<option value="sam">sam</option>
+<option value="sasl">sasl</option>
+<option value="SCA_SDO">SCA_SDO</option>
+<option value="scream">scream</option>
+<option value="shape">shape</option>
+<option value="solr">solr</option>
+<option value="sphinx">sphinx</option>
+<option value="spidermonkey">spidermonkey</option>
+<option value="SPL_Types">SPL_Types</option>
+<option value="spread">spread</option>
+<option value="SQLite">SQLite</option>
+<option value="sqlsrv">sqlsrv</option>
+<option value="ssdeep">ssdeep</option>
+<option value="ssh2">ssh2</option>
+<option value="statgrab">statgrab</option>
+<option value="stats">stats</option>
+<option value="stem">stem</option>
+<option value="stomp">stomp</option>
+<option value="sundown">sundown</option>
+<option value="svn">svn</option>
+<option value="swish">swish</option>
+<option value="syck">syck</option>
+<option value="taint">taint</option>
+<option value="tcpwrap">tcpwrap</option>
+<option value="tdb">tdb</option>
+<option value="threads">threads</option>
+<option value="timezonedb">timezonedb</option>
+<option value="tk">tk</option>
+<option value="tokyo_tyrant">tokyo_tyrant</option>
+<option value="Trader">Trader</option>
+<option value="translit">translit</option>
+<option value="udis86">udis86</option>
+<option value="unicodestring">unicodestring</option>
+<option value="uploadprogress">uploadprogress</option>
+<option value="uri_template">uri_template</option>
+<option value="uuid">uuid</option>
+<option value="v8js">v8js</option>
+<option value="Valkyrie">Valkyrie</option>
+<option value="varnish">varnish</option>
+<option value="vld">vld</option>
+<option value="vpopmail">vpopmail</option>
+<option value="WBXML">WBXML</option>
+<option value="Weakref">Weakref</option>
+<option value="win32ps">win32ps</option>
+<option value="win32service">win32service</option>
+<option value="win32std">win32std</option>
+<option value="WinBinder">WinBinder</option>
+<option value="WinCache">WinCache</option>
+<option value="xattr">xattr</option>
+<option value="xcommerce">xcommerce</option>
+<option value="Xdebug">Xdebug</option>
+<option value="xdiff">xdiff</option>
+<option value="xhprof">xhprof</option>
+<option value="xmms">xmms</option>
+<option value="xrange">xrange</option>
+<option value="xslcache">xslcache</option>
+<option value="yaf">yaf</option>
+<option value="yami">yami</option>
+<option value="yaml">yaml</option>
+<option value="yar">yar</option>
+<option value="yaz">yaz</option>
+<option value="yp">yp</option>
+<option value="zip">zip</option>
+</optgroup>
+<optgroup label="phpdbg"
+>
+<option value="phpdbg">phpdbg</option>
+</optgroup>
+<optgroup label="PHP Language Specification"
+>
+<option value="PHP Language Specification">PHP Language Specification</option>
+</optgroup>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">Bug Type:</th>
+				<td class="form-input">
+					<select name="in[bug_type]">
+						<option value="Bug" selected="selected">Bug</option>
+<option value="Feature/Change Request">Feature/Change Request</option>
+<option value="Documentation Problem">Documentation Problem</option>
+<option value="Security">Security</option>					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">Operating system:</th>
+				<td class="form-input">
+					<input type="text" size="20" maxlength="32" name="in[php_os]" value="">
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">Summary:</th>
+				<td class="form-input">
+					<input type="text" size="40" maxlength="79" name="in[sdesc]" value="">
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">Note:</th>
+				<td class="form-input">
+					Please supply any information that may be helpful in fixing the bug:
+					<ul>
+						<li>The version number of the PHP package or files you are using.</li>
+						<li>A short script that reproduces the problem.</li>
+						<li>The list of modules you compiled PHP with (your configure line).</li>
+						<li>Any other information unique or specific to your setup.</li>
+						<li>Any changes made in your php.ini compared to php.ini-dist or php.ini-recommended (<strong>not</strong> your whole php.ini!)</li>
+						<li>A <a href="bugs-generating-backtrace.php">gdb backtrace</a>.</li>
+					</ul>
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">
+					Description:
+					<p class="cell_note">
+						Put short code samples in the &quot;Test script&quot; section <strong>below</strong>
+						and upload patches <strong>below</strong>.
+					</p>
+				</th>
+				<td class="form-input">
+					<textarea cols="80" rows="15" name="in[ldesc]" wrap="soft">
+</textarea>
+				</td>
+			</tr>
+			<tr>
+				<th class="form-label_left">
+					Test script:
+					<p class="cell_note">
+						A short test script you wrote that demonstrates the bug.
+						Please <strong>do not</strong> post more than 20 lines of code.
+						If the code is longer than 20 lines, provide a URL to the source
+						code that will reproduce the bug.
+					</p>
+				</th>
+				<td class="form-input">
+					<textarea cols="80" rows="15" name="in[repcode]" wrap="no">
+</textarea>
+				</td>
+			</tr>
+ <tr>
+  <th class="form-label_left">
+   Patch name
+  </th>
+  <td class="form-input">
+   <p class="cell_note">
+    The patch name must be shorter than 80 characters and it must only contain alpha-numeric characters, dots, underscores or hyphens.
+   </p>
+   <input type="text" maxlength="80" size="40" name="in[patchname]" value="">
+<br>
+  </td>
+ </tr>
+ <tr>
+  <th class="form-label_left">
+   Patch file:
+   <p class="cell_note">
+    A patch file created using <kbd>git diff</kbd> (unified diff format)
+   </p>
+  </th>
+  <td class="form-input">
+   <input type="file" name="patchfile" value="">
+  </td>
+ </tr>
+
+			<tr>
+				<th class="form-label_left">
+					Expected result:
+					<p class="cell_note">
+						Skip if irrelevant.
+						What do you expect to happen or see when you run the test script above?
+					</p>
+				</th>
+				<td class="form-input">
+					<textarea cols="80" rows="15" name="in[expres]" wrap="soft">
+</textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">
+					Actual result:
+					<p class="cell_note">
+						Skip if irrelevant.
+						This could be a <a href="bugs-generating-backtrace.php">backtrace</a> for example.
+						Try to keep it as short as possible without leaving anything relevant out.
+					</p>
+				</th>
+				<td class="form-input">
+					<textarea cols="80" rows="15" name="in[actres]" wrap="soft">
+</textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<th>Solve the problem:<br>42 - 4 = ?</th>
+				<td class="form-input">
+<input type="text" name="captcha" autocomplete="off">
+</td>
+			</tr>
+
+			<tr>
+				<th class="form-label_left">Submit:</th>
+				<td class="form-input">
+					<input type="submit" value="Send bug report">
+					<input type="submit" value="Preview" name="preview">
+				</td>
+			</tr>
+		</table>
+	</form>
+		</td>
+	</tr>
+</table>
+
+
+<table class="foot" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="foot-bar" colspan="2">&nbsp;</td>
+	</tr>
+
+	<tr>
+		<td class="foot-copy">
+			<small>
+				<a href="https://php.net/">
+<img src="images/logo-small.gif" align="left" valign="middle" hspace="3" alt="PHP">
+</a>
+				<a href="https://php.net/copyright.php">Copyright &copy; 2001-2019 The PHP Group</a>
+<br>
+				All rights reserved.
+			</small>
+		</td>
+		<td class="foot-source">
+			<small>Last updated: Mon Mar 11 23:01:29 2019 UTC</small>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
