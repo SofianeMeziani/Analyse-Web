@@ -61,27 +61,36 @@ class AnalysisController extends Controller
         return $headers['http_code'];
     }
 
-    public function broken_link($url)
+    public function broken_link($url, &$nb_broken, &$nb_broken404)
     {
         $check_url_status = $this->check_url($url);
         if ($check_url_status == '200')
-           $result = "Link Works";
+           return "Valide";
         else
-        {
-            if ($check_url_status == '404')
-                $result = "paga not found";
-            if ($check_url_status == 'bad host')
-                $result = "bad host";
-            if ($check_url_status == '400')
-                $result = "bad request";
-            if ($check_url_status == 'Malformed URL')
-                $result = "Malformed URL";
-            if ($check_url_status == 'bad code')
-                $result = "bad code";
-            else 
-                $result = "broken link";
+        {   
+            $nb_broken++;
+            if ($check_url_status == '404'){
+                $nb_broken404++;
+                return "Page introuvable";
+            }
+            if ($check_url_status == 'bad host'){
+                return "Mauvais hôte";
+            }
+            if ($check_url_status == '302' || $check_url_status == '301'){
+                $nb_broken--;
+                return "Redirection";
+            }
+            if ($check_url_status == '400'){
+                return "Mauvaise demande";
+            }
+            if ($check_url_status == 'Malformed URL'){
+                return "URL Malformé";
+            }
+            if ($check_url_status == 'bad code'){
+                return "Mauvais code";
+            }
+            return "Lien mort";
         }
-        return $result;
     }
 
     public function syntaxe_verif($url)
@@ -193,13 +202,13 @@ class AnalysisController extends Controller
                     } else {
                        $external_links = $external_links + 1; 
                        array_push($load_time, $this->t_reponse($aLink));
-                       array_push($broken_link, $this->broken_link($aLink));
+                       array_push($broken_link, $this->broken_link($aLink, $nb_broken, $nb_broken404));
                        array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
                     }   
                 } else {
                     $internal_links = $internal_links + 1;
                     array_push($load_time, $this->t_reponse($aLink));
-                    array_push($broken_link, $this->broken_link($aLink));
+                    array_push($broken_link, $this->broken_link($aLink, $nb_broken, $nb_broken404));
                     array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
                 }
             }
@@ -295,13 +304,16 @@ class AnalysisController extends Controller
 
         //dd($url);
 
+        $nb_broken = 0;
+        $nb_broken404 = 0;
+
         $this->syntaxe_verif($url);
 
         $load_time = array();
         array_push($load_time, $this->t_reponse($url));
 
         $broken_link = array();
-        array_push($broken_link, $this->broken_link($url));
+        array_push($broken_link, $this->broken_link($url, $nb_broken, $nb_broken404));
 
         $syntaxe_errors = array();
         array_push($syntaxe_errors, $this->syntaxe_verif($url));
@@ -344,6 +356,8 @@ class AnalysisController extends Controller
         $var ["syntaxe_errors"] = $syntaxe_errors;
         $var ["internal_links"] = $internal_links;
         $var ["external_links"] = $external_links;
+        $var ["nb_broken"] = $nb_broken;
+        $var ["nb_broken404"] = $nb_broken404;
         //$var ["pageltime"] = $pageltime;
 
         //dd($var);

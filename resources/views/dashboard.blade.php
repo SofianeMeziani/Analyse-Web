@@ -59,7 +59,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Liens morts</h5>
-                      <span class="h2 font-weight-bold mb-0">13</span>
+                      <span class="h2 font-weight-bold mb-0"><?php echo $nb_broken; ?></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -68,8 +68,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Internes : 9</span> <br>
-                    <span class="text-nowrap">Externes : 4</span>
+                    <span class="text-nowrap">Erreur 404 : <?php echo $nb_broken404; ?></span> <br>
+                    <span class="text-nowrap">Autres : <?php echo $nb_broken-$nb_broken404; ?></span>
                   </p>
                 </div>
               </div>
@@ -134,7 +134,12 @@
                     @foreach ($url_array as $url)
                       <tr>
                         <td scope="row">
-                          {{$j}} - <a href= <?php echo $url; ?> target="_blank">{{$url}}</a>
+                          {{$j}} - <a href= <?php
+                          echo $url;
+                          if (strlen($url) > 40)
+                            $url = substr($url, 0, 40)."....";
+
+                            ?> target="_blank">{{$url}}</a>
                         </td>
                         <td style="text-align: center; font-size: 16px">
                           <?php $loadT = $load_time[$j - 1]; 
@@ -171,7 +176,7 @@
             <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
           </div>
 
-          <?php if(strcmp($syntaxe_errors[0][0], "CORRECT") !== 0){ ?>
+          <?php if(strcmp($syntaxe_errors[0][0], "CORRECT") !== 0 && $syntaxe_errors[0][1] !== 0){ ?>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Erreur de syntaxe </label>
