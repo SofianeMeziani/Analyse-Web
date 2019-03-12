@@ -158,9 +158,10 @@
                         <td style="text-align: center;">
                           {{$broken_link[$j-1]}}
                         </td>
-                        <td style="text-align: center; font-size: 16px">
+                        <td style="text-align: center;">
+                          <?php if ($analyse_synt == 0) {echo "Non demandé";} else {?>
                           <?php if (strcmp(($syntaxe_errors[$j - 1])[0], "CORRECT") == 0){ ?> <span class="badge badge-success"><?php echo "Correcte";
-                           ?></span> <?php } else { ?> <span class="badge badge-danger"><?php echo "Fausse"; ?></span> <?php } ?>
+                           ?></span> <?php } else { ?> <span class="badge badge-danger"><?php echo "Fausse"; ?></span> <?php }} ?>
                         </td>
                       </tr>
                       <?php $j++; ?>
@@ -175,8 +176,8 @@
             <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
             <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
           </div>
-
-          <?php if(strcmp($syntaxe_errors[0][0], "CORRECT") !== 0 && $syntaxe_errors[0][1] !== 0){ ?>
+          <?php if (count($syntaxe_errors) > 0){ ?>
+          <?php if(strcmp($syntaxe_errors[0][0], "CORRECT") !== 0 && $syntaxe_errors[0][1] !== 0 && $analyse_synt === 1){ ?>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Erreur de syntaxe </label>
@@ -217,7 +218,7 @@
                 echo ($num_ligne+2)." |   ".$lines[$num_ligne+2-1]; 
                ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> devrait etre fermee a la ligne (ligne <?php echo $num_ligne ?>).</textarea>
           </div>
-        <?php } ?>
+        <?php } }?>
 
         </div>
       </div>

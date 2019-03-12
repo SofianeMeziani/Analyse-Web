@@ -32,14 +32,21 @@
               </div>
 
               <div class="form-row col-md-10">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                   <label for="inputExternLinks">Liens externes</label>
                   <select id="inputExternLinks" name="liensx" class="form-control form-control-sm">
                     <option value="0">Non</option>
                     <option value="1" selected="">Oui</option>
                   </select>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
+                  <label for="inputExternLinks">Analyse syntaxique</label>
+                  <select id="inputExternLinks" name="analyse_synt" class="form-control form-control-sm">
+                    <option value="0">Non</option>
+                    <option value="1" selected="">Oui</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
                   <label for="inputState">Profondeur</label>
                   <select id="inputState" name="Profondeur" class="form-control form-control-sm">
                     <option value="1" selected>1</option>
@@ -49,8 +56,8 @@
                     <option value="5">5</option>
                   </select>
                 </div>
-                <div class="form-group col-md-4">
-                  <label for="inputCity">Temps de rep moyen (ms)</label>
+                <div class="form-group col-md-3">
+                  <label for="inputCity">Reponse moyenne</label>
                   <input type="number" name="TempsRep" class="form-control form-control-sm" id="inputCity" value="200" min="0">
                 </div>   
               </div>

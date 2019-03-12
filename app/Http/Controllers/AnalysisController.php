@@ -100,25 +100,6 @@ class AnalysisController extends Controller
         
         chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
         file_put_contents("tags.txt", "");
-/*
-        //$html = $this->format_html($url);
-
-        //$html = $this->file_get_contents_curl($url);
-
-
-        $dom = new DOMDocument('1.0', 'UTF-8');
-
-        $dom->preserveWhiteSpace = false;
-       // $dom->loadHTML($html,LIBXML_HTML_NOIMPLIED);
-        @$dom->loadHTML($html);
-        $dom->formatOutput = true;
-*/
-
-        //return ($dom->saveXML($dom->documentElement));
-
-
-        //file_put_contents("tags.txt", $dom->saveXML($dom->documentElement));
-        //file_put_contents("tags.txt",  $this->format_html($url));
 
         $htmlcontent =  $this->format_html($url);
         $htmlcontent = str_replace("><", ">\n<", $htmlcontent);
@@ -176,7 +157,12 @@ class AnalysisController extends Controller
         return $result;
     }
 
-    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link, &$syntaxe_errors) 
+    public function get_original_link ($url) 
+    {
+        return (parse_url($url)['host']);
+    }
+
+    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link, &$syntaxe_errors, &$analyse_synt) 
     {
         $profondeur_max = 0;
         $links = array();
@@ -196,20 +182,25 @@ class AnalysisController extends Controller
         if (!empty($links)){ 
             $array_unique_links = array_unique($links);
             foreach ($array_unique_links as $key => $aLink) {
-                if (strpos($aLink, $original_link) === false){
+                if (strpos(parse_url($aLink, PHP_URL_HOST), $original_link) === false){
                     if ($lienx == 0) {
                         unset($array_unique_links[$key]);
                     } else {
                        $external_links = $external_links + 1; 
                        array_push($load_time, $this->t_reponse($aLink));
                        array_push($broken_link, $this->broken_link($aLink, $nb_broken, $nb_broken404));
-                       array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
+                       if($analyse_synt == 1){
+                        array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
+                       }
+                       
                     }   
                 } else {
                     $internal_links = $internal_links + 1;
                     array_push($load_time, $this->t_reponse($aLink));
                     array_push($broken_link, $this->broken_link($aLink, $nb_broken, $nb_broken404));
-                    array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
+                    if($analyse_synt == 1){
+                        array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
+                       }
                 }
             }
             array_push($array, $array_unique_links);
@@ -222,22 +213,7 @@ class AnalysisController extends Controller
         return $array;
     }
 
-    public function get_original_link ($url) 
-    {
-        // trouver la position du 3 eme slash
-        $pos1slash = strpos($url, '/');
-        $pos2slash = strpos($url, '/', $pos1slash + 2);
-
-        return substr ($url ,0, $pos2slash);
-
-        // trouver la position du 2 eme point depuis la fin
-        //$pos1 = strrpos ($original_link, '.');
-        //$pos2 = strrpos ($original_link, '.', $pos1 - strlen($original_link) - 1);
-
-        //if ($pos2 === false) 
-        //return substr($original_link, $pos1slash + 1);
-        //return substr ($original_link , $pos2 + 1);
-    }
+    
 
     // supprimer les commentaires conditionnels
     public function format_html($url){
@@ -246,21 +222,6 @@ class AnalysisController extends Controller
 
         $html = preg_replace('/<!--(.|\s)*?-->/', '', $html);
         $html = str_replace('\r\n', '', $html);
-
-        //$dom = new DOMDocument();
-        //@$dom->loadHTML($html);
-        //$xpath = new \DOMXPath($dom);
-        //$hrefs = $xpath->evaluate("/html/body//a")
-        /*$dom = new DOMDocument('1.0', 'UTF-8');
-
-        $dom->preserveWhiteSpace = false;
-       // $dom->loadHTML($html,LIBXML_HTML_NOIMPLIED);
-        @$dom->loadHTML($html);
-        $dom->formatOutput = true;
-
-
-        return ($dom->saveXML($dom->documentElement));*/
-
 
         return ($html);
     }
@@ -283,6 +244,7 @@ class AnalysisController extends Controller
         $url = $request->all()["url"];
         $profondeur = $request->all()["Profondeur"];
         $lienx = $request->all()["liensx"];
+        $analyse_synt = $request->all()["analyse_synt"];
         $tmoyen = $request->all()["TempsRep"];
 
         if (false === strpos($url, '://'))  {
@@ -316,7 +278,10 @@ class AnalysisController extends Controller
         array_push($broken_link, $this->broken_link($url, $nb_broken, $nb_broken404));
 
         $syntaxe_errors = array();
-        array_push($syntaxe_errors, $this->syntaxe_verif($url));
+        if($analyse_synt == 1){
+            array_push($syntaxe_errors, $this->syntaxe_verif($url));
+        }
+        
 
 
         //$ltime = $this->t_reponse($url);
@@ -336,7 +301,7 @@ class AnalysisController extends Controller
         $d=array();
         array_push($d, $url);
         array_push($links_array , $d);
-        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link,$syntaxe_errors);
+        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link,$syntaxe_errors,$analyse_synt);
 
         // dd($links_array);
         chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
@@ -345,6 +310,8 @@ class AnalysisController extends Controller
         $htmlcontent = str_replace("><", ">\n<", $htmlcontent);
 
         file_put_contents("tags.txt",  $htmlcontent);
+
+       
 
 
         $var ["urls"] = $links_array;
@@ -358,6 +325,7 @@ class AnalysisController extends Controller
         $var ["external_links"] = $external_links;
         $var ["nb_broken"] = $nb_broken;
         $var ["nb_broken404"] = $nb_broken404;
+        $var ["analyse_synt"] = $analyse_synt;
         //$var ["pageltime"] = $pageltime;
 
         //dd($var);
