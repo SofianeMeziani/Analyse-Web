@@ -61,6 +61,17 @@ class AnalysisController extends Controller
         return $headers['http_code'];
     }
 
+    public function r_manquante($url, &$nb_r_broken)
+    {
+        $check_url_status = $this->check_url($url);
+        if ($check_url_status == '200')
+            return "Valide";
+        else{
+            $nb_r_broken++;
+            return "non_Valide";
+        }
+    }
+
     public function broken_link($url, &$nb_broken, &$nb_broken404)
     {
         $check_url_status = $this->check_url($url);
@@ -71,7 +82,7 @@ class AnalysisController extends Controller
             $nb_broken++;
             if ($check_url_status == '404'){
                 $nb_broken404++;
-                return "Page introuvable";
+                return "introuvable";
             }
             if ($check_url_status == 'bad host'){
                 return "Mauvais hôte";
@@ -127,21 +138,36 @@ class AnalysisController extends Controller
         return ($result);
     }
 
-    public function getLinks($url) 
+    public function getLinks($url,$tag) 
     {
+        $url1=$url;
         $urlContent = $this->file_get_contents_curl($url);
         $urls = array();
         $dom = new DOMDocument();
         @$dom->loadHTML($urlContent);
         $xpath = new \DOMXPath($dom);
-        $hrefs = $xpath->evaluate("/html/body//a");
-        for($i = 0; $i < $hrefs->length; $i++){
-            $href = $hrefs->item($i);
-            $url = $href->getAttribute('href');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            // validate url
-            if(!filter_var($url, FILTER_VALIDATE_URL) === false){
-                array_push($urls, $url) ;
+        if ($tag=="a"){
+            $hrefs = $xpath->evaluate("/html/body//a");
+            for($i = 0; $i < $hrefs->length; $i++){
+                $href = $hrefs->item($i);
+                $url = $href->getAttribute('href');
+                $url = filter_var($url, FILTER_SANITIZE_URL);
+                // validate url
+                if(!filter_var($url, FILTER_VALIDATE_URL) === false){
+                    array_push($urls, $url) ;
+                }
+            }
+        }else{
+            $hrefs = $xpath->evaluate("/html/body//img");
+            for($i = 0; $i < $hrefs->length; $i++){
+                $href = $hrefs->item($i);
+                $url = $href->getAttribute('src');
+                if (false === strpos($url, '://'))  {
+                    $temp = parse_url($url1, PHP_URL_HOST).$url;
+                    array_push($urls, $temp) ;
+                } else {
+                    array_push($urls, $url) ;
+                }
             }
         }
         $result = array_unique($urls);
@@ -263,6 +289,7 @@ class AnalysisController extends Controller
         //dd($url);
 
         $nb_broken = 0;
+        $nb_r_broken = 0;
         $nb_broken404 = 0;
 
         $this->syntaxe_verif($url);
@@ -283,7 +310,14 @@ class AnalysisController extends Controller
         //$ltime = $this->t_reponse($url);
 
         // $result = $this->getLinks($url);
-        $result = $this->getLinks($url);
+        $r_links = $this->getLinks($url,"img");
+        //dd($result);
+        $r_manquante_arr=array();
+        foreach ($r_links as $key => $value) {
+            array_push($r_manquante_arr, $this->r_manquante($value,$nb_r_broken));
+        }
+
+        //dd($r_manquante_arr);
 
         //$pageltime = $this->getLinkstime($result);
 
@@ -309,7 +343,9 @@ class AnalysisController extends Controller
 
        
 
-
+        $var ["$r_manquante_arr"] = $r_manquante_arr;
+        $var ["$r_links"] = $r_links;
+        $var ["$nb_r_broken"] = $nb_r_broken;
         $var ["urls"] = $links_array;
         $var ["tmoyen"] = $tmoyen;
         $var ["prof"] = $profondeur;
@@ -322,7 +358,7 @@ class AnalysisController extends Controller
         $var ["nb_broken"] = $nb_broken;
         $var ["nb_broken404"] = $nb_broken404;
         $var ["analyse_synt"] = $analyse_synt;
-        //$var ["pageltime"] = $pageltime;
+        
 
         //dd($var);
         return view('dashboard', $var);
