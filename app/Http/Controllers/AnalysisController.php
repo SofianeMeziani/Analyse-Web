@@ -194,7 +194,7 @@ class AnalysisController extends Controller
         $links = array();
         while(sizeof($array) <= $profondeur) {
         foreach ($array[sizeof($array)-1] as $value) {
-            $links_temp=$this->getLinks($value);
+            $links_temp=$this->getLinks($value,"a");
             foreach ($links_temp as $value_temp) {
 
                 // supprimer ce qui suit les pts d'interrogations
@@ -343,9 +343,9 @@ class AnalysisController extends Controller
 
        
 
-        $var ["$r_manquante_arr"] = $r_manquante_arr;
-        $var ["$r_links"] = $r_links;
-        $var ["$nb_r_broken"] = $nb_r_broken;
+        $var ["r_manquante_arr"] = $r_manquante_arr;
+        $var ["r_links"] = $r_links;
+        $var ["nb_r_broken"] = $nb_r_broken;
         $var ["urls"] = $links_array;
         $var ["tmoyen"] = $tmoyen;
         $var ["prof"] = $profondeur;
