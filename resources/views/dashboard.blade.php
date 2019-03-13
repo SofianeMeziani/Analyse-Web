@@ -79,18 +79,18 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">ressources manquantes</h5>
-                      <span class="h2 font-weight-bold mb-0">10</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Images Rssourse</h5>
+                      <span class="h2 font-weight-bold mb-0"><?php echo count($r_links); ?></span>
                     </div>
-                    <!--div class="col-auto">
+                    <div class="col-auto">
                       <div class="icon icon-shape bg-info text-white rounded-circle shadow">
                         <i class="fas fa-percent"></i>
                       </div>
-                    </div-->
+                    </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Internes : 6</span> <br>
-                    <span class="text-nowrap">Externes : 4</span>
+                    <span class="text-nowrap">Existantes : <?php  echo (count($r_links) - count($r_manquante_arr)); ?></span> <br>
+                    <span class="text-nowrap">Manquantes : <?php echo count($r_manquante_arr); ?></span>
                   </p>
                 </div>
               </div>
