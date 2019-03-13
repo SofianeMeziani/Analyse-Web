@@ -156,7 +156,18 @@
                           <?php echo $i ?>
                         </td>
                         <td style="text-align: center;">
-                          {{$broken_link[$j-1]}}
+                          <?php $status = $broken_link[$j-1];
+                          if (strcmp($status, "Valide") === 0) {
+
+                            ?> <span class="badge badge-success"><?php echo $status;
+                           ?></span> <?php 
+                         } else if ((strcmp($status, "Redirection") === 0)){
+                          ?> <span class="badge badge-warning"><?php echo $status;
+                           ?></span> <?php }
+                            else {
+                           ?> <span class="badge badge-danger"><?php echo $status;
+                           ?></span> <?php } ?>
+              
                         </td>
                         <td style="text-align: center;">
                           <?php if ($analyse_synt == 0) {echo "Non demandé";} else {?>
