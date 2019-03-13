@@ -177,7 +177,7 @@
             <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
           </div>
           <?php if (count($syntaxe_errors) > 0){ ?>
-          <?php if(strcmp($syntaxe_errors[0][0], "CORRECT") !== 0 && $syntaxe_errors[0][1] !== 0 && $analyse_synt === 1){ ?>
+          <?php if(strcmp($syntaxe_errors[0][0], "CORRECT") !== 0 && $syntaxe_errors[0][1] !== 0 && $analyse_synt == 1){ ?>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Erreur de syntaxe </label>
