@@ -198,10 +198,10 @@ class AnalysisController extends Controller
             foreach ($links_temp as $value_temp) {
 
                 // supprimer ce qui suit les pts d'interrogations
-                $pos = strpos($value_temp, "?");
+                /*$pos = strpos($value_temp, "?");
                 if ($pos !== false) {
                     $value_temp = substr($value_temp, 0, $pos);
-                }
+                }*/
                 array_push($links, $value_temp);
             }
         }
@@ -341,7 +341,7 @@ class AnalysisController extends Controller
 
         file_put_contents("tags.txt",  $htmlcontent);
 
-       
+        //dd($nb_r_broken);       
 
         $var ["r_manquante_arr"] = $r_manquante_arr;
         $var ["r_links"] = $r_links;
