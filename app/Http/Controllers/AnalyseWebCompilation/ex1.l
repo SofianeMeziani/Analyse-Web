@@ -1,16 +1,21 @@
- /* Declaration section*/
+  /* Declaration section*/
 %{ 
+  #define YY_BUF_SIZE 128000
   #include <limits.h>
   #include "ex1.tab.h"
   #include "pile.h"
 
 
+
 %} 
 %option noyywrap
+%option yylineno
+
+fin_com "-->"
 %%
 
 
-"<!--"(.|\n)*?--> {}
+"<!--"(^[fin_com]])*?--> {}
 
 "<"(area|base|basefont|br|embed|frame|hr|img|input|link|map|meta|param|source|track)[^>|<]*">"|"<!"[^>|<]*> {} 
 "<!"(.*?)> {}
@@ -138,7 +143,7 @@
 "</h2>" { return FERMANTE_h2;}
 "<h2"[^>|<]*> { return OUVRANTE_h2;} 
 
-"</h3>" { return FERMANTE_h3;}
+"</h3>" {  return FERMANTE_h3;}
 "<h3"[^>|<]*> { return OUVRANTE_h3;} 
 
 "</h4>" { return FERMANTE_h4;}
@@ -332,9 +337,8 @@
 
 "<col"[^>|<]*">"|"<!"[^>|<]*> {} 
 
-\n {yylineno++;}
 
-. ;
+.|\n ;
 %%   
  
   

@@ -49,6 +49,7 @@
                 <div class="form-group col-md-3">
                   <label for="inputState">Profondeur</label>
                   <select id="inputState" name="Profondeur" class="form-control form-control-sm">
+                    <option value="0">0</option>
                     <option value="1" selected>1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

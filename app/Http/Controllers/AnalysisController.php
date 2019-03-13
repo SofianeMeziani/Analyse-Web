@@ -162,11 +162,11 @@ class AnalysisController extends Controller
         return (parse_url($url)['host']);
     }
 
-    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link, &$syntaxe_errors, &$analyse_synt) 
+    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link, &$syntaxe_errors, &$analyse_synt, &$nb_broken, &$nb_broken404) 
     {
         $profondeur_max = 0;
         $links = array();
-        a:
+        while(sizeof($array) <= $profondeur) {
         foreach ($array[sizeof($array)-1] as $value) {
             $links_temp=$this->getLinks($value);
             foreach ($links_temp as $value_temp) {
@@ -204,11 +204,12 @@ class AnalysisController extends Controller
                 }
             }
             array_push($array, $array_unique_links);
-            if (sizeof($array) <= $profondeur) 
+            } }
+            /*if (sizeof($array) <= $profondeur) 
                 goto a;
         } else {
             $profondeur_max = sizeof($array); // -1 ?;
-        }
+        }*/
         //dd($array);
         return $array;
     }
@@ -221,6 +222,10 @@ class AnalysisController extends Controller
         $html = $this->file_get_contents_curl($url);
 
         $html = preg_replace('/<!--(.|\s)*?-->/', '', $html);
+        
+        //$pattern = '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/';
+        //$html = preg_replace($pattern, '', $html);
+        
         $html = str_replace('\r\n', '', $html);
 
         return ($html);
@@ -248,17 +253,8 @@ class AnalysisController extends Controller
         $tmoyen = $request->all()["TempsRep"];
 
         if (false === strpos($url, '://'))  {
-            $url = 'http://' . $url;
+            $url = 'http:/' .parse_url($url, PHP_URL_HOST).'/'.parse_url($url, PHP_URL_PATH);
         }
-
-        // a changer
-        /*if (false === strpos($url, 'www.')) {
-            if (false === strpos($url, 'https')) {
-                $url = substr($url, 0, 7) . "www." . substr($url, 7);
-            } else {
-                $url = substr($url, 0, 8) . "www." . substr($url, 8);
-            }    
-        }*/
 
         if (strcmp ( substr($url, strlen($url) - 1) , '/') !== 0)  {
             $url = $url . '/';
@@ -301,7 +297,7 @@ class AnalysisController extends Controller
         $d=array();
         array_push($d, $url);
         array_push($links_array , $d);
-        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link,$syntaxe_errors,$analyse_synt);
+        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link,$syntaxe_errors,$analyse_synt, $nb_broken, $nb_broken404);
 
         // dd($links_array);
         chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");

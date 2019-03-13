@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="profile" href="https://gmpg.org/xfn/11">
+      <!-- <link type="text/css" media="all" href="https://mon-chakra.fr/wp-content/cache/autoptimize/css/autoptimize_6945805e97a1df17a2d33687ec3163aa.css" rel="stylesheet" /> -->
+      <link rel="stylesheet" type="text/css" href="//mon-chakra.fr/wp-content/cache/wpfc-minified/9j10i7ib/6kvkc.css" media="all"/>
+      <title>Boutique de Bijoux à Pierres bénéfique pour vous ! | Mon-Chakra.fr</title>
+      <meta name="description" content="Nous vendons des produits convenant à la lithothérapie ainsi qu&#039;à l&#039;amélioration de votre quotidien. Ceci est dû aux Pierres présente dans nos articles"/>
+      <link rel="canonical" href="https://mon-chakra.fr/" />
+      <meta property="og:locale" content="fr_FR" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Boutique de Bijoux à Pierres bénéfique pour vous ! | Mon-Chakra.fr" />
+      <meta property="og:description" content="Nous vendons des produits convenant à la lithothérapie ainsi qu&#039;à l&#039;amélioration de votre quotidien. Ceci est dû aux Pierres présente dans nos articles" />
+      <meta property="og:url" content="https://mon-chakra.fr/" />
+      <meta property="og:site_name" content="Mon Chakra" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:description" content="Nous vendons des produits convenant à la lithothérapie ainsi qu&#039;à l&#039;amélioration de votre quotidien. Ceci est dû aux Pierres présente dans nos articles" />
+      <meta name="twitter:title" content="Boutique de Bijoux à Pierres bénéfique pour vous ! | Mon-Chakra.fr" />
+      <script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://mon-chakra.fr/#website","url":"https://mon-chakra.fr/","name":"Mon Chakra","potentialAction":{"@type":"SearchAction","target":"https://mon-chakra.fr/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+      <link rel="alternate" type="application/rss+xml" title="Mon Chakra &raquo; Flux" href="https://mon-chakra.fr/feed" />
+      <link rel="alternate" type="application/rss+xml" title="Mon Chakra &raquo; Flux des commentaires" href="https://mon-chakra.fr/comments/feed" />
+      <script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script src='//mon-chakra.fr/wp-content/cache/wpfc-minified/kmopgjjo/6f06h.js' type="text/javascript"></script>
+      <!-- <script type='text/javascript' src='https://mon-chakra.fr/wp-includes/js/jquery/jquery.js'></script> --> 
+      <link rel='https://api.w.org/' href='https://mon-chakra.fr/wp-json/' />
+      <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mon-chakra.fr/xmlrpc.php?rsd" />
+      <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mon-chakra.fr/wp-includes/wlwmanifest.xml" />
+      <meta name="generator" content="WordPress 5.0.3" />
+      <meta name="generator" content="WooCommerce 3.5.4" />
+      <link rel='shortlink' href='https://mon-chakra.fr/' />
+      <link rel="alternate" type="application/json+oembed" href="https://mon-chakra.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmon-chakra.fr%2F" />
+      <link rel="alternate" type="text/xml+oembed" href="https://mon-chakra.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmon-chakra.fr%2F&#038;format=xml" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134218977-1"></script> <script>window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-134218977-1');
+      </script> 
+      <noscript>
+         <style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
+      </noscript>
+      <script type='text/javascript'>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+         n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+         document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      </script> <script>fbq('init', '1780840378871299', {}, {
+         "agent": "woocommerce-3.5.4-1.9.5"
+         });
+         fbq('track', 'PageView', {
+         "source": "woocommerce",
+         "version": "3.5.4",
+         "pluginVersion": "1.9.5"
+         });
+         document.addEventListener('DOMContentLoaded', function() {
+         jQuery && jQuery(function($){
+         $('body').on('added_to_cart', function(event) {
+         // Ajax action.
+         $.get('?wc-ajax=fb_inject_add_to_cart_event', function(data) {
+         $('head').append(data);
+         });
+         });
+         });
+         }, false);
+      </script> 
+      <link rel="icon" href="https://mon-chakra.fr/wp-content/uploads/2019/02/cropped-logo-mon-chakra-32x32.png" sizes="32x32" />
+      <link rel="icon" href="https://mon-chakra.fr/wp-content/uploads/2019/02/cropped-logo-mon-chakra-192x192.png" sizes="192x192" />
+      <link rel="apple-touch-icon-precomposed" href="https://mon-chakra.fr/wp-content/uploads/2019/02/cropped-logo-mon-chakra-180x180.png" />
+      <meta name="msapplication-TileImage" content="https://mon-chakra.fr/wp-content/uploads/2019/02/cropped-logo-mon-chakra-270x270.png" />
+   </head>
+   <body data-rsssl=1 class="home page-template page-template-template-frontpage page-template-template-frontpage-php page page-id-21 wp-custom-logo woocommerce-no-js has_paypal_express_checkout woocommerce-active">
+      <header class="header ">
+         <nav class="navbar navbar-custom navbar-fixed-top " role="navigation">
+            <div class="container">
+               <div class="header-container">
+                  <div class="navbar-header">
+                     <div class="shop_isle_header_title">
+                        <div class="shop-isle-header-title-inner"><a href="https://mon-chakra.fr/" class="custom-logo-link" rel="home" itemprop="url"><img width="384" height="80" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_384/https://mon-chakra.fr/wp-content/uploads/2019/02/cropped-logo-mon-chakra-trans-e1549231928482.png" class="custom-logo" alt="Mon Chakra" itemprop="logo" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_384/https://mon-chakra.fr/wp-content/uploads/2019/02/cropped-logo-mon-chakra-trans-e1549231928482.png 384w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_300/https://mon-chakra.fr/wp-content/uploads/2019/02/cropped-logo-mon-chakra-trans-e1549231928482-300x63.png 300w" sizes="(max-width: 384px) 100vw, 384px" /></a></div>
+                     </div>
+                     <div type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse"> <span class="sr-only">Déplier/replier la navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div>
+                  </div>
+                  <div class="header-menu-wrap">
+                     <div class="collapse navbar-collapse" id="custom-collapse">
+                        <ul id="menu-menu" class="nav navbar-nav navbar-right">
+                           <li id="menu-item-351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-351"><a href="https://mon-chakra.fr/blog">Blog</a></li>
+                           <li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-142"><a href="https://mon-chakra.fr/boutique">Boutique</a></li>
+                           <li id="menu-item-293" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-293"><a href="https://mon-chakra.fr/contact">Contact</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="navbar-cart">
+                     <div class="header-search">
+                        <div class="glyphicon glyphicon-search header-search-button"></div>
+                        <div class="header-search-input">
+                           <form role="search" method="get" class="woocommerce-product-search" action="https://mon-chakra.fr/"> <input type="search" class="search-field" placeholder="Search Products&hellip;" value="" name="s" title="Search for:" /> <input type="submit" value="Search" /> <input type="hidden" name="post_type" value="product" /></form>
+                        </div>
+                     </div>
+                     <div class="navbar-cart-inner">
+                        <a href="https://mon-chakra.fr/panier" title="Voir votre panier" class="cart-contents"> <span class="icon-basket"></span> <span class="cart-item-number">0</span> </a>
+                        <div class="header-shopping-cart">
+                           <div class="widget woocommerce widget_shopping_cart">
+                              <div class="widget_shopping_cart_content"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <section id="home" class="home-section home-parallax home-fade  home-full-height">
+         <div class="hero-slider">
+            <ul class="slides">
+               <li class="bg-dark-30 bg-dark" style="background-image:url(https://mon-chakra.fr/wp-content/uploads/2019/01/banniere-bijoux-meditation.jpg)">
+                  <div class="hs-caption">
+                     <div class="caption-content">
+                        <h1 class="hs-title-size-4 font-alt mb-30">Lithothérapie et découverte de Chakra</h1>
+                        <a href="/boutique" class="section-scroll btn btn-border-w btn-round">Nos produits</a>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </section >
+      <div class="main front-page-main" style="background-color: #FFF">
+         <section class="shortcodes" id="" role="region" aria-label="Shortcode">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6 col-sm-offset-3"></div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-6 col-sm-offset-3">
+                     <h2 class="module-title font-alt product-banners-title">Catégories</h2>
+                  </div>
+               </div>
+               <div class="row shop_isle_bannerss_section">
+                  <div class="col-sm-4">
+                     <div class="content-box mt-0 mb-0">
+                        <div class="content-box-image">
+                           <figure>
+                              <a href="https://mon-chakra.fr/categorie-produit/bracelets-et-malas">
+                                 <img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://mon-chakra.fr/wp-content/uploads/2019/02/bracelet-mala-banniere-e1549323968398.jpg" alt="Bracelet &amp; Mâlâ">
+                                 <figcaption>Bracelets et Mâlas</figcaption>
+                           </figure>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="content-box mt-0 mb-0">
+                        <div class="content-box-image">
+                           <figure>
+                              <a href="https://mon-chakra.fr/categorie-produit/collier">
+                                 <img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-obsidienne-noir-banniere-e1549324665593.jpg" alt="Banniere collier">
+                                 <figcaption>Colliers bienveillants</figcaption>
+                           </figure>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-4"><div class="content-box mt-0 mb-0"><div class="content-box-image"><figure><a href="https://mon-chakra.fr/categorie-produit/decoration-maison"><img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://mon-chakra.fr/wp-content/uploads/2019/01/figurine-mini-bouddha-rose-e1549327337356.jpg" alt="Décoration bouddha"><figcaption>Décorations pour maison</figcaption></figure></div></div></div>
+               </div>
+            </div>
+         </section>
+         <section class="shortcodes" id="" role="region" aria-label="Shortcode"><div class="container"><div class="row"><div class="col-sm-6 col-sm-offset-3"></div></div><div class="row"> <b>Mon-Chakra.fr est une boutique assez atypique, nous sommes des passionnées des pierres précieuses qui ont un impact bénéfique sur notre quotidien. En effet les produits que nous vendons sont tous fait pour améliorer votre goût à la vie ! Comme vous avez pu le voir ci-dessus, nous vendons aussi bien des bijoux ornementés par ces pierres précieuses que des décorations pour vous accompagnez chez vous. Bien entendu chacunes des pierres qui sont dans nos produits ont une signification et un bénéfice précis à vous apporter.</b><br /><br /><b>Sur notre boutique, vous aurez droit à :</b><br /><div id="our_services_wrap" class="sip-services-wrap"><div class="col-xs-12 col-sm-4 sip-service-box"><div class="sip-single-service"><a href="#" class="sip-single-service-a"><span class="icon_lock sip-single-icon"></span><div class="sip-single-service-text"><h3>Un Paiement sécurisé</h3><p>Toutes les transactions effectuées sur notre boutique sont sécurisées, nous utilisons la technologie PayPal comme moyen de paiement.</p></div></a></div></div><div class="col-xs-12 col-sm-4 sip-service-box"><div class="sip-single-service"><a href="#" class="sip-single-service-a"><span class="icon_map sip-single-icon"></span><div class="sip-single-service-text"><h3>Une Livraison gratuite</h3><p>Nous vous offrons la livraison, en effet pour chaque commande vous bénéficiez d&#39;une livraison gratuite dans le Monde entier !</p></div></a></div></div><div class="col-xs-12 col-sm-4 sip-service-box"><div class="sip-single-service"><a href="#" class="sip-single-service-a"><span class="icon_cart sip-single-icon"></span><div class="sip-single-service-text"><h3>Une satisfaction garantie</h3><p>Nous avons confiance en nos produits, mais si ce dernier ne vous plait pas alors nous vous rembourserons sans problème !</p></div></a></div></div></div><br /><b>Après le paiement via PayPal vous recevrez un email de confirmation de commande. Si jamais vous rencontrez un problème il suffira de <a href="/contact">nous contacter ici</a> nous vous répondrons dans les 24 heures ( en moyenne nous répondons sous 4 heures). </b></div></div></section>
+         <section id="products-slider" class="home-product-slider">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6 col-sm-offset-3"></div>
+               </div>
+               <div class="row">
+                  <div class="owl-carousel text-center" data-items="18" data-pagination="true" data-navigation="false" data-rtl="false">
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/collier-sculpte-yin-yang-en-obsidienne-noire"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/DropShipping-noir-obsidienne-collier-pendentif-chinois-BAGUA-hommes-bijoux-femmes-0-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/DropShipping-noir-obsidienne-collier-pendentif-chinois-BAGUA-hommes-bijoux-femmes-0-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/DropShipping-noir-obsidienne-collier-pendentif-chinois-BAGUA-hommes-bijoux-femmes-0-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/collier-sculpte-yin-yang-en-obsidienne-noire">Collier sculpté &#8220;Yin &#038; Yang&#8221; en Obsidienne Noire</a></h4>
+                              <div class="product-rating-home">
+                                 <div class="star-rating"><span style="width:100%">Note <strong class="rating">5.00</strong> sur 5</span></div>
+                              </div>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">54.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">29.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/bracelet-7-chakras-en-pierres-naturelles-version-2019"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/chakra-bracelet-7-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Bracelet 7 chakra" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/chakra-bracelet-7-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/chakra-bracelet-7-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/bracelet-7-chakras-en-pierres-naturelles-version-2019">Bracelet &#8220;7 Chakras&#8221; en Pierres Naturelles (Version 2019)</a></h4>
+                              <div class="product-rating-home">
+                                 <div class="star-rating"><span style="width:100%">Note <strong class="rating">5.00</strong> sur 5</span></div>
+                              </div>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">39.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">19.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/collier-arbre-de-la-vie-en-quartz-rose"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-quartz-rose-fond-blanc-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-quartz-rose-fond-blanc-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-quartz-rose-fond-blanc-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/collier-arbre-de-la-vie-en-quartz-rose">Collier &#8220;Arbre de la Vie&#8221; en Quartz rose</a></h4>
+                              <div class="product-rating-home">
+                                 <div class="star-rating"><span style="width:100%">Note <strong class="rating">5.00</strong> sur 5</span></div>
+                              </div>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">49.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">24.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/collier-obsidienne-noir-forme-ronde"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-obsidienne-nolir-ronde-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Collier en obsidienne noire ronde" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-obsidienne-nolir-ronde-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-obsidienne-nolir-ronde-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/collier-obsidienne-noir-forme-ronde">Collier Obsidienne Noir forme ronde</a></h4>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">40.00&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">22.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/collier-amethyste-hexagonal"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/amethyste-collier-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/amethyste-collier-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/amethyste-collier-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/collier-amethyste-hexagonal">Collier Améthyste hexagonal</a></h4>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">29.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">19.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/collier-lapis-lazuli-hexagonale"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/lapis-lazuli-collier-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/lapis-lazuli-collier-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/lapis-lazuli-collier-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/collier-lapis-lazuli-hexagonale">Collier Lapis Lazuli hexagonale</a></h4>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">29.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">19.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/collier-oeil-de-tigre-hexagonale"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/oeil-de-tigre-colier-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Collier oeil de tigre" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/oeil-de-tigre-colier-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/oeil-de-tigre-colier-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/collier-oeil-de-tigre-hexagonale">Collier Oeil de Tigre hexagonale</a></h4>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">29.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">19.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/collier-7-chakra-arbre-parfait"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-7-chakra-vie-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-7-chakra-vie-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/collier-7-chakra-vie-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/collier-7-chakra-arbre-parfait">Collier 7 Chakra : Arbre Parfait</a></h4>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">39.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">24.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/bracelet-rose-energie"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/bracelet-rose-energie-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/bracelet-rose-energie-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/bracelet-rose-energie-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/bracelet-rose-energie">Bracelet Rose énergie</a></h4>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">29.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">19.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="owl-item">
+                        <div class="col-sm-12">
+                           <div class="ex-product">
+                              <a href="https://mon-chakra.fr/produit/bracelet-les-7-chakras-blanc"><img width="262" height="328" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/Bracelet-7-chakra-blanc-2-262x328.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_262/https://mon-chakra.fr/wp-content/uploads/2019/02/Bracelet-7-chakra-blanc-2-262x328.jpg 262w, https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_58/https://mon-chakra.fr/wp-content/uploads/2019/02/Bracelet-7-chakra-blanc-2-58x72.jpg 58w" sizes="(max-width: 262px) 100vw, 262px" /></a>
+                              <h4 class="shop-item-title font-alt"><a href="https://mon-chakra.fr/produit/bracelet-les-7-chakras-blanc">Bracelet les « 7 Chakras » Blanc</a></h4>
+                              <span class="onsale">Promo !</span> <del><span class="woocommerce-Price-amount amount">49.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></del> <ins><span class="woocommerce-Price-amount amount">24.99&nbsp;<span class="woocommerce-Price-currencySymbol">&euro;</span></span></ins>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="bottom-page-wrap">
+         <div style="display: none"></div>
+         <footer class="footer bg-dark">
+            <hr class="divider-d">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <p class="copyright font-alt">© Mon-Chakra.fr, Tous droits réservés.</p>
+                  </div>
+                  <div class="col-sm-6">
+                     <div class="footer-social-links"><a href="#" target="_blank"><span class="social_facebook"></span></a><a href="#" target="_blank"><span class="social_twitter"></span></a><a href="#" target="_blank"><span class="social_dribbble"></span></a><a href="#" target="_blank"><span class="social_skype"></span></a></div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </div>
+      </div>
+      <div class="scroll-up"> <a href="#totop"><i class="arrow_carrot-2up"></i></a></div>
+      <noscript> <img height="1" width="1" style="display:none" alt="fbpx"
+         src="https://www.facebook.com/tr?id=1780840378871299&ev=PageView&noscript=1"/> </noscript>
+      <script type="text/javascript">var c = document.body.className;
+         c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+         document.body.className = c;
+      </script> <script type='text/javascript'>var woo_discount_rules = {"home_url":"https:\/\/mon-chakra.fr","admin_url":"https:\/\/mon-chakra.fr\/wp-admin\/","ajax_url":"https:\/\/mon-chakra.fr\/wp-admin\/admin-ajax.php"};</script> <script type='text/javascript'>var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Voir le panier","cart_url":"https:\/\/mon-chakra.fr\/panier","is_cart":"","cart_redirect_after_add":"yes"};</script> <script type='text/javascript'>var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};</script> <script type='text/javascript'>var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_30d3f4c2ee68239712d86cca71d61656","fragment_name":"wc_fragments_30d3f4c2ee68239712d86cca71d61656"};</script> <script type='text/javascript'>var angelleye_frontend = {"is_product":"no","is_cart":"no","is_checkout":"no","three_digits":"3 digits usually found on the signature strip.","four_digits":"4 digits usually found on the front of the card.","enable_in_context_checkout_flow":"no"};</script> <script type="text/javascript" defer src="https://mon-chakra.fr/wp-content/cache/autoptimize/js/autoptimize_4014c87b9290436faa93e468f4ee47cc.js"></script>
+   </body>
+</html>
+<!-- WP Fastest Cache file was created in 0.75259804725647 seconds, on 21-02-19 19:13:36 -->

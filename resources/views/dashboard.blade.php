@@ -121,7 +121,7 @@
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" style="text-align: center;">Nom de la page</th>
-                    <th scope="col" style="text-align: center;">Temps de rep (ms)</th>
+                    <th scope="col" style="text-align: center;">Reponse (ms)</th>
                     <th scope="col" style="text-align: center;">Niveau</th>
                     <th scope="col" style="text-align: center;">Status</th>
                     <th scope="col" style="text-align: center;">Syntaxe</th>
@@ -193,7 +193,9 @@
                   echo ($num_ligne-1)." |   ".$lines[$num_ligne-1-1];
                 }
                 echo ($num_ligne)." |   ".$lines[$num_ligne-1];
+                if(count($lines) >= $num_ligne+1)
                 echo ($num_ligne+1)." |   ".$lines[$num_ligne+1-1]; 
+               if(count($lines) >= $num_ligne+2)
                 echo ($num_ligne+2)." |   ".$lines[$num_ligne+2-1]; 
                ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> n'est pas fermee correctement (ligne <?php echo $num_ligne ?>).</textarea>
           </div>
@@ -214,7 +216,9 @@
                   echo ($num_ligne-1)." |   ".$lines[$num_ligne-1-1];
                 }
                 echo ($num_ligne)." |   ".$lines[$num_ligne-1];
+                if(count($lines) >= $num_ligne+1)
                 echo ($num_ligne+1)." |   ".$lines[$num_ligne+1-1]; 
+              if(count($lines) >= $num_ligne+2)
                 echo ($num_ligne+2)." |   ".$lines[$num_ligne+2-1]; 
                ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> devrait etre fermee a la ligne (ligne <?php echo $num_ligne ?>).</textarea>
           </div>
