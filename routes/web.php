@@ -22,6 +22,8 @@ Route::post("/dashboard", "AnalysisController@analyse");
 
 //-----------UserController--------------
 Route::get('/user', "UserController@account");
+Route::get('/history', "UserController@getAnalysis");
+Route::get('/history/{analysis_id}', "AnalysisController@getAnalysisById");
 Route::post('/update-personal-info', "UserController@updatePersonalInfo");
 Route::post('/update-password', "UserController@updatePassword");
 

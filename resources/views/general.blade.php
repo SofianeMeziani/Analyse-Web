@@ -8,15 +8,20 @@
   <meta name="author" content="Creative Tim">
   <title> Analyse Web </title>
   <!-- Favicon -->
-  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="/assets/img/brand/favicon.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="./assets/css/argon.css?v=1.0.0" rel="stylesheet">
+  <link type="text/css" href="/assets/css/argon.css?v=1.0.0" rel="stylesheet">
   <script src="/js/sweetalert2.all.js"></script>
+
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,7 +36,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="/">
-        <img src="./assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <img src="/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -60,9 +65,13 @@
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Welcome!</h6>
             </div>
-            <a href="./user" class="dropdown-item">
+            <a href="/user" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
+            </a> 
+            <a href="/history" class="dropdown-item">
+              <i class="ni ni-single-02"></i>
+              <span>History</span>
             </a>
             <div class="dropdown-divider"></div>
             <a href="#!" class="dropdown-item">
@@ -82,8 +91,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./user">
+            <a class="nav-link" href="/user">
               <i class="ni ni-single-02 text-yellow"></i> Profil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/history">
+              <i class="ni ni-single-02 text-yellow"></i> Histoire
             </a>
           </li>
           <li class="nav-item">
@@ -117,7 +131,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
+                    <img alt="Image placeholder" src="/assets/img/theme/team-4-800x800.jpg">
                   </span>
                   
                   <div class="media-body ml-2 d-none d-lg-block">
@@ -133,9 +147,13 @@
                   <i class="ni ni-istanbul"></i>
                   <span>Accueil</span>
                 </a>
-                <a href="./user" class="dropdown-item">
+                <a href="/user" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
                   <span>Profil</span>
+                </a>
+                <a href="/history" class="dropdown-item">
+                  <i class="ni ni-single-02"></i>
+                  <span>Histoire</span>
                 </a>
     
                 <div class="dropdown-divider"></div>
@@ -191,18 +209,18 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Optional JS -->
-  <script src="./assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="./assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <script src="/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
-  <script src="./assets/js/argon.js?v=1.0.0"></script>
+  <script src="/assets/js/argon.js?v=1.0.0"></script>
 
   <script type="text/javascript">
     function logout() {
       form = document.getElementById("logout_form");
-      form.action = "./logout";
+      form.action = "/logout";
       form.submit();
     }
   </script>

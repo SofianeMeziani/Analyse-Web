@@ -18,6 +18,22 @@ class UserController extends Controller
 		return view("user", $array);
 	}
 
+	public function getAnalysis()
+	{
+		$allAnalysis = Auth::user()->analysis()->get()->toArray();
+		$array = array();
+		foreach ($allAnalysis as $analyse) {
+			foreach ($analyse as $key => $value) {
+				if ($key != "url" && $key != "created_at" && $key != "updated_at") {
+					$analyse[$key] = json_decode($value, true);
+				}
+			}
+			array_push($array, $analyse);
+		}
+
+		return view("history", ["histories"=>$array]);
+	}
+
 	public function updatePersonalInfo(Request $request)
 	{
 		$data = $request->all();

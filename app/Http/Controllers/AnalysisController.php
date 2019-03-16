@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Session;
 use Illuminate\Http\Request;
 use DOMDocument;
+use Auth;
+
+use App\Analysis;
 
 class AnalysisController extends Controller
 {
@@ -80,7 +83,7 @@ class AnalysisController extends Controller
 
     public function init_txt ()
     {
-        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
+        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseTest'))."AnalyseTest/app/Http/Controllers/AnalyseWebCompilation");
         file_put_contents("tags.txt", "");
     }
 
@@ -352,8 +355,34 @@ class AnalysisController extends Controller
         $var ["nb_broken404"] = $links_array["vars"]["nb_broken404"];
         $var ["analyse_synt"] = $analyse_synt;
         $var ["op_images"] = $op_images;
+
+        $analysis = new Analysis();
+        foreach ($var as $key => $value) {
+            $analysis->$key = json_encode($value);
+        }
+        $analysis->url = $url;
+        $analysis->user_id = Auth::id();
+        $analysis->save();
         
         return view('dashboard', $var);
+    }
+
+    public function getAnalysisById($analysis_id)
+    {
+        $analysis = Analysis::find($analysis_id)->toArray();
+        foreach ($analysis as $key => $value) {
+            if ($key != "url" && $key != "created_at" && $key != "updated_at") {
+                $analysis[$key] = json_decode($value, true);
+            }
+        }
+
+        if ($analysis) {
+            $analysis["message"]="found";
+        } else {
+            $analysis = ["message"=>"notfound"];
+        }
+
+        return view("historydetails", $analysis);
     }
 
 
