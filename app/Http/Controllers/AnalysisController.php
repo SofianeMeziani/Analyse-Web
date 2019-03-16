@@ -316,6 +316,8 @@ class AnalysisController extends Controller
         $lienx = $request->all()["liensx"];
         $analyse_synt = $request->all()["analyse_synt"];
         $tmoyen = $request->all()["TempsRep"];
+        $op_images = $request->all()["op_images"];
+        
         
         // adding http to url
         $url = $this->add_http($url);
@@ -349,6 +351,7 @@ class AnalysisController extends Controller
         $var ["nb_broken"] = $links_array["vars"]["nb_broken"];
         $var ["nb_broken404"] = $links_array["vars"]["nb_broken404"];
         $var ["analyse_synt"] = $analyse_synt;
+        $var ["op_images"] = $op_images;
         
         return view('dashboard', $var);
     }
