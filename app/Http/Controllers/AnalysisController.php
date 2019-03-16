@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Http\Controllers;
 
 use Session;
@@ -14,6 +12,25 @@ class AnalysisController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    //  ----------------- Secondary Functions -----------------
+
+    public function add_http ($url)
+    {
+        if (false === strpos($url, '://'))  {
+            $url = 'http:/' .parse_url($url, PHP_URL_HOST).'/'.parse_url($url, PHP_URL_PATH);
+        }
+        return $url;
+    }
+
+    // supprimer les commentaires conditionnels
+    public function format_html($url)
+    {
+        $html = $this->file_get_contents_curl($url);
+        $html = preg_replace('/<!--(.|\s)*?-->/', '', $html);        
+        $html = str_replace('\r\n', '', $html);
+        return ($html);
     }
 
     public function file_get_contents_curl($url) 
@@ -61,6 +78,24 @@ class AnalysisController extends Controller
         return $headers['http_code'];
     }
 
+    public function init_txt ()
+    {
+        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseTest'))."AnalyseTest/app/Http/Controllers/AnalyseWebCompilation");
+        file_put_contents("tags.txt", "");
+    }
+
+    public function end_txt($url)
+    {
+        $this->init_txt();
+        $htmlcontent =  $this->format_html($url);
+        $htmlcontent = str_replace("><", ">\n<", $htmlcontent);
+        file_put_contents("tags.txt",  $htmlcontent); 
+    }
+
+    
+
+    //  ----------------- Primary Functions -----------------
+
     public function r_manquante($url, &$nb_r_broken)
     {
         $check_url_status = $this->check_url($url);
@@ -87,7 +122,7 @@ class AnalysisController extends Controller
             if ($check_url_status == 'bad host'){
                 return "Mauvais hôte";
             }
-            if ($check_url_status == '302' || $check_url_status == '301'){
+            if ($check_url_status == '302' || $check_url_status == '301' || $check_url_status == '303'){
                 $nb_broken--;
                 return "Redirection";
             }
@@ -105,16 +140,10 @@ class AnalysisController extends Controller
     }
 
     public function syntaxe_verif($url)
-    {
-        //require __DIR__.'/AnalyseWebCompilation';
-        //dd (getcwd());
-        
-        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
-        file_put_contents("tags.txt", "");
-
+    {        
+        $this->init_txt();
         $htmlcontent =  $this->format_html($url);
         $htmlcontent = str_replace("><", ">\n<", $htmlcontent);
-       // $htmlcontent = str_replace("\n\n", "\n<", $htmlcontent);
 
         file_put_contents("tags.txt",  $htmlcontent);
                 
@@ -183,184 +212,144 @@ class AnalysisController extends Controller
         return $result;
     }
 
-    public function get_original_link ($url) 
+    public function site_links($depth_0,$original_link,$profondeur,$lienx,$analyse_synt,$load_time, $broken_link,$syntaxe_errors, $nb_broken, $nb_broken404) 
     {
-        return (parse_url($url)['host']);
+        $internal_links = 1;
+        $external_links = 0;
+        $links = array();
+        $result = array();
+        $load_time_temp=array();
+        $broken_link_temp=array();
+        $syntaxe_errors_temp=array();
+
+        array_push($load_time_temp, $load_time);
+        array_push($broken_link_temp, $broken_link);
+        array_push($syntaxe_errors_temp, $syntaxe_errors);
+
+        $array["0"]["0"]= $depth_0;
+
+        while(sizeof($array) <= $profondeur) {
+            foreach ($array[sizeof($array)-1] as $value) {
+                $links_temp=$this->getLinks($value,"a");
+                foreach ($links_temp as $aLink) {
+                    if(!in_array($aLink, $links, true)){
+                        
+                        // external + demandé
+                        if (strpos(parse_url($aLink, PHP_URL_HOST), $original_link) === false && $lienx == 1){
+                            $external_links = $external_links + 1; 
+                            array_push($load_time_temp, $this->t_reponse($aLink));
+                            array_push($broken_link_temp, $this->broken_link($aLink, $nb_broken, $nb_broken404));
+                            if($analyse_synt == 1)
+                                array_push($syntaxe_errors_temp, $this->syntaxe_verif($aLink));
+                            else
+                                array_push($syntaxe_errors_temp, "non demandé");
+                            
+
+                            array_push($links, $aLink);
+
+                            // internal
+                        } else if (strpos(parse_url($aLink, PHP_URL_HOST), $original_link) !== false){
+                            $internal_links = $internal_links + 1;
+                            array_push($load_time_temp, $this->t_reponse($aLink));
+                            array_push($broken_link_temp, $this->broken_link($aLink, $nb_broken, $nb_broken404));
+                            if($analyse_synt == 1)
+                                array_push($syntaxe_errors_temp, $this->syntaxe_verif($aLink));
+                            else
+                                array_push($syntaxe_errors_temp, "non demandé");
+
+                            array_push($links, $aLink);
+                        }          
+                    }
+                }
+                
+            }
+            array_push($array, $links);
+        }
+        $result["vars"]["nb_broken"]=$nb_broken;
+        $result["vars"]["nb_broken404"]=$nb_broken404;
+        $result["vars"]["internal_links"]=$internal_links;
+        $result["vars"]["external_links"]=$external_links;
+        $result["vars"]["load_time"]=$load_time_temp;
+        $result["vars"]["broken_link"]=$broken_link_temp;
+        $result["vars"]["syntaxe_errors"]=$syntaxe_errors_temp;
+        $result["array"]=$array;
+        return $result;
     }
 
-    public function site_links($array,$profondeur,$original_link,$lienx,&$internal_links,&$external_links, &$load_time, &$broken_link, &$syntaxe_errors, &$analyse_synt, &$nb_broken, &$nb_broken404) 
+    public function depth_zero($url,$analyse_synt)
     {
-        $profondeur_max = 0;
-        $links = array();
-        while(sizeof($array) <= $profondeur) {
-        foreach ($array[sizeof($array)-1] as $value) {
-            $links_temp=$this->getLinks($value,"a");
-            foreach ($links_temp as $value_temp) {
+        $nb_broken = 0;
+        $nb_r_broken = 0;
+        $nb_broken404 = 0;
+        $array_temp = array();
 
-                // supprimer ce qui suit les pts d'interrogations
-                /*$pos = strpos($value_temp, "?");
-                if ($pos !== false) {
-                    $value_temp = substr($value_temp, 0, $pos);
-                }*/
-                array_push($links, $value_temp);
-            }
+        $array["load_time"]   = $this->t_reponse($url);
+
+        $array["broken_link"] = $this->broken_link ($url, $nb_broken, $nb_broken404);
+
+        if($analyse_synt == 1)
+            $array["syntaxe_errors"] = $this->syntaxe_verif($url);
+        else
+            $array["syntaxe_errors"] = "non demandé";
+        
+        $array["r_links"] = $this->getLinks($url,"img");
+
+        foreach ($array["r_links"] as $value){
+            array_push($array_temp,$this->r_manquante($value,$nb_r_broken));
         }
-        if (!empty($links)){ 
-            $array_unique_links = array_unique($links);
-            foreach ($array_unique_links as $key => $aLink) {
-                if (strpos(parse_url($aLink, PHP_URL_HOST), $original_link) === false){
-                    if ($lienx == 0) {
-                        unset($array_unique_links[$key]);
-                    } else {
-                       $external_links = $external_links + 1; 
-                       array_push($load_time, $this->t_reponse($aLink));
-                       array_push($broken_link, $this->broken_link($aLink, $nb_broken, $nb_broken404));
-                       if($analyse_synt == 1){
-                        array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
-                       }
-                       
-                    }   
-                } else {
-                    $internal_links = $internal_links + 1;
-                    array_push($load_time, $this->t_reponse($aLink));
-                    array_push($broken_link, $this->broken_link($aLink, $nb_broken, $nb_broken404));
-                    if($analyse_synt == 1){
-                        array_push($syntaxe_errors, $this->syntaxe_verif($aLink));
-                       }
-                }
-            }
-            array_push($array, $array_unique_links);
-            } }
-            /*if (sizeof($array) <= $profondeur) 
-                goto a;
-        } else {
-            $profondeur_max = sizeof($array); // -1 ?;
-        }*/
-        //dd($array);
+        $array["r_manquante_arr"] = $array_temp;
+
+        $array["nb_broken"]     = $nb_broken;
+        $array["nb_r_broken"]   = $nb_r_broken;
+        $array["nb_broken404"]  = $nb_broken404;
+
         return $array;
     }
 
-    
-
-    // supprimer les commentaires conditionnels
-    public function format_html($url){
-
-        $html = $this->file_get_contents_curl($url);
-
-        $html = preg_replace('/<!--(.|\s)*?-->/', '', $html);
-        
-        //$pattern = '/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\|\')\/\/.*))/';
-        //$html = preg_replace($pattern, '', $html);
-        
-        $html = str_replace('\r\n', '', $html);
-
-        return ($html);
-    }
-
-/*    public function analyse2(Request $request){
-        $array = array('abbr', 'a', 'acronym', 'address', 'applet', 'article', 'aside', 'audio', 'b', 'bdi','div', 'bdo', 'big', 'blockquote', 'body', 'button','canvas','caption','center', 'cite', 'code', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'dir', 'dl', 'dt', 'em', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'i', 'iframe', 'ins', 'kbd', 'label', 'legend', 'li', 'main', 'mark', 'meter', 'nav', 'noframes', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'picture', 'pre', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'section', 'select', 'small', 'span', 'strike', 'strong', 'style', 'sub', 'summary', 'sup', 'svg', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'tt', 'u', 'ul', 'var', 'video', 'wbr', 'script');
-
-        foreach ($array as $value) {
-
-            echo "| OUVRANTE_".$value." { inserer(stack, \"".$value."\"); } FERMANTE_".$value." { retirer(stack, \"".$value."\"); }";
-            echo "<br>";
-
-        }
-        
-    }*/
+    //  ----------------- Main Function -----------------
 
     public function analyse(Request $request)
     {
-
+        // init vars
         $url = $request->all()["url"];
         $profondeur = $request->all()["Profondeur"];
         $lienx = $request->all()["liensx"];
         $analyse_synt = $request->all()["analyse_synt"];
         $tmoyen = $request->all()["TempsRep"];
-
-        if (false === strpos($url, '://'))  {
-            $url = 'http:/' .parse_url($url, PHP_URL_HOST).'/'.parse_url($url, PHP_URL_PATH);
-        }
-
-        if (strcmp ( substr($url, strlen($url) - 1) , '/') !== 0)  {
-            $url = $url . '/';
-        }
-
-        //dd($url);
-
-        $nb_broken = 0;
-        $nb_r_broken = 0;
-        $nb_broken404 = 0;
-
-        $this->syntaxe_verif($url);
-
-        $load_time = array();
-        array_push($load_time, $this->t_reponse($url));
-
-        $broken_link = array();
-        array_push($broken_link, $this->broken_link($url, $nb_broken, $nb_broken404));
-
-        $syntaxe_errors = array();
-        if($analyse_synt == 1){
-            array_push($syntaxe_errors, $this->syntaxe_verif($url));
-        }
         
+        // adding http to url
+        $url = $this->add_http($url);
+
+        // getting host 
+        $original_link = parse_url($url, PHP_URL_HOST);
+
+        // results of main page
+        $array = $this->depth_zero($url,$analyse_synt);
+
+        // result of depth X
+        $links_array = $this->site_links($url,$original_link,$profondeur,$lienx,$analyse_synt,$array["load_time"],$array["broken_link"],$array["syntaxe_errors"], $array["nb_broken"], $array["nb_broken404"]);
+
+        // adding final content to tags
+        if ($analyse_synt == 1)
+            $this->end_txt($url);
 
 
-        //$ltime = $this->t_reponse($url);
-
-        // $result = $this->getLinks($url);
-        $r_links = $this->getLinks($url,"img");
-        //dd($result);
-        $r_manquante_arr=array();
-        foreach ($r_links as $key => $value) {
-            array_push($r_manquante_arr, $this->r_manquante($value,$nb_r_broken));
-        }
-
-        //dd($r_manquante_arr);
-
-        //$pageltime = $this->getLinkstime($result);
-
-        $internal_links = 1;
-        $external_links = 0;
-
-        $original_link = $this->get_original_link($url);
-
-
-        $links_array = array();
-        $d=array();
-        array_push($d, $url);
-        array_push($links_array , $d);
-        $links_array = $this->site_links($links_array,$profondeur,$original_link,$lienx,$internal_links,$external_links,$load_time,$broken_link,$syntaxe_errors,$analyse_synt, $nb_broken, $nb_broken404);
-
-        // dd($links_array);
-        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
-        file_put_contents("tags.txt", "");
-        $htmlcontent =  $this->format_html($url);
-        $htmlcontent = str_replace("><", ">\n<", $htmlcontent);
-
-        file_put_contents("tags.txt",  $htmlcontent);
-
-        //dd($nb_r_broken);       
-
-        $var ["r_manquante_arr"] = $r_manquante_arr;
-        $var ["r_links"] = $r_links;
-        $var ["nb_r_broken"] = $nb_r_broken;
-        $var ["urls"] = $links_array;
+        $var ["r_manquante_arr"] = $array["r_manquante_arr"];
+        $var ["r_links"] = $array["r_links"];
+        $var ["nb_r_broken"] = $array["nb_r_broken"];
+        $var ["urls"] = $links_array["array"];
         $var ["tmoyen"] = $tmoyen;
         $var ["prof"] = $profondeur;
         $var ["tdep"] = $tmoyen;
-        $var ["load_time"] = $load_time;
-        $var ["broken_link"] = $broken_link;
-        $var ["syntaxe_errors"] = $syntaxe_errors;
-        $var ["internal_links"] = $internal_links;
-        $var ["external_links"] = $external_links;
-        $var ["nb_broken"] = $nb_broken;
-        $var ["nb_broken404"] = $nb_broken404;
+        $var ["load_time"] = $links_array["vars"]["load_time"];
+        $var ["broken_link"] = $links_array["vars"]["broken_link"];
+        $var ["syntaxe_errors"] = $links_array["vars"]["syntaxe_errors"];
+        $var ["internal_links"] = $links_array["vars"]["internal_links"];
+        $var ["external_links"] = $links_array["vars"]["external_links"];
+        $var ["nb_broken"] = $links_array["vars"]["nb_broken"];
+        $var ["nb_broken404"] = $links_array["vars"]["nb_broken404"];
         $var ["analyse_synt"] = $analyse_synt;
         
-
-        //dd($var);
         return view('dashboard', $var);
     }
 
