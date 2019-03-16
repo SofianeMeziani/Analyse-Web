@@ -27,10 +27,19 @@
                   </div>  
                 </div>
                 <div class="col-lg-2">
-                  <button onclick="checkURL();" type="button" class="btn btn-primary btn-md">Analyser</button>
+                  <button onclick="checkURL();" type="button" class="btn btn-primary btn-md" >Analyser</button>
+                  <button id="show_loading_modal" style="display: none" 
+                      data-toggle="modal" 
+                      data-target="#modal-form-analyse"
+                      data-backdrop="static" 
+                      data-keyboard="false">
+                  </button>
                 </div>                    
               </div>
-          <img id="loading" style="height: 100px; width: auto; float: right; display: none" src="./assets/img/loading.gif">
+
+              <div class="col-md-12">
+              </div>
+
               <div class="form-row col-md-10">
                 <div class="form-group col-md-4">
                   <label for="inputCity">Temps accepté</label>
@@ -161,6 +170,32 @@
                 </div>
               </div>
 
+              <div class="modal fade" id="modal-form-analyse" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+                  <div class="modal-content">
+                   <div class="modal-body p-0">
+                      <div class="card bg-secondary shadow border-0">
+                        <div class="card-body px-lg-5 py-lg-5">
+                          <div class="col-md-6" style="margin: 0 auto">
+                            <img id="loading" style="height: 100px; width: 100px;" src="./assets/img/loading.gif">
+                          </div>
+                          <div class="col-md-12">
+                            <p id="loading_p" style="text-align: center">
+                              Analyse du site en cours...
+                            </p>
+                          </div>
+                          <div class="col-md-12">
+                            <button onclick="stopAnalyse()" type="button" class="btn btn-secondary col-md-12" data-dismiss="modal">Arrêter l'analyse</button>
+                          </div>
+                        </div>
+                      </div>
+                   </div>
+                  </div>
+                </div>
+              </div>
+
+
+
             </div>
 
             <br>
@@ -172,6 +207,8 @@
     
 
   <script type="text/javascript">
+
+
 
     var fav = <?php echo json_encode($fav); ?>;
     function getClickCallback(i) {
@@ -217,13 +254,17 @@
       var t = document.getElementById("url").value;
 
       if (t.match(regex)) {
-        document.getElementById('loading').style.display='block';
+        document.getElementById('show_loading_modal').click();
         form = document.getElementById("url_form");
         form.action = "/dashboard";
         form.submit();
       } else {
           swal("","Veuillez entrer un lien valide", "error")
         }
+    }
+
+    function stopAnalyse() {
+      window.stop();
     }
 
     function addButton() {
