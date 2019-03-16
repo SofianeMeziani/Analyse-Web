@@ -242,11 +242,14 @@
   </script>
 
 <style type="text/css">
-        .navbar {
+        .navbar-vertical {
+          /*background-image: url("http://gifette.g.i.pic.centerblog.net/d683f6cd.gif") !important;*/
           box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
         }
         .header {
           background-image: url("https://i.gifer.com/J4o.gif") !important;
+         /* background-image: url("http://gifette.g.i.pic.centerblog.net/d683f6cd.gif") !important;
+          */
           box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;
         }
         .card {

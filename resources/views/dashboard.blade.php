@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="header-body">
           <!-- Card stats -->
-          <div class="row">
+          <div class="row" style="margin-top: -100px">
             <div class="col-xl-3 col-lg-6">
               <div class="card card-stats mb-4 mb-xl-0">
                 <div class="card-body">
@@ -355,7 +355,11 @@
 
       <style type="text/css">
         .header {
-          /*background-image: url("https://lennyobez.be/wp-content/uploads/2017/04/Gif.gif") !important;*/
+          background-image: url("https://i.pinimg.com/originals/cc/d4/09/ccd409e4173f80a4f39f69aa29a5e150.gif") !important;
+          background-size: 60% !important;
+          background-repeat: no-repeat !important;
+          background-color: #ABE6DA !important;
+         /* background-image: url("https://nsec-dz.com/images/proactif.gif") !important;*/
          /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;*/
         }
         .card, textarea {
