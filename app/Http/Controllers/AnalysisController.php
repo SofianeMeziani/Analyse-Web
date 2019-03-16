@@ -83,7 +83,7 @@ class AnalysisController extends Controller
 
     public function init_txt ()
     {
-        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseTest'))."AnalyseTest/app/Http/Controllers/AnalyseWebCompilation");
+        chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/app/Http/Controllers/AnalyseWebCompilation");
         file_put_contents("tags.txt", "");
     }
 

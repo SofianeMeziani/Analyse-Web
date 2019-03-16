@@ -141,7 +141,7 @@
                             ?> target="_blank">{{$value_reduced}}</a>
                         </td>
                         <td style="text-align: center;">
-                          <a target="_blank" href=<?php echo "\"".$value."\""; ?>><img style="height: 20px; width: auto;" src=<?php echo "\"".$value."\""; ?>></a>
+                          <a target="_blank" href=<?php echo "\"".$value."\""; ?>><img style="height: 20px; width: auto; border: 1px solid #d6d9dc;" src=<?php echo "\"".$value."\""; ?>></a>
                         </td>
 
                         <td style="text-align: center;">
@@ -164,12 +164,13 @@
               </table>
             </div>
           </div> <br>
+          <?php if(count($r_links) > 5) { ?>
           <div class="col text-right">
             <a id="load_more_img" href="#" class="btn btn-sm btn-primary load_more_img">Voir plus</a>
             <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
           </div>
           <br>
-          <?php } ?>
+          <?php } } ?>
 
 
 
@@ -286,7 +287,7 @@
                 $myFile = "tags.txt";
                 $lines = file($myFile);
                 $num_ligne = $syntaxe_errors[0][2]; ?>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" readonly><?php 
+            <textarea  class="form-control" id="exampleFormControlTextarea1" rows="6" readonly><?php 
                 if ($num_ligne > 1){
                   echo ($num_ligne-2)." |   ".$lines[$num_ligne-2-1];
                   echo ($num_ligne-1)." |   ".$lines[$num_ligne-1-1];
@@ -359,7 +360,7 @@
           background-size: 60% !important;
           background-repeat: no-repeat !important;
           background-color: #ABE6DA !important;
-         /* background-image: url("https://nsec-dz.com/images/proactif.gif") !important;*/
+          /*background-image: url("https://i.gifer.com/J4o.gif") !important;*/
          /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;*/
         }
         .card, textarea {
@@ -370,6 +371,7 @@
         .card:hover, textarea:hover {
           box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
         }
+
       </style>
 
 @endsection

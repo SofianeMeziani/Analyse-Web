@@ -66,8 +66,8 @@
                 <div class="form-group col-md-4">
                   <label for="inputExternLinks">Analyse syntaxique</label>
                   <select id="inputExternLinks" name="analyse_synt" class="form-control form-control-sm">
-                    <option value="0">Non</option>
-                    <option value="1" selected="">Oui</option>
+                    <option value="0" selected>Non</option>
+                    <option value="1">Oui</option>
                   </select>
                 </div>
                 
