@@ -89,8 +89,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Existantes : <?php  echo (count($r_manquante_arr) - $nb_r_broken); ?></span> <br>
-                    <span class="text-nowrap">Manquantes : <?php echo $nb_r_broken; ?></span>
+                    <span class="text-nowrap">Valide(s) : <?php  echo (count($r_manquante_arr) - $nb_r_broken); ?></span> <br>
+                    <span class="text-nowrap">Invalide(s) : <?php echo $nb_r_broken; ?></span>
                   </p>
                 </div>
               </div>
@@ -104,22 +104,88 @@
       
       <div class="row mt-5">
         <div class="col-xl-12 mb-5 mb-xl-0">
+
+
+          <?php if (count($r_links) > 0 && $op_images == 1) { ?>
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0">Images</h3>
+                </div>
+
+              </div>
+            </div>   
+            <div class="table-responsive">
+              <!-- Projects table -->
+              <table class="table align-items-center table-flush" id="table_images">
+                <thead class="thead-light">
+                  <tr class="tr_img">
+                    <th scope="col" style="text-align: center;">Lien de l'image</th>
+                    <th scope="col" style="text-align: center;">Apercu</th>
+                    <th scope="col" style="text-align: center;">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                  @foreach ($r_links as $key => $value)
+                   
+                      <tr class="tr_img">
+                        <td scope="row">
+                          <?php echo ($key + 1); ?> - <a href= <?php
+                          echo $value;
+                          $value_reduced = $value;
+                          if (strlen($value) > 60)
+                            $value_reduced = substr($value, 0, 60)."....";
+
+                            ?> target="_blank">{{$value_reduced}}</a>
+                        </td>
+                        <td style="text-align: center;">
+                          <a target="_blank" href=<?php echo "\"".$value."\""; ?>><img style="height: 20px; width: auto;" src=<?php echo "\"".$value."\""; ?>></a>
+                        </td>
+
+                        <td style="text-align: center;">
+                          <?php $status_img = $r_manquante_arr[$key];
+                          if (strcmp($r_manquante_arr[$key], "Valide") === 0) {
+
+                            ?> <span class="badge badge-success"><?php echo "Valide";
+                           ?></span> <?php 
+                         } 
+                            else {
+                           ?> <span class="badge badge-danger"><?php echo "Invalide";
+                           ?></span> <?php } ?>
+              
+                        </td>
+
+                      </tr>
+                    
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div> <br>
+          <div class="col text-right">
+            <a id="load_more_img" href="#" class="btn btn-sm btn-primary load_more_img">Voir plus</a>
+            <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
+          </div>
+          <br>
+          <?php } ?>
+
+
+
           <div class="card shadow">
             <div class="card-header border-0">
               <div class="row align-items-center">
                 <div class="col">
                   <h3 class="mb-0">Statistiques</h3>
                 </div>
-                <div class="col text-right">
-                  <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
-                </div>
               </div>
-            </div>
+            </div>   
             <div class="table-responsive">
               <!-- Projects table -->
-              <table class="table align-items-center table-flush">
+              <table class="table align-items-center table-flush" id="table_stats">
                 <thead class="thead-light">
-                  <tr>
+                  <tr class="tr_stat">
                     <th scope="col" style="text-align: center;">Nom de la page</th>
                     <th scope="col" style="text-align: center;">Reponse (ms)</th>
                     <th scope="col" style="text-align: center;">Niveau</th>
@@ -132,7 +198,7 @@
                   @foreach ($urls as $url_array)
                     <?php $i++; ?>
                     @foreach ($url_array as $url)
-                      <tr>
+                      <tr class="tr_stat">
                         <td scope="row">
                           {{$j}} - <a href= <?php
                           echo $url;
@@ -183,8 +249,9 @@
             </div>
           </div>
           <br>
+
           <div class="col text-right">
-            <a href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
+            <a id="load_more_stat" href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
             <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
           </div>
           <?php if (count($syntaxe_errors) > 0){ ?>
@@ -239,19 +306,36 @@
       </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script type="text/javascript">
-        $('table tr:lt(11)').addClass('active');
+        $('tr.tr_stat:lt(6)').addClass('active');
+        $('tr.tr_img:lt(4)').addClass('active');
 
         $('a.load_more').on('click', function(e) {
           e.preventDefault();  
-          var $rows = $('table tr');
+          //var $rows = $('table tr');
+          var $rows = $('tr.tr_stat');
           var lastActiveIndex = $rows.filter('.active:last').index();
-          $rows.filter(':lt(' + (lastActiveIndex + 12) + ')').addClass('active');
+          $rows.filter(':lt(' + (lastActiveIndex + 7) + ')').addClass('active');
+        });
+
+        $('a.load_more_img').on('click', function(e) {
+          e.preventDefault();  
+          //var $rows = $('table tr');
+          var $rows = $('tr.tr_img');
+          var lastActiveIndex = $rows.filter('.active:last').index();
+          $rows.filter(':lt(' + (lastActiveIndex + 5) + ')').addClass('active');
         });
 
         $('.load_more').click(function () {
-          $('html, body').animate({
-              scrollTop:$(document).height()
-          }, 'slow');
+          document.getElementById('load_more_stat').scrollIntoView({
+            behavior: 'smooth'
+          });
+          return false;
+        });
+
+        $('.load_more_img').click(function () {
+          document.getElementById('load_more_img').scrollIntoView({
+            behavior: 'smooth'
+          });
           return false;
         });
 
@@ -267,6 +351,21 @@
         table a {color: #525f7f}
         table tr { display: none; }
         table tr.active { display: table-row; }
+      </style>
+
+      <style type="text/css">
+        .header {
+          /*background-image: url("https://lennyobez.be/wp-content/uploads/2017/04/Gif.gif") !important;*/
+         /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;*/
+        }
+        .card, textarea {
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+          transition: all 0.3s cubic-bezier(.25,.8,.25,1) !important;
+        }
+
+        .card:hover, textarea:hover {
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+        }
       </style>
 
 @endsection

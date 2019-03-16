@@ -30,23 +30,13 @@
                   <button onclick="checkURL();" type="button" class="btn btn-primary btn-md">Analyser</button>
                 </div>                    
               </div>
-
+          <img id="loading" style="height: 100px; width: auto; float: right; display: none" src="./assets/img/loading.gif">
               <div class="form-row col-md-10">
-                <div class="form-group col-md-3">
-                  <label for="inputExternLinks">Liens externes</label>
-                  <select id="inputExternLinks" name="liensx" class="form-control form-control-sm">
-                    <option value="0">Non</option>
-                    <option value="1" selected="">Oui</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="inputExternLinks">Analyse syntaxique</label>
-                  <select id="inputExternLinks" name="analyse_synt" class="form-control form-control-sm">
-                    <option value="0">Non</option>
-                    <option value="1" selected="">Oui</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-4">
+                  <label for="inputCity">Temps accepté</label>
+                  <input type="number" name="TempsRep" class="form-control form-control-sm" id="inputCity" value="200" min="0">
+                </div> 
+                <div class="form-group col-md-4">
                   <label for="inputState">Profondeur</label>
                   <select id="inputState" name="Profondeur" class="form-control form-control-sm">
                     <option value="0">0</option>
@@ -57,16 +47,38 @@
                     <option value="5">5</option>
                   </select>
                 </div>
-                <div class="form-group col-md-3">
-                  <label for="inputCity">Reponse moyenne</label>
-                  <input type="number" name="TempsRep" class="form-control form-control-sm" id="inputCity" value="200" min="0">
-                </div>   
+                <div class="form-group col-md-4">
+                  <label for="inputExternLinks">Liens externes</label>
+                  <select id="inputExternLinks" name="liensx" class="form-control form-control-sm">
+                    <option value="0">Non</option>
+                    <option value="1" selected="">Oui</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputExternLinks">Analyse syntaxique</label>
+                  <select id="inputExternLinks" name="analyse_synt" class="form-control form-control-sm">
+                    <option value="0">Non</option>
+                    <option value="1" selected="">Oui</option>
+                  </select>
+                </div>
+                
+                
+                <div class="form-group col-md-4">
+                  <label for="inputExternLinks">Analyse d'images</label>
+                  <select id="inputExternLinks" name="op_images" class="form-control form-control-sm">
+                    <option value="0">Non</option>
+                    <option value="1" selected="">Oui</option>
+                  </select>
+                </div>
+
               </div>
             </form>   
           </div>
 
+
           <div class="pl-lg-4">
             <div id="vv" class="row col-lg-10 container">
+
               <button class="btn btn-icon btn-2 btn-success" type="button" data-toggle="modal" data-target="#modal-form-add">
                 <span class="btn-inner--text">Ajouter</span>
                 <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
@@ -75,6 +87,7 @@
                 <span class="btn-inner--text">Retirer</span>
                 <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
               </button>
+
 
               <div class="modal fade" id="modal-form-add" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
                  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
@@ -149,6 +162,7 @@
               </div>
 
             </div>
+
             <br>
           </div> 
         </div>
@@ -203,6 +217,7 @@
       var t = document.getElementById("url").value;
 
       if (t.match(regex)) {
+        document.getElementById('loading').style.display='block';
         form = document.getElementById("url_form");
         form.action = "/dashboard";
         form.submit();
@@ -223,6 +238,27 @@
       form2.submit();
     }
 
+
   </script>
+
+<style type="text/css">
+        .navbar {
+          box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
+        }
+        .header {
+          background-image: url("https://i.gifer.com/J4o.gif") !important;
+          box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;
+        }
+        .card {
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+          transition: all 0.3s cubic-bezier(.25,.8,.25,1) !important;
+        }
+
+        .card:hover {
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+        }
+
+        
+      </style>
 @endsection
 

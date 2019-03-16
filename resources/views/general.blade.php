@@ -161,7 +161,7 @@
     @endif
     <!-- Page content -->
    @yield("content") 
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
             <div class="copyright text-center text-xl-left text-muted">
@@ -185,7 +185,8 @@
             </ul>
           </div>
         </div>
-      </footer>
+      </footer> -->
+      <br/>
     </div>
   </div>
   <!-- Argon Scripts -->
