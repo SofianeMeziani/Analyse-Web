@@ -19,7 +19,7 @@ class CreateAnalysisTable extends Migration
             $table->text("r_manquante_arr")->nullable();
             $table->text("r_links")->nullable();
             $table->text("nb_r_broken")->nullable();
-            $table->text("urls")->nullable();
+            $table->mediumtext("urls")->nullable();
             $table->text("tmoyen")->nullable();
             $table->text("prof")->nullable();
             $table->text("tdep")->nullable();

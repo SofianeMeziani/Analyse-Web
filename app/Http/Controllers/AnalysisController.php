@@ -220,6 +220,7 @@ class AnalysisController extends Controller
         $internal_links = 1;
         $external_links = 0;
         $links = array();
+        $links1 = array();
         $result = array();
         $load_time_temp=array();
         $broken_link_temp=array();
@@ -261,12 +262,15 @@ class AnalysisController extends Controller
                                 array_push($syntaxe_errors_temp, "non demandé");
 
                             array_push($links, $aLink);
+                            array_push($links1, $aLink);
                         }          
                     }
                 }
                 
             }
-            array_push($array, $links);
+            array_push($array, $links1);
+            unset($links1);
+            $links1 = array();
         }
         $result["vars"]["nb_broken"]=$nb_broken;
         $result["vars"]["nb_broken404"]=$nb_broken404;
@@ -345,7 +349,7 @@ class AnalysisController extends Controller
         $var ["urls"] = $links_array["array"];
         $var ["tmoyen"] = $tmoyen;
         $var ["prof"] = $profondeur;
-        $var ["tdep"] = $tmoyen;
+        $var ["tdep"] = $lienx;
         $var ["load_time"] = $links_array["vars"]["load_time"];
         $var ["broken_link"] = $links_array["vars"]["broken_link"];
         $var ["syntaxe_errors"] = $links_array["vars"]["syntaxe_errors"];

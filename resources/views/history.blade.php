@@ -16,6 +16,8 @@
 							<tr>
 								<th scope="col">Analyse Nb</th>
 								<th scope="col">Site</th>
+								<th scope="col">Profondeur</th>
+								<th scope="col">Interne seule</th>
 								<th scope="col">Date</th>
 								<th scope="col">Vue</th>
 							</tr>
@@ -34,6 +36,20 @@
 										<div class="media align-items-center">
 											<div class="media-body">
 												<span class="mb-0 text-sm">{{$history["url"]}}</span>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="media align-items-center">
+											<div class="media-body">
+												<span class="mb-0 text-sm">{{$history["prof"]}}</span>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="media align-items-center">
+											<div class="media-body">
+												<span class="mb-0 text-sm"><?php if (!$history["tdep"]) echo "Oui" ; else echo "Non";?></span>
 											</div>
 										</div>
 									</td>
