@@ -21,7 +21,7 @@
 	                    </div>
 	                    <div class="col-auto">
 	                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-	                        <i class="fas fa-chart-pie"></i>
+	                        <i class="fas fa-link"></i>
 	                      </div>
 	                    </div>
 	                  </div>
@@ -42,7 +42,7 @@
 	                    </div>
 	                    <div class="col-auto">
 	                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-	                        <i class="ni ni-sound-wave"></i>
+	                        <i class="fas fa-clock"></i>
 	                      </div>
 	                    </div>
 	                  </div>
@@ -63,7 +63,7 @@
 	                    </div>
 	                    <div class="col-auto">
 	                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-	                        <i class="ni ni-button-power"></i>
+	                        <i class="fas fa-cut"></i>
 	                      </div>
 	                    </div>
 	                  </div>
@@ -84,7 +84,7 @@
 	                    </div>
 	                    <div class="col-auto">
 	                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-	                        <i class="fas fa-percent"></i>
+	                        <i class="fas fa-images"></i>
 	                      </div>
 	                    </div>
 	                  </div>
@@ -257,6 +257,7 @@
 
           <div class="col text-right">
             <a id="load_more_stat" href="#" class="btn btn-sm btn-primary load_more">Voir plus</a>
+            <a id="load_all_stat" href="#" class="btn btn-sm btn-primary load_all">Voir tout</a>
             <a href="#" class="btn btn-sm btn-primary go_up">Retour en haut</a>
           </div>
           <?php if (count($syntaxe_errors) > 0){ ?>
@@ -322,6 +323,14 @@
           $rows.filter(':lt(' + (lastActiveIndex + 7) + ')').addClass('active');
         });
 
+        $('a.load_all').on('click', function(e) {
+          e.preventDefault();  
+          //var $rows = $('table tr');
+          var $rows = $('tr.tr_stat');
+          var lastActiveIndex = $rows.filter('.active:last').index();
+          $rows.filter(':lt(' + (lastActiveIndex + 10000) + ')').addClass('active');
+        });
+
         $('a.load_more_img').on('click', function(e) {
           e.preventDefault();  
           //var $rows = $('table tr');
@@ -332,6 +341,13 @@
 
         $('.load_more').click(function () {
           document.getElementById('load_more_stat').scrollIntoView({
+            behavior: 'smooth'
+          });
+          return false;
+        });
+
+        $('.load_all').click(function () {
+          document.getElementById('load_all_stat').scrollIntoView({
             behavior: 'smooth'
           });
           return false;

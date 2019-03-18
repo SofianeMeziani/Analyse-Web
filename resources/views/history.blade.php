@@ -14,12 +14,12 @@
 					<table class="table align-items-center table-dark table-flush">
 						<thead class="thead-dark">
 							<tr>
-								<th scope="col">Numéro</th>
+								<th scope="col">Num</th>
 								<th scope="col">Lien du site Web</th>
-								<th scope="col">Profondeur</th>
-								<th scope="col">Interne seule</th>
+								<th scope="col">Prof</th>
+								<th scope="col">Externe</th>
 								<th scope="col">Date de l'analyse</th>
-								<th scope="col">Consulter / Supprimer</th>
+								<th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -29,14 +29,19 @@
 									<th scope="row">
 										<div class="media align-items-center">
 											<div class="media-body">
-												<span class="mb-0 text-sm"><?php echo (count($histories) - $i + 1); $i++; ?></span>
+												<span class="mb-0 text-sm "><?php echo (count($histories) - $i + 1); $i++; ?></span>
 											</div>
 										</div>
 									</th>
 									<td>
 										<div class="media align-items-center">
 											<div class="media-body">
-												<span class="mb-0 text-sm">{{$history["url"]}}</span>
+												<?php 
+												$value_reduced = $history["url"];
+												if (strlen($history["url"]) > 30)
+                            					$value_reduced = substr($history["url"], 0, 30)."....";
+                           						  ?>
+												<span class="mb-0 text-sm">{{$value_reduced}}</span>
 											</div>
 										</div>
 									</td>
@@ -50,7 +55,7 @@
 									<td>
 										<div class="media align-items-center">
 											<div class="media-body">
-												<span class="mb-0 text-sm"><?php if (!$history["tdep"]) echo "Oui" ; else echo "Non";?></span>
+												<span class="mb-0 text-sm"><?php if (!$history["tdep"]) echo "Non" ; else echo "Oui";?></span>
 											</div>
 										</div>
 									</td>
@@ -64,10 +69,12 @@
 									<td>
 										<div class="media align-items-center">
 											<div class="media-body">
-												<a target="_blank" href="/history/{{$history['id']}}" class="btn btn-primary btn-sm">Consulter</a>
+												<a target="_blank" href="/history/{{$history['id']}}" class="btn btn-primary btn-sm">
+												<i class="far fa-eye"></i></a>
 											</div>
 											<div class="media-body">
-												<a target="_blank" href="/history/{{$history['id']}}" class="btn btn-danger btn-sm">Supprimer</a>
+												<a target="_blank" href="/history/{{$history['id']}}" class="btn btn-danger btn-sm">
+													<i class="far fa-trash-alt"></i></a>
 											</div>
 										</div>
 									</td>
