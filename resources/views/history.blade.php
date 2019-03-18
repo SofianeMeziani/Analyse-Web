@@ -17,6 +17,7 @@
 								<th scope="col">Num</th>
 								<th scope="col">Lien du site Web</th>
 								<th scope="col">Prof</th>
+								<th scope="col">Temps d'analyse</th>
 								<th scope="col">Externe</th>
 								<th scope="col">Date de l'analyse</th>
 								<th scope="col">Action</th>
@@ -52,6 +53,14 @@
 										<div class="media align-items-center">
 											<div class="media-body">
 												<span class="mb-0 text-sm">{{$history["prof"]}}</span>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="media align-items-center">
+											<div class="media-body">
+												<span class="mb-0 text-sm"><?php if (($history["loading_time"]) < 60 ) echo (round($history["loading_time"], 2))." s"; 
+																					else echo (round($history["loading_time"]/60, 2))." m"?></span>
 											</div>
 										</div>
 									</td>

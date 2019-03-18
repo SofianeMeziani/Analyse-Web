@@ -17,15 +17,15 @@ Route::get('/', "HomeController@index");
 Route::post('/create','HomeController@insert');
 Route::post('/del','HomeController@del_fav');
 
-//Route::get("/dashboard", "AnalysisController@dashboard");
-Route::post("/dashboard", "AnalysisController@analyse");
-Route::post('/delHistory', "AnalysisController@delAnalysisById");
-Route::post('/getHistory', "AnalysisController@getAnalysisById");
+//-----------AnalysisController--------------
+Route::post("/dashboard", "AnalysisController@loading_time");
+// Route::post("/dashboard", "AnalysisController@analyse");
 
 //-----------UserController--------------
 Route::get('/user', "UserController@account");
 Route::get('/history', "UserController@getAnalysis");
-
+Route::post('/delHistory', "UserController@delAnalysisById");
+Route::post('/getHistory', "UserController@getAnalysisById");
 Route::post('/update-personal-info', "UserController@updatePersonalInfo");
 Route::post('/update-password', "UserController@updatePassword");
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Analysis;
 use App\General;
 use Auth;
 use Hash;
@@ -24,7 +25,7 @@ class UserController extends Controller
 		$array = array();
 		foreach ($allAnalysis as $analyse) {
 			foreach ($analyse as $key => $value) {
-				if ($key != "url" && $key != "created_at" && $key != "updated_at") {
+				if ($key != "created_at" && $key != "updated_at") {
 					$analyse[$key] = json_decode($value, true);
 				}
 			}
@@ -33,6 +34,36 @@ class UserController extends Controller
 		$array = array_reverse($array);
 		return view("history", ["histories"=>$array]);
 	}
+
+	
+
+    public function delAnalysisById(Request $request)
+    {
+        $name = $request->input('name');
+        Analysis::find($name)->delete();
+        return redirect('/history');
+    }
+
+    public function getAnalysisById(Request $request)
+    {
+        $name = $request->input('name');
+        $analysis = Analysis::find($name)->toArray();
+        foreach ($analysis as $key => $value) {
+            if ($key != "url" && $key != "created_at" && $key != "updated_at") {
+                $analysis[$key] = json_decode($value, true);
+            }
+        }
+
+        if ($analysis) {
+            $analysis["message"]="found";
+        } else {
+            $analysis = ["message"=>"notfound"];
+        }
+
+        return view("historydetails", $analysis);
+    }
+
+
 
 	public function updatePersonalInfo(Request $request)
 	{

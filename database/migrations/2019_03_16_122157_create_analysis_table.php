@@ -23,6 +23,7 @@ class CreateAnalysisTable extends Migration
             $table->text("tmoyen")->nullable();
             $table->text("prof")->nullable();
             $table->text("tdep")->nullable();
+            $table->text("loading_time")->nullable();
             $table->text("load_time")->nullable();
             $table->text("broken_link")->nullable();
             $table->text("syntaxe_errors")->nullable();

@@ -6,8 +6,8 @@ use Session;
 use Illuminate\Http\Request;
 use DOMDocument;
 use Auth;
-
 use App\Analysis;
+
 
 class AnalysisController extends Controller
 {
@@ -18,6 +18,31 @@ class AnalysisController extends Controller
     }
 
     //  ----------------- Secondary Functions -----------------
+
+    public function loading_time (Request $request)
+    {
+        $time = microtime();
+        $time = explode(' ', $time);
+        $time = $time[1] + $time[0];
+        $start = $time;
+
+        $array = $this->analyse($request);
+
+        $analysis = new Analysis();
+        foreach ($array as $key => $value) {
+            $analysis->$key = json_encode($value);
+        }
+
+        $time = microtime();
+        $time = explode(' ', $time);
+        $time = $time[1] + $time[0];
+        $finish = $time;
+        $total_time = $finish - $start;
+        $analysis->loading_time=$total_time;
+        $analysis->save();
+
+        return view('dashboard', $array);
+    }
 
     public function add_http ($url)
     {
@@ -315,7 +340,7 @@ class AnalysisController extends Controller
 
     //  ----------------- Main Function -----------------
 
-    public function analyse(Request $request)
+    public function analyse($request)
     {
         // init vars
         $url = $request->all()["url"];
@@ -342,7 +367,8 @@ class AnalysisController extends Controller
         if ($analyse_synt == 1)
             $this->end_txt($url);
 
-
+        $var ["url"] = $url;
+        $var ["user_id"] = Auth::id();
         $var ["r_manquante_arr"] = $array["r_manquante_arr"];
         $var ["r_links"] = $array["r_links"];
         $var ["nb_r_broken"] = $array["nb_r_broken"];
@@ -359,43 +385,6 @@ class AnalysisController extends Controller
         $var ["nb_broken404"] = $links_array["vars"]["nb_broken404"];
         $var ["analyse_synt"] = $analyse_synt;
         $var ["op_images"] = $op_images;
-
-        $analysis = new Analysis();
-        foreach ($var as $key => $value) {
-            $analysis->$key = json_encode($value);
-        }
-        $analysis->url = $url;
-        $analysis->user_id = Auth::id();
-        $analysis->save();
-        
-        return view('dashboard', $var);
+        return $var;
     }
-
-    public function delAnalysisById(Request $request)
-    {
-        $name = $request->input('name');
-        Analysis::find($name)->delete();
-        return redirect('/history');
-    }
-
-    public function getAnalysisById(Request $request)
-    {
-        $name = $request->input('name');
-        $analysis = Analysis::find($name)->toArray();
-        foreach ($analysis as $key => $value) {
-            if ($key != "url" && $key != "created_at" && $key != "updated_at") {
-                $analysis[$key] = json_decode($value, true);
-            }
-        }
-
-        if ($analysis) {
-            $analysis["message"]="found";
-        } else {
-            $analysis = ["message"=>"notfound"];
-        }
-
-        return view("historydetails", $analysis);
-    }
-
-
 }

@@ -16,6 +16,7 @@ class Analysis extends Model {
 							"tmoyen",
 							"prof",
 							"tdep",
+							"loading_time",
 							"load_time",
 							"broken_link",
 							"syntaxe_errors",
