@@ -28,7 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function favorites()
+    public function favorite()
     {
         return $this->hasMany("App\Favorite");
     }

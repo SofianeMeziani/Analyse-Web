@@ -371,9 +371,17 @@ class AnalysisController extends Controller
         return view('dashboard', $var);
     }
 
-    public function getAnalysisById($analysis_id)
+    public function delAnalysisById(Request $request)
     {
-        $analysis = Analysis::find($analysis_id)->toArray();
+        $name = $request->input('name');
+        Analysis::find($name)->delete();
+        return redirect('/history');
+    }
+
+    public function getAnalysisById(Request $request)
+    {
+        $name = $request->input('name');
+        $analysis = Analysis::find($name)->toArray();
         foreach ($analysis as $key => $value) {
             if ($key != "url" && $key != "created_at" && $key != "updated_at") {
                 $analysis[$key] = json_decode($value, true);

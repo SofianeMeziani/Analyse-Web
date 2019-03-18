@@ -151,7 +151,7 @@
                           </div>
                           <form id="del_fav_form" action="" method="POST">
                             @csrf
-                            <input id="del" type="hidden" name="name" value="17">
+                            <input id="del" type="hidden" name="name" value="">
                             <div id="v0"></div>
                             <div id="v1"><br></div>
                             <div id="v2"><br></div>

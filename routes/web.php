@@ -19,11 +19,13 @@ Route::post('/del','HomeController@del_fav');
 
 //Route::get("/dashboard", "AnalysisController@dashboard");
 Route::post("/dashboard", "AnalysisController@analyse");
+Route::post('/delHistory', "AnalysisController@delAnalysisById");
+Route::post('/getHistory', "AnalysisController@getAnalysisById");
 
 //-----------UserController--------------
 Route::get('/user', "UserController@account");
 Route::get('/history', "UserController@getAnalysis");
-Route::get('/history/{analysis_id}', "AnalysisController@getAnalysisById");
+
 Route::post('/update-personal-info', "UserController@updatePersonalInfo");
 Route::post('/update-password', "UserController@updatePassword");
 

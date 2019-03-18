@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use App\Favorite;
 use DB;
 
 use Session;
@@ -22,8 +23,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $fav = DB::table('favorite')->where('user_id', '=', Auth::user()->id)->get();
-        $array['fav'] = $fav;
+        $array['fav'] = Auth::user()->favorite()->get();
         return view('home',$array);
     }
 
@@ -33,14 +33,14 @@ class HomeController extends Controller
         $name = $request->input('name');
         $link = $request->input('link');
         $data = array('name'=>$name,"link"=>$link,'user_id'=>$user);
-        DB::table('favorite')->insert($data);
-        return redirect('./');
+        Favorite::insert($data);
+        return redirect('/');
     }
 
     public function del_fav(Request $request)
     {
         $name = $request->input('name');
-        DB::table('favorite')->where('id','=',$name)->delete();
-        return redirect('./');
+        Favorite::find($name)->delete();
+        return redirect('/');
     }
 }

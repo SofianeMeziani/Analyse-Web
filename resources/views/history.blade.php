@@ -23,6 +23,9 @@
 							</tr>
 						</thead>
 						<tbody>
+							<form action="" id="History_form" method="POST"> 
+              				@csrf
+              				<input id="hid" type="hidden" name="name" value="">
 							<?php $i = 1; ?>
 							@foreach ($histories as $history)
 								<tr>
@@ -69,24 +72,45 @@
 									<td>
 										<div class="media align-items-center">
 											<div class="media-body">
-												<a target="_blank" href="/history/{{$history['id']}}" class="btn btn-primary btn-sm">
-												<i class="far fa-eye"></i></a>
+												<button onclick="viewHistory(name)" target="_blank" name="{{$history['id']}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i></button>													
+												<!-- <a target="_blank" href="/history/{{$history['id']}}" class="btn btn-primary btn-sm">
+												<i class="far fa-eye"></i></a> -->
 											</div>
 											<div class="media-body">
+												<button onclick="delHistory(name)" target="_blank" name="{{$history['id']}}" class="btn btn-primary btn-sm"><i class="far fa-trash-alt"></i></button><!-- 
 												<a target="_blank" href="/history/{{$history['id']}}" class="btn btn-danger btn-sm">
-													<i class="far fa-trash-alt"></i></a>
+													<i class="far fa-trash-alt"></i></a> -->
 											</div>
 										</div>
 									</td>
 								</tr>
 							@endforeach
-						</tbody>
+						</tbody></form>
 					</table>
 	    		</div>
 		  	</div>
 		</div>
 	</div>
 </div>
+
+
+<script type="text/javascript">
+
+	function viewHistory(name) {
+      document.getElementById("hid").value=name;
+      form = document.getElementById("History_form");
+      form.action = "/getHistory";
+      form.submit();
+    }
+
+	function delHistory(name) {
+      document.getElementById("hid").value=name;
+      form = document.getElementById("History_form");
+      form.action = "/delHistory";
+      form.submit();
+    }
+
+</script>
 
 <style type="text/css">
         .navbar-vertical {
