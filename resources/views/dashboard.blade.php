@@ -187,11 +187,11 @@
               <table class="table align-items-center table-flush" id="table_stats">
                 <thead class="thead-light">
                   <tr class="tr_stat">
-                    <th scope="col" style="text-align: center;">Nom de la page</th>
-                    <th scope="col" style="text-align: center;">Reponse (ms)</th>
-                    <th scope="col" style="text-align: center;">Niveau</th>
-                    <th scope="col" style="text-align: center;">Status</th>
-                    <th scope="col" style="text-align: center;">Syntaxe</th>
+                    <th scope="col" style="text-align: center;">Lien de la page</th>
+                    <th data-toggle="tooltip" data-placement="top" title="Temps de réponse de la page en ms" scope="col" style="text-align: center;">Réponse (ms)</th>
+                    <th data-toggle="tooltip" data-placement="top" title="Profondeur de la page" scope="col" style="text-align: center;">Niveau</th>
+                    <th data-toggle="tooltip" data-placement="top" title="Validité du lien" scope="col" style="text-align: center;">Status</th>
+                    <th data-toggle="tooltip" data-placement="top" title="Vérification syntaxique" scope="col" style="text-align: center;">Syntaxe</th>
                   </tr>
                 </thead>
                 <tbody>

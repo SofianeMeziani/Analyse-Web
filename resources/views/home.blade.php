@@ -284,8 +284,10 @@
 
 <style type="text/css">
         .navbar-vertical {
-          /*background-image: url("http://gifette.g.i.pic.centerblog.net/d683f6cd.gif") !important;*/
+          background-image: url("https://cdn.hipwallpaper.com/i/93/63/Fx2mvz.png") !important;
           box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
+          background-position: bottom !important;
+          background-repeat: no-repeat;
         }
         .header {
           background-image: url("https://i.gifer.com/J4o.gif") !important;

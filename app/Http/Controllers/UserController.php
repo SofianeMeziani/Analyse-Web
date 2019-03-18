@@ -30,7 +30,7 @@ class UserController extends Controller
 			}
 			array_push($array, $analyse);
 		}
-
+		$array = array_reverse($array);
 		return view("history", ["histories"=>$array]);
 	}
 

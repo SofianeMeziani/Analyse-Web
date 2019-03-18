@@ -70,8 +70,8 @@
               <span>My profile</span>
             </a> 
             <a href="/history" class="dropdown-item">
-              <i class="ni ni-single-02"></i>
-              <span>History</span>
+              <i class="ni ni-bullet-list-67"></i>
+              <span>Historique</span>
             </a>
             <div class="dropdown-divider"></div>
             <a href="#!" class="dropdown-item">
@@ -97,7 +97,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/history">
-              <i class="ni ni-single-02 text-yellow"></i> Histoire
+              <i class="ni ni-bullet-list-67"></i> Histoirique
             </a>
           </li>
           <li class="nav-item">
@@ -152,8 +152,8 @@
                   <span>Profil</span>
                 </a>
                 <a href="/history" class="dropdown-item">
-                  <i class="ni ni-single-02"></i>
-                  <span>Histoire</span>
+                  <i class="ni ni-bullet-list-67"></i>
+                  <span>Historique</span>
                 </a>
     
                 <div class="dropdown-divider"></div>
