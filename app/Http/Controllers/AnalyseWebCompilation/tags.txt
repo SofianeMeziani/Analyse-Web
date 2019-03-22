@@ -19,11 +19,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -40,7 +35,9 @@
 
 
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-<title>Site institutionnel - Page non trouv&eacute;e</title>
+<title>Site institutionnel - Université de Rouen Normandie</title>
+
+<link rel="canonical" href="http://www.univ-rouen.fr/version-francaise/universite-de-rouen-normandie-320730.kjsp" />
 
 <link rel="shortcut icon" type="image/x-icon" href="http://www.univ-rouen.fr/images/favicon.ico" />
 <link rel="icon" type="image/png" href="http://www.univ-rouen.fr/images/favicon.png" />
@@ -50,23 +47,23 @@
 
 
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
-<meta name="DC.Title" content="Site institutionnel - Page non trouv&eacute;e" />
-<meta name="DC.Creator" content="" />
-<meta name="DC.Subject" lang="fr-FR" content="" />
-<meta name="DC.Description" lang="fr-FR" content="" />
-<meta name="DC.Publisher" content="" />
-<meta name="DC.Date.created" scheme="W3CDTF" content="20190313" />
-<meta name="DC.Date.modified" scheme="W3CDTF" content="20190313" />
+<meta name="DC.Title" content="Site institutionnel - Université de Rouen Normandie" />
+<meta name="DC.Creator" content="Clement Chertier" />
+<meta name="DC.Subject" lang="fr-FR" content="Universit&eacute; de Rouen Normandie, univ rouen, ent rouen" />
+<meta name="DC.Description" lang="fr-FR" content="Avec ses 28 460 &eacute;tudiants et ses 12 composantes, l'Universit&eacute; de Rouen Normandie est une universit&eacute; pluridisciplinaire." />
+<meta name="DC.Publisher" content="Clement Chertier" />
+<meta name="DC.Date.created" scheme="W3CDTF" content="20130726" />
+<meta name="DC.Date.modified" scheme="W3CDTF" content="20190318" />
 <meta name="DC.Language" scheme="RFC3066" content="fr-FR" />
 <meta name="DC.Rights" content="Copyright &copy; Site institutionnel" />
 
 
 
-<meta name="author" lang="fr-FR" content="" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta name="Date-Creation-yyyymmdd" content="20190313" />
-<meta name="Date-Revision-yyyymmdd" content="20190313" />
+<meta name="author" lang="fr-FR" content="Clement Chertier" />
+<meta name="keywords" content="Universit&eacute; de Rouen Normandie, univ rouen, ent rouen" />
+<meta name="description" content="Avec ses 28 460 &eacute;tudiants et ses 12 composantes, l'Universit&eacute; de Rouen Normandie est une universit&eacute; pluridisciplinaire." />
+<meta name="Date-Creation-yyyymmdd" content="20130726" />
+<meta name="Date-Revision-yyyymmdd" content="20190318" />
 <meta name="copyright" content="Copyright &copy; Site institutionnel" />
 <meta name="reply-to" content="webanim@univ-rouen.fr" />
 <meta name="category" content="Internet" />
@@ -103,6 +100,8 @@
 <link rel="stylesheet" type="text/css" media="print" href="http://www.univ-rouen.fr/wro/printstyles.css" />
 
 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.univ-rouen.fr/jsp/styles/defaut/accueil.css" />
+
 
 
 
@@ -111,7 +110,7 @@
 <style type="text/css" media="screen">
 
 	body {
-		background-image: url(http://www.univ-rouen.fr/medias/photo/7_1384425668618-jpg);
+		background-image: url(http://www.univ-rouen.fr/medias/photo/5_1384425742051-jpg);
 	}
 
 
@@ -376,14 +375,30 @@ li.parite_0 {
 	<link rel="stylesheet" type="text/css" media="screen" href="http://www.univ-rouen.fr/jsp_mobile/styles/ecran_redirection_mobile.css" />
 	
 </head>
-<body class="recherche page_interieure institutionnel">
+<body class="pagelibre fiche accueil institutionnel">
 
 
 
 
 
 
+<script type="text/javascript" src="http://www.univ-rouen.fr/jsp_mobile/js/libs/jquery-1.7.1.min.js" >
+</script>
+<script type="text/javascript" src="http://www.univ-rouen.fr/jsp_mobile/js/libs/jquery.cookie.js" >
+</script>
+<div id="site_mobile">
+	<a href="http://m.univ-rouen.fr" class="version_mobile" title="Version Mobile">Consulter la version mobile</a>
+	<a href="#" class="version_desktop" title="Version Desktop">Rester sur cette version</a>
+</div>
+<script type="text/javascript">
 
+</script>
+
+
+
+
+		<div id="clic_out" onclick="afficheContenu('contenu_acces_directs');return false;">
+</div>
 
 	
 <div id="body_deco">
@@ -404,6 +419,8 @@ li.parite_0 {
 </img>
 </a>
 			
+			
+				<div>L'Universit&eacute;</div>
 			
 		</div>
 		
@@ -526,152 +543,6 @@ li.parite_0 {
 	</div>  
 	
 	<div id="page_deco">
-	
-		<div id="menu">
-			 
-				
-
-
-
-
-			<ul id="menu_principal">
-<li>
-<div>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/l-universite-en-quelques-dates-16339.kjsp?RH=1374833262562&amp;RF=P1" >Présentation</a>
-<ul>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/l-universite-en-quelques-dates-16339.kjsp?RH=1374833262562&amp;RF=P1" >Histoire et patrimoine</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/orientations-strategiques-de-l-universite-de-rouen-normandie-16380.kjsp?RH=1374833262562&amp;RF=P3" >Orientations stratégiques</a>
-</li>
-<li>
-<a href="http://plan-vert.univ-rouen.fr/"  onclick="window.open(this.href);return false;">Mission Responsabilité Sociétale et Développement Durable</a>
-</li>
-<li>
-<a href="http://communaute-universitaire.univ-rouen.fr/bilan-social-2016-597953.kjsp"  onclick="window.open(this.href);return false;">Bilan social</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/une-organisation-autour-de-six-sites-16570.kjsp?RH=1374833262562&amp;RF=P7" >Campus et sites</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/les-effectifs-etudiants-2018-2019-546771.kjsp?RH=1374833262562&amp;RF=P8" >Chiffres et indicateurs</a>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<div>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/president-et-equipe-de-direction-97987.kjsp?RH=1374833262562&amp;RF=O1" >Organisation</a>
-<ul>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/president-et-equipe-de-direction-97987.kjsp?RH=1374833262562&amp;RF=O1" >Président et équipe de direction</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/conseils-et-commissions-de-l-universite-de-rouen-normandie-560632.kjsp?RH=1374833262562&amp;RF=O2" >Conseils, Commissions et Comités</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/ufr-et-facultes-203317.kjsp?RH=1374833262562&amp;RF=O3" >UFR et Facultés</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/instituts-ecoles-et-centres-320818.kjsp?RH=1374833262562&amp;RF=1377155273227" >Instituts, Écoles et Centres</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/ecoles-doctorales-et-laboratoires-320821.kjsp?RH=1374833262562&amp;RF=O6" >Écoles doctorales et Laboratoires</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/services-des-affaires-generales-203319.kjsp?RH=1374833262562&amp;RF=O4" >Affaires générales</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/accueil-agence-comptable-direction-des-affaires-financieres-515896.kjsp?RH=1374833262562&amp;RF=1390918890509" >Agence comptable</a>
-</li>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/services-communs-203318.kjsp?RH=1374833262562&amp;RF=1377155399319" >Services communs</a>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<div>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/vous-etes-entreprise-partenaire-343582.kjsp?RH=1374833262562&amp;RF=E1" >Entreprises</a>
-<ul>
-<li>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/vous-etes-entreprise-partenaire-343582.kjsp?RH=1374833262562&amp;RF=E1" >Entreprise - Partenaires</a>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<div>
-<a href="http://documentation.univ-rouen.fr/" >Documentation</a>
-<ul>
-<li>
-<a href="http://documentation.univ-rouen.fr/"  onclick="window.open(this.href);return false;">Actualités documentation</a>
-</li>
-<li>
-<a href="http://documentation.univ-rouen.fr/direction-du-service-commun-de-documentation-328692.kjsp?RH=1377360751956&RF=1383419355589"  onclick="window.open(this.href);return false;">Mes BU</a>
-</li>
-<li>
-<a href="http://documentation.univ-rouen.fr/suivez-le-guide-336595.kjsp?RH=1383419355589&RF=1384783846897"  onclick="window.open(this.href);return false;">e-ressources</a>
-</li>
-<li>
-<a href="http://documentation.univ-rouen.fr/-365783.kjsp?RH=1384783846897&RF=1385216681269"  onclick="window.open(this.href);return false;">Ma boîte à outils</a>
-</li>
-<li>
-<a href="http://documentation.univ-rouen.fr/inscription-et-pret-328693.kjsp?RH=1385216681269&RF=1383420049227"  onclick="window.open(this.href);return false;">Services</a>
-</li>
-<li>
-<a href="http://documentation.univ-rouen.fr/suivez-le-guide-333801.kjsp?RH=1383420049227&RF=1384123963988"  onclick="window.open(this.href);return false;">Fonds anciens</a>
-</li>
-<li>
-<a href="http://documentation.univ-rouen.fr/contacts-333799.kjsp?RH=1384123963988&RF=1384123527687"  onclick="window.open(this.href);return false;">Infos pratiques</a>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<div>
-<a href="http://purh.univ-rouen.fr/" >Publications</a>
-<ul>
-<li>
-<a href="http://purh.univ-rouen.fr/"  onclick="window.open(this.href);return false;">Actualités</a>
-</li>
-<li>
-<a href="http://purh.univ-rouen.fr/?q=news"  onclick="window.open(this.href);return false;">Nouveautés</a>
-</li>
-<li>
-<a href="http://purh.univ-rouen.fr/?q=periodiques"  onclick="window.open(this.href);return false;">Périodiques</a>
-</li>
-<li>
-<a href="http://purh.univ-rouen.fr/?q=collections"  onclick="window.open(this.href);return false;">Collections</a>
-</li>
-<li>
-<a href="http://purh.univ-rouen.fr/?q=catalogue"  onclick="window.open(this.href);return false;">Catalogue</a>
-</li>
-<li>
-<a href="http://purh.univ-rouen.fr/?q=node/455"  onclick="window.open(this.href);return false;">Contact</a>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<div>
-<a href="http://culture.univ-rouen.fr" >Sports et Cultures</a>
-<ul>
-<li>
-<a href="http://culture.univ-rouen.fr"  onclick="window.open(this.href);return false;">Vers le site Sports et Cultures</a>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-
-			
-			<div id="visuel_rubrique">
-</div>
-<div class="separateur">
-</div>
-		</div> 
 		
 		
 		 
@@ -685,15 +556,6 @@ li.parite_0 {
 	<div id="sans_nav_sans_encadres" class="contenu">
 		
 	
-		
-		
-		
-			<h1>Page non trouv&eacute;e</h1>
-		
-		
-		
-		
-	
 
 
 
@@ -701,82 +563,581 @@ li.parite_0 {
 
 
 
-   
-<div id="erreur_not_found">
-<p>D&eacute;sol&eacute;, la page que vous cherchez &agrave; atteindre ne peut pas &ecirc;tre trouv&eacute;e. Il est possible qu'elle ait &eacute;t&eacute; supprim&eacute;e ou d&eacute;plac&eacute;e. Si vous avez saisi manuellement son adresse, veuillez v&eacute;rifier une &eacute;ventuelle erreur de saisie.</p>
-
-<p>Nous vous proposons diff&eacute;rents points d'information :</p>
-<ul>
-	<li>
-<a href="http://www.univ-rouen.fr/">La page d'accueil</a>
+			<ul id="menu_principal_institutionnel">
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/l-universite-en-quelques-dates-16339.kjsp?RH=1374833262562&amp;RF=P1"  title="Présentation">Présentation</a>
 </li>
-	<li>
-<a href="http://www.univ-rouen.fr/jsp/recherche_avancee.jsp">Recherche avanc&eacute;e</a>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/president-et-equipe-de-direction-97987.kjsp?RH=1374833262562&amp;RF=O1"  title="Organisation">Organisation</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/vous-etes-entreprise-partenaire-343582.kjsp?RH=1374833262562&amp;RF=E1"  title="Entreprises">Entreprises</a>
+</li>
+<li>
+<a href="http://documentation.univ-rouen.fr/"  title="Documentation">Documentation</a>
+</li>
+<li>
+<a href="http://purh.univ-rouen.fr/"  title="Publications">Publications</a>
+</li>
+<li>
+<a href="http://culture.univ-rouen.fr"  title="Sports et Cultures">Sports et Cultures</a>
+</li>
+<li>
+<a href="http://communaute-universitaire.univ-rouen.fr/concours-recrutements-carriere-77151.kjsp"  onclick="window.open(this.href);return false;" title="Recrutement">Recrutement</a>
+</li>
+<li>
+<a href="http://communaute-universitaire.univ-rouen.fr/service-des-achats-publics-279416.kjsp"  onclick="window.open(this.href);return false;" title="Marchés publics">Marchés publics</a>
+</li>
+<li>
+<a href="http://communaute-universitaire.univ-rouen.fr/"  onclick="window.open(this.href);return false;" title="La communauté universitaire">La communauté universitaire</a>
 </li>
 </ul>
+				<div class="ligne1 premiere">
+		
+		
+			
+			<div class="colonne  premiere   derniere " style="width:645px;">
+			
+			
+			<div class="colonne_deco">
 
 
-	<p>De plus, vous pouvez simplement nous contacter par <a href="javascript:melA('webanim','','','univ-rouen.fr');?subject=Page non trouv&eacute;e&amp;body=%2Fversion-francaise%2Fnavigation%2Fl-universite-en-quelques-dates-16339.kjsp%2F">courriel</a> pour nous signaler ce probl&egrave;me que nous traiterons dans les plus brefs d&eacute;lais </p>
 
-
+			
+				<div class="sansstyle">
+  <div id="main-slider" class="flexslider">
+<ul class="slides">
+<li style="position: relative;">
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/elections-des-representants-des-etudiants-et-des-personnels-aux-conseils-de-normandie-universite-627665.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/elections-comue-2019_1551956160822-jpg" alt="" />
+<em>Élections des représentants des étudiants et des personnels aux conseils de Normandie Université</em>
+</a>
+</li>
+<li style="position: relative;">
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/conference-br-de-monia-ben-jemia--628061.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/2019-carroussel-monia-ben-jemia_1552321460964-jpg" alt="" />
+<em>Conférence </br/> de Monia Ben Jemia </em>
+</a>
+</li>
+<li style="position: relative;">
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/les-zazimuts-printemps-2019-625949.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/carrousel-zazimuts2018_1542214006303-jpg" alt="" />
+<em>Les Zazimuts - Printemps 2019</em>
+</a>
+</li>
+<li style="position: relative;">
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/conferences-utlc-mars-626074.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/0-utlc-18-19-couv-livret_1543503086931-jpg" alt="" />
+<em>Conférences UTLC - Mars</em>
+</a>
+</li>
+</ul>
+</div>
 </div> 
 
+			
 
 
+			</div> 
+		</div> 
 
-
-
-
-
-
-
-
-	
-
-	
-	
+					<br class="separateur" />
+				</div> 
+				<div class="ligne2">	
 		
-	
-	
-	
-	
-
-	
-	
-		
-
-<div id="pictos_outils">
-	
-
-	
-	<div class="social-bookmarks-services">
-		
-		<div class="social-bookmarks-service social-bookmarks-service-mail">
-			<a href="http://www.addthis.com/bookmark.php" onclick="return addthis_open(this, 'email', '[URL]', '[TITLE]')" onmouseout="addthis_close()" title="Partager par mail">envoyer par email</a>
-		</div>
-		
-		<div class="social-bookmarks-service social-bookmarks-service-facebook">
-			<a target="_blank" title="Partager sur 'Facebook'" rel="nofollow" href="http://addthis.com/bookmark.php?s=facebook&amp;pub=UniversiteRouen">Partager sur 'Facebook'</a>
-		</div>
-
-		<div class="social-bookmarks-service social-bookmarks-service-twitter">
-			<a target="_blank" title="Partager sur 'Twitter'" rel="nofollow" href="http://addthis.com/bookmark.php?s=twitter&amp;pub=UniversiteRouen">Partager sur twitter</a>
-		</div>		
-	</div>
-		<ul id="pictos_zone1">
-		<li>
-<a id="top"  href="#page">&nbsp;</a>
+			<div id="zone_acces" class="colonne premiere">
+			 	<ul id="menu_inscription">
+<li>
+<a href="http://formation-ve.univ-rouen.fr/candidatures-320789.kjsp">
+<span id="bt_inscription" class="boutons" >Préinscriptions</span>
+</a>
 </li>
 		<li>
-<a id="print_page" href="#" onclick="window.print(); return false;" title="Imprimer">&nbsp;</a>
-</li>
+			<span id="bt_acces_directs" class="boutons" onclick="afficheContenu('contenu_acces_directs');return false;">Acc&egrave;s directs</span>
+			
+
+
+
 		
-	</ul>
-	
+		<ul id="contenu_acces_directs" style="display:none;">
+<li>
+<h3>UFR</h3>
+<ul id="acces_directs_n2">
+<li>
+<a href="http://lsh.univ-rouen.fr/">Lettres et Sciences<br />Humaines</a>
+</li>
+<li>
+<a href="http://shs.univ-rouen.fr/">Sciences de l'Homme<br /> et de la Société</a>
+</li>
+<li>
+<a href="http://droit-eco-gestion.univ-rouen.fr/">Droit, Sciences<br /> économiques Gestion</a>
+</li>
+<li>
+<a href="http://medecine-pharmacie.univ-rouen.fr/">Santé</a>
+</li>
+<li>
+<a href="http://sciences-techniques.univ-rouen.fr/">Sciences et<br />Techniques</a>
+</li>
+<li>
+<a href="http://staps.univ-rouen.fr/">Sciences et<br />Techniques des<br />Activités Physiques<br />et Sportives</a>
+</li>
+</ul> </li>
+<li>
+<h3>Instituts, Écoles<br />et Centre de formation</h3>
+<ul id="acces_directs_n2">
+<li>
+<a href="http://iutrouen.univ-rouen.fr/">IUT de Rouen</a>
+</li>
+<li>
+<a href="http://iutevreux.univ-rouen.fr/">IUT d’Évreux</a>
+</li>
+<li>
+<a href="http://ipag.univ-rouen.fr">IPAG</a>
+</li>
+<li>
+<a href="http://iae.univ-rouen.fr/">IAE</a>
+</li>
+<li>
+<a href="http://espe.univ-rouen.fr/">ESPE</a>
+</li>
+<li>
+<a href="http://esitech.univ-rouen.fr">ESITech</a>
+</li>
+<li>
+<a href="http://cfa-cfc.univ-rouen.fr">Centre de Formation Continue<br />et par Alternance</a>
+</li>
+<li>
+<a href="http://ead.univ-rouen.fr/">Enseignement à distance</a>
+</li>
+</ul> </li>
+<li>
+<h3>Recherche</h3>
+<ul id="acces_directs_n2">
+<li>
+<a href="http://recherche.univ-rouen.fr/federations-335916.kjsp?RH=1376983572771&RF=1384355777877">Les structures fédératives</a>
+</li>
+<li>
+<a href="http://recherche.univ-rouen.fr/les-ecoles-doctorales-16388.kjsp?RH=1384356301282&RF=1384356337588">Les écoles doctorales</a>
+</li>
+</ul> </li>
+<li>
+<h3>Direction</h3>
+<ul id="acces_directs_n2">
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/cabinet-du-president-279380.kjsp?RH=1374833262562&amp;RF=1377163595334">Présidence</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/direction-generale-des-services-279401.kjsp?RH=1374833262562&amp;RF=1377163680177">DGS</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/accueil-agence-comptable-direction-des-affaires-financieres-515896.kjsp?RH=1374833262562&amp;RF=1377163712138">Agence comptable</a>
+</li>
+</ul> </li>
+<li>
+<h3>Affaires générales</h3>
+<ul id="acces_directs_n2">
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/service-des-achats-publics-279416.kjsp?RH=1374833262562&amp;RF=1389716436452">Achats publics</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/accueil-agence-comptable-direction-des-affaires-financieres-515896.kjsp?RH=1374833262562&amp;RF=1377163989697">Affaires financières</a>
+</li>
+<li>
+<a href="http://communaute-universitaire.univ-rouen.fr/direction-des-affaires-juridiques-et-statutaires-279372.kjsp">Affaires juridiques</a>
+</li>
+<li>
+<a href="http://communaute-universitaire.univ-rouen.fr/service-de-la-communication-279379.kjsp?RH=1378148615910&RF=1382450532567">Communication</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/controle-de-gestion-qualite-417568.kjsp?RH=1374833262562&amp;RF=1411547761120">Contrôle Gestion Qualité</a>
+</li>
+<li>
+<a href="http://international.univ-rouen.fr/">Relations internationales</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/direction-des-enseignemements-et-du-suivi-des-parcours-etudiants-279498.kjsp">Direction des Enseignements</a>
+</li>
+<li>
+<a href="http://communaute-universitaire.univ-rouen.fr/mission-hygiene-securite-developpement-durable-279474.kjsp?RH=1383223378829&RF=1385452521197">Direction Prévention Risques</a>
+</li>
+<li>
+<a href="http://recherche.univ-rouen.fr/">Recherche et Valorisation</a>
+</li>
+<li>
+<a href="http://drh.univ-rouen.fr">Ressources humaines</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/direction-des-ressources-immobilieres-279442.kjsp?RH=1374833262562&amp;RF=1377164669805">Ressources immobilières</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/direction-des-systemes-d-information-dsi--25318.kjsp?RH=1374833262562&amp;RF=1377164893120">SI et Informatique</a>
+</li>
+</ul> </li>
+<li>
+<h3>Services communs</h3>
+<ul id="acces_directs_n2">
+<li>
+<a href="http://sun.univ-rouen.fr">Service aux Usagers<br />du Numérique (SUN)</a>
+</li>
+<li>
+<a href="http://documentation.univ-rouen.fr/">Documentation</a>
+</li>
+<li>
+<a href="http://mdu.univ-rouen.fr/">Maison de l'Université</a>
+</li>
+<li>
+<a href="http://sante-social.univ-rouen.fr/">Médecine préventive</a>
+</li>
+<li>
+<a href="http://www.univ-rouen.fr/version-francaise/acces-directs-structures/presses-universitaires-de-rouen-et-du-havre-279371.kjsp?RH=1374833262562&amp;RF=1377166827041">PURH</a>
+</li>
+<li>
+<a href="http://sacso.univ-rouen.fr/">SACSO</a>
+</li>
+<li>
+<a href="http://suaps.univ-rouen.fr/">Sports (SUAPS)</a>
+</li>
+</ul> </li>
+</ul> 
+		</li>
+		</ul> 
+
+
+			 	
+			</div>
+			<div id="agenda">Agenda</div>
+		
+		
+			
+			<div class="colonne   derniere " style="width: 65.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  <div id="secondary-slider" class="flexslider">
+<ul class="slides">
+<li>
+<span class="date-liste">7 janvier 2019 - 21 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/venez-participer-aux-br-ateliers-cuisine--617728.kjsp?RH=1374833262562">Venez participer aux<br/>ATELIERS Cuisine...</a>
+</li>
+<li>
+<span class="date-liste">15 février 2019 - 31 décembre 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/performance-de-l-artiste-johanna-rocard-a-l-esitech-626591.kjsp?RH=1374833262562">Performance de l'artiste Johanna Rocard à l'ESITech</a>
+</li>
+<li>
+<span class="date-liste">19 février 2019 - 25 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/volontariat-franco-allemand-520406.kjsp?RH=1374833262562">Volontariat franco-allemand</a>
+</li>
+<li>
+<span class="date-liste">27 février 2019 - 5 avril 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/exposition-permeables--625849.kjsp?RH=1374833262562">Exposition - Perméables !</a>
+</li>
+<li>
+<span class="date-liste">1 mars 2019 - 24 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/exposition-logopolis-enseignant-626226.kjsp?RH=1374833262562">Exposition Logopolis Enseignant</a>
+</li>
+<li>
+<span class="date-liste">7 mars 2019 - 6 avril 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/les-zazimuts-printemps-2019-625949.kjsp?RH=1374833262562">Les Zazimuts - Printemps 2019</a>
+</li>
+<li>
+<span class="date-liste">19 mars 2019 - 4 juin 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/elections-des-representants-des-etudiants-et-des-personnels-aux-conseils-de-normandie-universite-627665.kjsp?RH=1374833262562">Élections des représentants des étudiants et des personnels aux conseils de Normandie Université</a>
+</li>
+<li>
+<span class="date-liste">19 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/conference-br-de-monia-ben-jemia--628061.kjsp?RH=1374833262562">Conférence </br/> de Monia Ben Jemia </a>
+</li>
+<li>
+<span class="date-liste">21 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/table-ronde-blockchain-loisir-pour-les-jeunes-ou-solution-industrielle--625729.kjsp?RH=1374833262562">Table ronde - BlockChain : loisir pour les jeunes ou solution industrielle ?</a>
+</li>
+<li>
+<span class="date-liste">27 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/lan-party-626540.kjsp?RH=1374833262562">LAN Party</a>
+</li>
+<li>
+<span class="date-liste">29 avril 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/carrefour-des-possibles-9e-edition-624870.kjsp?RH=1374833262562">Carrefour des Possibles - 9e édition</a>
+</li>
+<li>
+<span class="date-liste">3 juin 2019 - 5 juin 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/50es-journees-de-calorimetrie-et-d-analyse-thermique-626958.kjsp?RH=1374833262562">50es journées de calorimétrie et d'analyse thermique</a>
+</li>
+</ul>
 </div>
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js">
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+					<br class="separateur" />
+				</div> 
+				<div class="ligne3">	
+		
+		
+			
+			<div class="colonne  " style="width: 2.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne  " style="width: 22.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  <div style="text-align: center;">
+<a  href="http://formation-ve.univ-rouen.fr/formation-et-vie-etudiante-320772.kjsp?RH=1374833262562">
+<br />
+<img title="" alt="" style="width:200px;height:148px;margin:0px 0px;border:px solid;float:;" src="http://www.univ-rouen.fr/medias/photo/new-blocs-fve_1429603791212-jpg" />
+</a>
+</div>
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne  " style="width: 2.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne  " style="width: 22.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  <div style="text-align: center;">
+<a  href="http://recherche.univ-rouen.fr/portail-recherche-320774.kjsp?RH=1374833262562">
+<br />
+<img title="" alt="" style="width:200px;height:148px;margin:0px 0px;border:px solid;float:;" src="http://www.univ-rouen.fr/medias/photo/new-blocs-recherche_1429603937521-jpg" />
+</a>
+</div>
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne  " style="width: 2.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne  " style="width: 22.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  <div style="text-align: center;">
+<br />
+<a  href="http://international.univ-rouen.fr/international-324562.kjsp?RH=1374833262562">
+<img title="" alt="" style="width:200px;height:148px;margin:0px 0px;border:px solid;float:;" src="http://www.univ-rouen.fr/medias/photo/new-blocs-international_1429603992331-jpg" />
+</a>
+</div>
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne  " style="width: 2.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne  " style="width: 22.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  <br />
+<a href="http://portail-lyceens.univ-rouen.fr/universite-de-rouen-portail-lyceens-441342.kjsp?RH=1374833262562" >
+<img title="" alt="" style="width:200px;height:44px;margin:2px 5px;border:px solid;float:;" src="http://www.univ-rouen.fr/medias/photo/home-bandeau-portail-lyceens_1429604135715-jpg" />
+</a>
+<br />
+<a  class="lien_externe" title="http://helpetu.univ-rouen.fr (nouvelle fen&ecirc;tre)" onclick="window.open(this.href);return false;" href="http://helpetu.univ-rouen.fr" >
+<img title="" alt="" style="width:200px;height:44px;margin:2px 5px;border:px solid;float:;" src="http://www.univ-rouen.fr/medias/photo/home-helpetu_1429604159251-jpg" />
+</a>
+<br />
+<a  class="lien_externe" title="https://webtv.univ-rouen.fr/ (nouvelle fen&ecirc;tre)" onclick="window.open(this.href);return false;" href="https://webtv.univ-rouen.fr/" >
+<img title="" alt="" style="width:200px;height:44px;margin:2px 5px;border:px solid;float:;" src="http://www.univ-rouen.fr/medias/photo/home-bandeau-videos_1429604247328-jpg" />
+</a>
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+		
+			
+			<div class="colonne   derniere " style="width: 2.0%;">
+			
+			
+			<div class="colonne_deco">
+
+
+
+			
+				<div class="sansstyle">
+  
+</div> 
+
+			
+
+
+			</div> 
+		</div> 
+
+
+
+   		<br class="separateur" />
+	</div> 
+
+
+
+
+	<div id="complements">	
+			<style type="text/css"> .accueil #page_deco .ligne2 #zone_acces #contenu_acces_directs { min-height: 22em!important;} </style>
+	</div> 
+
+
+
+
+<script type="text/javascript">	
+function afficheContenu(id) {
+	if(document.getElementById(id).style.display == 'none') {
+		document.getElementById(id).style.display = 'block';
+		document.getElementById("clic_out").style.display = 'block';
+	} else {
+		document.getElementById(id).style.display = 'none';
+		document.getElementById("clic_out").style.display = 'none';
+	}
+}
 </script>
-<br class="separateur"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+	
+
+	
 	
 	
 	

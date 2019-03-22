@@ -87,7 +87,7 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="/">
-              <i class="ni ni-istanbul text-orange"></i> Accueil
+              <i class="fas fa-home text-orange"></i> Accueil
             </a>
           </li>
           <li class="nav-item">
@@ -118,6 +118,26 @@
     <!-- Top navbar -->
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
+
+        @if (($_SERVER['REQUEST_URI'] == '/getHistory') || ($_SERVER['REQUEST_URI'] == '/dashboard'))
+          <form action="" id="pdf_form" method="POST" target="_blank"> 
+            @csrf
+            <div class="media-body ml-2 d-none d-lg-block">
+              <input type="hidden" name="name" value="Hilllloooozzzz">
+              <button onclick="pdf()" type="button" class="btn btn-danger btn-md" >Générer le rapport en PDF&nbsp;
+                <i class="fas fa-file-pdf"></i></button>
+            </div>
+          </form>
+
+          <form action="" id="pdf_form" method="POST" target="_blank"> 
+            @csrf
+            <div class="media-body ml-2 d-none d-lg-block">
+              <input type="hidden" name="name" value="Hilllloooozzzz">
+              <button onclick="pdf()" type="button" class="btn btn-secondary btn-md" >Recevoir le rapport par mail&nbsp;
+                <i class="fas fa-envelope"></i></button>
+            </div>
+          </form>
+        @endif
         
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
@@ -135,7 +155,7 @@
                   </span>
                   
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Bonjour {{Auth::user()->name}}</span>
+                    <span class="mb-0 text-sm  font-weight-bold" style="text-shadow: 2px 2px 8px gray;">Bonjour {{Auth::user()->name}}</span>
                   </div>
                 </div>
               </a>
@@ -144,7 +164,7 @@
                   <h6 class="text-overflow m-0">Bienvenue!</h6>
                 </div>
                 <a href="/" class="dropdown-item">
-                  <i class="ni ni-istanbul"></i>
+                  <i class="fas fa-home"></i>
                   <span>Accueil</span>
                 </a>
                 <a href="/user" class="dropdown-item">
@@ -221,6 +241,11 @@
     function logout() {
       form = document.getElementById("logout_form");
       form.action = "/logout";
+      form.submit();
+    }
+    function pdf() {
+      form = document.getElementById("pdf_form");
+      form.action = "/pdf";
       form.submit();
     }
   </script>

@@ -19,6 +19,7 @@ Route::post('/del','HomeController@del_fav');
 
 //-----------AnalysisController--------------
 Route::post("/dashboard", "AnalysisController@loading_time");
+Route::post('/pdf','AnalysisController@generatePDF');
 // Route::post("/dashboard", "AnalysisController@analyse");
 
 //-----------UserController--------------
