@@ -49,15 +49,9 @@ class UserController extends Controller
         $name = $request->input('name');
         $analysis = Analysis::find($name)->toArray();
         foreach ($analysis as $key => $value) {
-            if ($key != "url" && $key != "created_at" && $key != "updated_at") {
+            if ($key != "created_at" && $key != "updated_at") {
                 $analysis[$key] = json_decode($value, true);
             }
-        }
-
-        if ($analysis) {
-            $analysis["message"]="found";
-        } else {
-            $analysis = ["message"=>"notfound"];
         }
 
         return view("historydetails", $analysis);
@@ -72,7 +66,7 @@ class UserController extends Controller
 		$user->name = $data["name"];
 		$user->save();
 		
-		return redirect('./user')->with(["message"=>"infoupdated"]);
+		return redirect('/user')->with(["message"=>"infoupdated"]);
 
 	}
 
@@ -84,9 +78,9 @@ class UserController extends Controller
 			$newpass = Hash::make($data["password"]);
 			$user->password = $newpass ;
 			$user->save();
-			return redirect('./user')->with(["message"=>"updated"]);
+			return redirect('/user')->with(["message"=>"updated"]);
 		} else {
-			return redirect('./user')->with(["message"=>"notupdated"]);
+			return redirect('/user')->with(["message"=>"notupdated"]);
 		}
 	}
 

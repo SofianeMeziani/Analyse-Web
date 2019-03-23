@@ -118,27 +118,6 @@
     <!-- Top navbar -->
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
-
-        @if (($_SERVER['REQUEST_URI'] == '/getHistory') || ($_SERVER['REQUEST_URI'] == '/dashboard'))
-          <form action="" id="pdf_form" method="POST" target="_blank"> 
-            @csrf
-            <div class="media-body ml-2 d-none d-lg-block">
-              <input type="hidden" name="name" value="Hilllloooozzzz">
-              <button onclick="pdf()" type="button" class="btn btn-danger btn-md" >Générer le rapport en PDF&nbsp;
-                <i class="fas fa-file-pdf"></i></button>
-            </div>
-          </form>
-
-          <form action="" id="pdf_form" method="POST" target="_blank"> 
-            @csrf
-            <div class="media-body ml-2 d-none d-lg-block">
-              <input type="hidden" name="name" value="Hilllloooozzzz">
-              <button onclick="pdf()" type="button" class="btn btn-secondary btn-md" >Recevoir le rapport par mail&nbsp;
-                <i class="fas fa-envelope"></i></button>
-            </div>
-          </form>
-        @endif
-        
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           
@@ -241,11 +220,6 @@
     function logout() {
       form = document.getElementById("logout_form");
       form.action = "/logout";
-      form.submit();
-    }
-    function pdf() {
-      form = document.getElementById("pdf_form");
-      form.action = "/pdf";
       form.submit();
     }
   </script>

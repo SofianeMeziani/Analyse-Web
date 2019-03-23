@@ -1,7 +1,6 @@
 @extends("general")
                             
 @section("content")
-
 <!-- Main content -->
   <div class="main-content">
     <!-- Header -->
@@ -9,7 +8,6 @@
       <div class="container-fluid">
         <div class="header-body">
           <!-- Card stats -->
-          @if ($message == "found")
 	          <div class="row" style="margin-top: -100px">
 	            <div class="col-xl-3 col-lg-6">
 	              <div class="card card-stats mb-4 mb-xl-0">
@@ -96,17 +94,23 @@
 	              </div>
 	            </div>
 	          </div>
-	      @else 
-	      	<div class="row" style="margin-top: -100px">
-	      		Erreure : les détails n'ont pas été trouvés
-	      	</div>
-	      @endif
         </div>
       </div>
     </div>
     <!-- Page content -->
     <div class="container-fluid mt--7">
-      
+      <div >
+        <form action="" id="pdf_form" method="POST" target="_blank"> 
+          @csrf
+          <div class="media-body ml-2 d-none d-lg-block">
+            <input id="hid" type="hidden" name="name" value="">
+            <button onclick="pdf(name)" name="{{$id}}" type="button" class="btn btn-danger btn-md" >Générer le rapport en PDF&nbsp;
+              <i class="fas fa-file-pdf"></i></button>
+              <button onclick="" type="button" class="btn btn-secondary btn-md" >Recevoir le rapport par mail&nbsp;
+              <i class="fas fa-envelope"></i></button>
+          </div>
+        </form>
+      </div>
       <div class="row mt-5">
         <div class="col-xl-12 mb-5 mb-xl-0">
 
@@ -366,6 +370,14 @@
           }, 'slow');
           return false;
         });
+
+        function pdf(name) {
+          document.getElementById("hid").value=name;
+          form = document.getElementById("pdf_form");
+          form.action = "/pdf";
+          form.submit();
+        }
+
       </script>
 
       <style type="text/css">
