@@ -216,7 +216,7 @@ class AnalysisController extends Controller
                 }
             }
         }else{
-            $hrefs = $xpath->evaluate("/html/body//img");
+            $hrefs = $xpath->evaluate("//img");
             for($i = 0; $i < $hrefs->length; $i++){
                 $href = $hrefs->item($i);
                 $url = $href->getAttribute('src');

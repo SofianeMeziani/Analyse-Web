@@ -41,18 +41,20 @@ class UserController extends Controller
     {
         $name = $request->input('name');
         Analysis::find($name)->delete();
-        return redirect('/history');
+        return redirect('/history')->with(["message"=>"deleted"]);
     }
 
     public function getAnalysisById(Request $request)
     {
         $name = $request->input('name');
-        $analysis = Analysis::find($name)->toArray();
-        foreach ($analysis as $key => $value) {
-            if ($key != "created_at" && $key != "updated_at") {
-                $analysis[$key] = json_decode($value, true);
-            }
-        }
+        // $analysis = Analysis::find($name)->toArray();
+        // foreach ($analysis as $key => $value) {
+        //     if ($key != "created_at" && $key != "updated_at") {
+        //         $analysis[$key] = json_decode($value, true);
+        //     }
+        // }
+
+        $analysis = Analysis::getAnalysisById($name);
 
         return view("historydetails", $analysis);
     }

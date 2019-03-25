@@ -101,19 +101,19 @@
         var pass_old = document.getElementById('password_old'); 
         if (errors_2 == 2) {
           if (errors == 1) {
-            swal("","Merci de remplir tous les champs obligatoirs !", "warning");
+            swal.fire("","Merci de remplir tous les champs obligatoirs !", "warning");
           } else {
             var form = document.getElementById("personalinfo_form");
             form.action = "/update-personal-info";
             form.submit();
           }
         } else if (errors_2 == 0) {
-            swal("","Veuillez entrer un mot de passe >= 6", "error");
+            swal.fire("","Veuillez entrer un mot de passe >= 6", "error");
         } else {
             if (pass_old.value==""){
-              swal("","Veuillez entrer votre mot de passe actuel correct", "error");
+              swal.fire("","Veuillez entrer votre mot de passe actuel correct", "error");
             } else if (errors_2 == 1) {
-                swal("","Votre mot de passe de confirmation n'est pas correct !", "error");
+                swal.fire("","Votre mot de passe de confirmation n'est pas correct !", "error");
                 } else {
                     var form = document.getElementById("personalinfo_form");
                     form.action = "/update-password";
@@ -124,11 +124,11 @@
       }
 
       @if (Session::has("message") && Session::get("message")=="updated")
-              swal("", "Votre mot de passe a bien été mis à jour.", "success");
+              swal.fire("", "Votre mot de passe a bien été mis à jour.", "success");
       @elseif (Session::has("message") && Session::get("message")=="notupdated")
-              swal("", "Votre mot de passe actuelle est incorrect !", "error");
+              swal.fire("", "Votre mot de passe actuelle est incorrect !", "error");
       @elseif (Session::has("message") && Session::get("message")=="infoupdated")
-              swal("", "Vos informations personnelles ont bien été à jour", "success");
+              swal.fire("", "Vos informations personnelles ont bien été à jour", "success");
       @endif
     </script>
     

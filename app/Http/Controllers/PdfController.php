@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use Response;
 use Illuminate\Http\Request;
 use DOMDocument;
 use Auth;
@@ -166,7 +167,19 @@ class PdfController extends Controller
             ';
             $pdf->WriteHTML($stylesheet,1); // The parameter 1 tells that this is css/style only and no body/html/text
             $pdf->WriteHTML($html);
-            $pdf->Output();
+
+            $pdfname = 'analysis_'.$name.'.pdf';
+
+            $pdf->Output($pdfname ,'F');
+
+            $realpath = realpath($pdfname);
+            $realpath2 = str_replace("/vendor/", "/public/pdfs/", $realpath);
+
+            rename($realpath, $realpath2);
+
+            $content = file_get_contents($realpath2);
+
+            return Response::make($content, 200, array('content-type'=>'application/pdf'));
     }
 
     

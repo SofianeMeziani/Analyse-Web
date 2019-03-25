@@ -34,4 +34,16 @@ class Analysis extends Model {
 		return $this->belongsTo("App\User");
 	}
 
+	public static function getAnalysisById($name)
+    {
+        $analysis = Analysis::find($name)->toArray();
+        foreach ($analysis as $key => $value) {
+            if ($key != "created_at" && $key != "updated_at") {
+                $analysis[$key] = json_decode($value, true);
+            }
+        }
+
+        return $analysis;
+    }
+
 }

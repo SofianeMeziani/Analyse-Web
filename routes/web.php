@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
+
+//-----------MailController--------------
+Route::post('/send-mail', "MailController@sendmail");
 
 //-----------HomeController--------------
 Route::get('/', "HomeController@index");
@@ -30,6 +34,8 @@ Route::post('/delHistory', "UserController@delAnalysisById");
 Route::post('/getHistory', "UserController@getAnalysisById");
 Route::post('/update-personal-info', "UserController@updatePersonalInfo");
 Route::post('/update-password', "UserController@updatePassword");
+
+
 
 
 

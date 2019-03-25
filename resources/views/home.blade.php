@@ -185,7 +185,7 @@
                             </p>
                           </div>
                           <div class="col-md-12">
-                            <button onclick="stopAnalyse()" type="button" class="btn btn-secondary col-md-12" data-dismiss="modal">Arrêter l'analyse</button>
+                            <button id="bb" onclick="stopAnalyse();" type="button" class="btn btn-secondary col-md-12" data-dismiss="modal">Arrêter l'analyse</button>
                           </div>
                         </div>
                       </div>
@@ -259,12 +259,14 @@
         form.action = "/dashboard";
         form.submit();
       } else {
-          swal("","Veuillez entrer un lien valide", "error")
+          swal.fire("","Veuillez entrer un lien valide", "error")
         }
     }
 
     function stopAnalyse() {
-      window.stop();
+      
+      document.location.reload(true);
+
     }
 
     function addButton() {
@@ -279,7 +281,9 @@
       form2.submit();
     }
 
-
+    @if (Session::has("message") && Session::get("message")=="sent")
+      swal.fire("Merci", "Votre message a bien été envoyée", "success");
+    @endif
   </script>
 
 <style type="text/css">

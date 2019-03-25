@@ -2,7 +2,6 @@
                             
 
 @section("content")
-
 <div class="container-fluid mt--7">
 	<div class="row mt-5">
 		<div class="col">
@@ -24,7 +23,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<form action="" id="History_form" method="POST"> 
+							<form action="" id="History_form" method="POST" target=""> 
               				@csrf
               				<input id="hid" type="hidden" name="name" value="">
 							<?php $i = 1; ?>
@@ -81,14 +80,10 @@
 									<td>
 										<div class="media align-items-center">
 											<div class="media-body">
-												<button onclick="viewHistory(name)" target="_blank" name="{{$history['id']}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i></button>													
-												<!-- <a target="_blank" href="/history/{{$history['id']}}" class="btn btn-primary btn-sm">
-												<i class="far fa-eye"></i></a> -->
+												<button onclick="viewHistory(name)" target="_blank" name="{{$history['id']}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i></button>
 											</div>
 											<div class="media-body">
-												<button onclick="delHistory(name)" target="_blank" name="{{$history['id']}}" class="btn btn-primary btn-sm"><i class="far fa-trash-alt"></i></button><!-- 
-												<a target="_blank" href="/history/{{$history['id']}}" class="btn btn-danger btn-sm">
-													<i class="far fa-trash-alt"></i></a> -->
+												<button onclick="delHistory(name)"  name="{{$history['id']}}" class="btn btn-danger btn-sm" type="button"><i class="far fa-trash-alt"></i></button>
 											</div>
 										</div>
 									</td>
@@ -102,23 +97,40 @@
 	</div>
 </div>
 
-
 <script type="text/javascript">
 
 	function viewHistory(name) {
-      document.getElementById("hid").value=name;
-      form = document.getElementById("History_form");
-      form.action = "/getHistory";
-      form.submit();
+		document.getElementById("hid").value=name;
+		form = document.getElementById("History_form");
+		form.target = "_blank";
+		form.action = "/getHistory";
+		form.submit();
     }
 
 	function delHistory(name) {
-      document.getElementById("hid").value=name;
-      form = document.getElementById("History_form");
-      form.action = "/delHistory";
-      form.submit();
-    }
+		document.getElementById("hid").value=name;
+		event.preventDefault();
+		form = document.getElementById("History_form");
+		form.target = "";
+		Swal.fire({
+		  title: 'Are you sure?',
+		  text: "You won't be able to revert this!",
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		  if (result.value) {
+		    form.action = "/delHistory";
+      		form.submit();
+		  }
+		})			
+	}
 
+	@if (Session::has("message") && Session::get("message")=="deleted")
+		swal.fire("", "l'enregistrement est supprimé.", "success");
+	@endif
 </script>
 
 <style type="text/css">
