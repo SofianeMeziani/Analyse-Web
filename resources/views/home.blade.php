@@ -85,16 +85,21 @@
           </div>
 
 
-          <div class="pl-lg-4">
+          <div class="pl-lg-4" style="margin-top: -25px">
             <div id="vv" class="row col-lg-10 container">
+
+               <div class="col-12" style="margin-bottom: 15px">
+                <h3 class="mb-0">Sites Web favoris</h3>
+              </div>
+             
 
               <button class="btn btn-icon btn-2 btn-success" type="button" data-toggle="modal" data-target="#modal-form-add">
                 <span class="btn-inner--text">Ajouter</span>
-                <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
+                <span class="btn-inner--icon"><i class="fas fa-star"></i></i></span>
               </button>
               <button class="btn btn-icon btn-2 btn-danger" type="button" data-toggle="modal" data-target="#modal-form-delete">
                 <span class="btn-inner--text">Retirer</span>
-                <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
+                <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
               </button>
 
 
