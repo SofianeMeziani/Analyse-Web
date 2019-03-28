@@ -31,14 +31,59 @@ class PdfController extends Controller
         chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/vendor/");
 
         require_once 'autoload.php';    
-        
+        // dd($analysis);
         $pdf = new \Mpdf\Mpdf();
   
         $email=Auth::user()->email;
-        
+
+        $total_links=count($analysis["load_time"]);
+
+        $cc=count($analysis["urls"]);
+
+        for ($i=0; $i < $cc; $i++) { 
+            $n[$i]=count($analysis["urls"][$i]);
+        }
+
+        for ($i=$cc; $i < 6; $i++) { 
+            $n[$i]=0;
+        }
+
+        for ($i=0; $i < 6; $i++) { 
+            $nn[$i]=$n[$i]/$total_links*100;
+            $nn[$i] = round($nn[$i], 2);
+        }
+
+        $t_min=round(min($analysis["load_time"]), 2);
+        $t_max=round (max($analysis["load_time"]), 2);
+        $t_avr=round((array_sum($analysis["load_time"])/count($analysis["load_time"])), 2);
+
+
+
+        if ($analysis["analyse_synt"]==0){
+            $syn_correct="non demandé";
+            $syn_noncorrect="non demandé";
+        } else {
+            $syn_correct=0;
+            for ($i=0; $i < count($analysis["syntaxe_errors"]); $i++) { 
+                if ($analysis["syntaxe_errors"][$i]["0"] == "CORRECT" )
+                    $syn_correct++;
+            }
+            $syn_noncorrect=count($analysis["syntaxe_errors"])-$syn_correct;
+        }
+
+        $percent_internal = $analysis["internal_links"]/$total_links*100;
+        $percent_external = $analysis["external_links"]/$total_links*100;
+
+        $percent_internal=round($percent_internal, 2);
+        $percent_external=round($percent_external, 2);
+
+        $valid_links = $total_links-$analysis["nb_broken"];
+        $percent_valid_links=round($valid_links/$total_links*100, 2);
+        $autre = $analysis["nb_broken"]-$analysis["nb_broken404"];
+        $valid_rsc = count($analysis["r_links"])-$analysis["nb_r_broken"];
+        $percent_valid_rsc = round($valid_rsc/count($analysis["r_links"])*100, 2);
         $html = '
             <h1>Rapport de l\'analyse</h1>
-            <h2>©AnalyseWeb</h2>
             <p class="breadcrumb">PDF généré le : Mardi, le 19 mars 2019 </p>
 
 
@@ -47,59 +92,46 @@ class PdfController extends Controller
             <p><span>Utilisateur ayant lancé l\'analyse :</span> '.$email.'</p>
             <p><span>Date de l\'analyse :</span>'.$analysis["created_at"].'</p>
 
-            <br/>
             <h3>Le site analysé en chiffres</h3>
             <h4>Le nombre de liens trouvés</h4>
-            <p>Nombre de liens internes : <span class="blue">3697 lien(s)</span> <span>(97%)</span></p>
-            <p>Nombre de liens externes : <span class="blue">12 lien(s)</span> <span>(3%)</span></p>
-            <h5>Nombre total de liens : 3709 lien(s)</h5>
+            <p>Nombre de liens internes : <span class="blue">'.$analysis["internal_links"].' lien(s)</span> <span>('.$percent_internal.'%)</span></p>
+            <p>Nombre de liens externes : <span class="blue">'.$analysis["external_links"].' lien(s)</span> <span>('.$percent_external.'%)</span></p>
+            <h5>Nombre total de liens : '.$total_links.' lien(s)</h5>
 
             <h4>La profondeur des liens</h4>
             <ul>
-            <li>Nombre de liens trouvés a la profondeur 0 : <span class="blue">1 lien(s)</span> <span>(0%)</span></li>
-            <li>Nombre de liens trouvés a la profondeur 1 : <span class="blue">12 lien(s)</span> <span>(2%)</span></li>
-            <li>Nombre de liens trouvés a la profondeur 2 : <span class="blue">217 lien(s)</span> <span>(5%)</span></li>
-            <li>Nombre de liens trouvés a la profondeur 3 : <span class="blue">739 lien(s)</span> <span>(11%)</span></li>
-            <li>Nombre de liens trouvés a la profondeur 4 : <span class="blue">1829 lien(s)</span> <span>(92%)</span></li>
-            <li>Nombre de liens trouvés a la profondeur 5 : <span class="blue">2712 lien(s)</span> <span>(65 %)</span></li>
+            <li>Nombre de liens trouvés a la profondeur 0 : <span class="blue">'.$n["0"].' lien(s)</span> <span>('.$nn["0"].'%)</span></li>
+            <li>Nombre de liens trouvés a la profondeur 1 : <span class="blue">'.$n["1"].' lien(s)</span> <span>('.$nn["1"].'%)</span></li>
+            <li>Nombre de liens trouvés a la profondeur 2 : <span class="blue">'.$n["2"].' lien(s)</span> <span>('.$nn["2"].'%)</span></li>
+            <li>Nombre de liens trouvés a la profondeur 3 : <span class="blue">'.$n["3"].' lien(s)</span> <span>('.$nn["3"].'%)</span></li>
+            <li>Nombre de liens trouvés a la profondeur 4 : <span class="blue">'.$n["4"].' lien(s)</span> <span>('.$nn["4"].'%)</span></li>
+            <li>Nombre de liens trouvés a la profondeur 5 : <span class="blue">'.$n["5"].' lien(s)</span> <span>('.$nn["5"].'%)</span></li>
             </ul>
 
             <h4>Le temps de réponse</h4>
             <ul>
-            <li>Temps de réponse minimum : <span class="blue">64 (ms)</span></li>
-            <li>Temps de réponse maximum : <span class="blue">1964 (ms)</span></li>
-            <ul>
-            <li><span>Répartition</span></li>
-            <li>Nombre de liens en dessous de 200 (ms) : <span class="blue">1102 lien(s)</span> <span>(49%)</span></li>
-            <li>Nombre de liens en dessus de 200 (ms) : <span class="blue">1309 lien(s)</span> <span>(51%)</span></li>
+            <li>Temps de réponse minimum : <span class="blue">'.$t_min.' (ms)</span></li>
+            <li>Temps de réponse maximum : <span class="blue">'.$t_max.' (ms)</span></li>
             </ul>
-            </ul>
-            <h5>Temps de réponse moyen : 312 (ms)</h5>
+            <h5>Temps de réponse moyen : '.$t_avr.' (ms)</h5>
 
             <h4>Validité des liens (Détection de liens morts)</h4>
             <ul>
-            <li>Nombre de liens valides : <span class="blue">2664 lien(s)</span></li>
-            <li>Nombre de redirections : <span class="blue">5 lien(s)</span></li>
-            <li>Nombre de liens invalides : <span class="blue">46 lien(s)</span></li>
-            <ul>
-            <li>Erreur 404 : <span class="blue">7 lien(s)</span></li>
-            <li>Mauvais hôte : <span class="blue">6 lien(s)</span></li>
-            <li>Autre(s) erreur(s) : <span class="blue">6 lien(s)</span></li>
+            <li>Nombre de liens valides : <span class="blue">'.$valid_links.' lien(s)</span></li>
+            <li>Nombre de liens invalides : <span class="blue">'.$analysis["nb_broken"].' lien(s)</span></li>
             </ul>
-            </ul>
-            <h5>Pourcentage de validité : 96% (liens valides)</h5>
+            <h5>Pourcentage de validité : '.$percent_valid_links.'% (liens valides)</h5>
 
             <h4>Les ressources (Détection de ressources manquantes)</h4>
             <ul>
-            <li>Nombre de ressources valides : <span class="blue">164</span> </span> <span>(3%)</span></li>
-            <li>Nombre de ressources invalides : <span class="blue">16</span> </span> <span>(3%)</span></li>
+            <li>Nombre de ressources valides : <span class="blue">'.$valid_rsc.'</span> </span></li>
+            <li>Nombre de ressources invalides : <span class="blue">'.$analysis["nb_r_broken"].'</span> </span></li>
             </ul>
-            <h5>Pourcentage de validité : 81% (ressources valides)</h5>
+            <h5>Pourcentage de validité : '.$percent_valid_rsc.'% (ressources valides)</h5>
 
             <h4>Vérification syntaxique</h4>
-            <p>Nombre de liens ne contenants <span>pas</span> d\'erreurs syntaxiques : <span class="blue">53 </span> <span>(3%)</span></sPan></p>
-            <p>Nombre de liens contenants des erreurs syntaxiques : <span class="blue">53 </span> <span>(3%)</span></sPan></p>
-            <h5>Pourcentage de validité : 89% (syntaxiqument valides)</h5>';
+            <p>Nombre de pages ne contenants <span>pas</span> d\'erreurs syntaxiques : <span class="blue">'.$syn_correct.' </span></span></p>
+            <p>Nombre de pages contenants des erreurs syntaxiques : <span class="blue">'.$syn_noncorrect.' </span></span></p>';
 
             //==============================================================
             //==============================================================

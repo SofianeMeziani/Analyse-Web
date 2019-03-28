@@ -193,122 +193,31 @@
                   </div>
                 </div>
               </div>
-
-
-
             </div>
-
             <br>
           </div> 
         </div>
       </div>
     </div>
   </div>
-    
+  
+
 
   <script type="text/javascript">
 
-
-
     var fav = <?php echo json_encode($fav); ?>;
-    function getClickCallback(i) {
-      return function() {
-      document.getElementById("url").value = fav[i]['link'];
-      };
-    }
-    function getClickCallback2(i) {
-      return function() {
-      document.getElementById("del").value = this.name;
-      delButton();
-      };
-    }
 
-    for (var i = 0; i < fav.length; i++) {
-      var name  = fav[i]['name'];
-      var links = fav[i]['link'];
-      var btn = document.createElement("BUTTON");
-      var t = document.createTextNode(name);
-      btn.appendChild(t);
-      btn.className="btn btn-default";
-      btn.id=name;
-      document.getElementById("vv").appendChild(btn);
-      document.getElementById(name).onclick = getClickCallback(i);
-    }
-
-    for (var i = 0; i < fav.length; i++) {
-      var name  = fav[i]['name'];
-      var links = fav[i]['link'];
-      var id = fav[i]['id'];
-      var btn1 = document.createElement("BUTTON");
-      var t = document.createTextNode(name);
-      btn1.appendChild(t);
-      btn1.className="btn btn-danger col-md-12";
-      btn1.name=id;
-      document.getElementById("v"+i).appendChild(btn1);
-      document.getElementsByName(id)[0].onclick = getClickCallback2(i);
-    }
-
-    function checkURL() {
-      var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-      var regex = new RegExp(expression);
-      var t = document.getElementById("url").value;
-
-      if (t.match(regex)) {
-        document.getElementById('show_loading_modal').click();
-        form = document.getElementById("url_form");
-        form.action = "/dashboard";
-        form.submit();
-      } else {
-          swal.fire("","Veuillez entrer un lien valide", "error")
-        }
-    }
-
-    function stopAnalyse() {
-      
-      document.location.reload(true);
-
-    }
-
-    function addButton() {
-      form1 = document.getElementById("fav_form");
-      form1.action = "/create";
-      form1.submit();
-    }
-
-    function delButton() {
-      form2 = document.getElementById("del_fav_form");
-      form2.action = "/del";
-      form2.submit();
-    }
+    $(function(){
+      foo(fav);
+    });
 
     @if (Session::has("message") && Session::get("message")=="sent")
       swal.fire("Merci", "Votre message a bien été envoyée", "success");
     @endif
+
   </script>
 
-<style type="text/css">
-        .navbar-vertical {
-          background-image: url("https://cdn.hipwallpaper.com/i/93/63/Fx2mvz.png") !important;
-          box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
-          background-position: bottom !important;
-          background-repeat: no-repeat;
-        }
-        .header {
-          background-image: url("https://i.gifer.com/J4o.gif") !important;
-         /* background-image: url("http://gifette.g.i.pic.centerblog.net/d683f6cd.gif") !important;
-          */
-          box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;
-        }
-        .card {
-          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
-          transition: all 0.3s cubic-bezier(.25,.8,.25,1) !important;
-        }
+  
 
-        .card:hover {
-          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
-        }
-
-        
-      </style>
 @endsection
 

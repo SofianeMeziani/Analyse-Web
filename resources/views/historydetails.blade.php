@@ -107,7 +107,7 @@
             <button onclick="pdf('{{$id}}')" name="{{$id}}" type="button" class="btn btn-danger btn-md" >Générer le rapport en PDF&nbsp;
               <i class="fas fa-file-pdf"></i></button>
 
-              <button onclick="mail()" type="button" class="btn btn-secondary btn-md" >Recevoir le rapport par mail&nbsp;
+              <button id="mail1" onclick="mail()" type="button" disabled="true" class="btn btn-secondary btn-md" >Recevoir le rapport par mail&nbsp;
               <i class="fas fa-envelope"></i></button>
           </div>
         </form>
@@ -311,110 +311,23 @@
                 echo ($num_ligne+2)." |   ".$lines[$num_ligne+2-1]; 
                ?>La balise <<?php echo $syntaxe_errors[0][0]; ?>> devrait etre fermee a la ligne (ligne <?php echo $num_ligne ?>).</textarea>
           </div>
-        <?php } }?>
-
+          <?php } }?>
         </div>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script type="text/javascript">
-        $('tr.tr_stat:lt(6)').addClass('active');
-        $('tr.tr_img:lt(4)').addClass('active');
+    </div>
+  </div>
 
-        $('a.load_more').on('click', function(e) {
-          e.preventDefault();  
-          //var $rows = $('table tr');
-          var $rows = $('tr.tr_stat');
-          var lastActiveIndex = $rows.filter('.active:last').index();
-          $rows.filter(':lt(' + (lastActiveIndex + 7) + ')').addClass('active');
-        });
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    @if (isset($message) && $message == "sent")
+      swal.fire("Merci", "Votre message a bien été envoyée", "success");
+    @endif
+  </script>
 
-        $('a.load_all').on('click', function(e) {
-          e.preventDefault();  
-          //var $rows = $('table tr');
-          var $rows = $('tr.tr_stat');
-          var lastActiveIndex = $rows.filter('.active:last').index();
-          $rows.filter(':lt(' + (lastActiveIndex + 10000) + ')').addClass('active');
-        });
-
-        $('a.load_more_img').on('click', function(e) {
-          e.preventDefault();  
-          //var $rows = $('table tr');
-          var $rows = $('tr.tr_img');
-          var lastActiveIndex = $rows.filter('.active:last').index();
-          $rows.filter(':lt(' + (lastActiveIndex + 5) + ')').addClass('active');
-        });
-
-        $('.load_more').click(function () {
-          document.getElementById('load_more_stat').scrollIntoView({
-            behavior: 'smooth'
-          });
-          return false;
-        });
-
-        $('.load_all').click(function () {
-          document.getElementById('load_all_stat').scrollIntoView({
-            behavior: 'smooth'
-          });
-          return false;
-        });
-
-        $('.load_more_img').click(function () {
-          document.getElementById('load_more_img').scrollIntoView({
-            behavior: 'smooth'
-          });
-          return false;
-        });
-
-        $('.go_up').click(function () {
-          $('html, body').animate({
-              scrollTop:0
-          }, 'slow');
-          return false;
-        });
-
-        function pdf(name) {
-          document.getElementById("hid").value=name;
-          form = document.getElementById("pdf_form");
-          form.action = "/pdf";
-          form.submit();
-        }
-
-        function mail() {
-          form = document.getElementById("pdf_form");
-          target=""
-          form.action = "/send-mail";
-          form.submit();
-        }
-
-        @if (isset($message) && $message == "sent")
-          swal.fire("Merci", "Votre message a bien été envoyée", "success");
-        @endif
-
-      </script>
-
-      <style type="text/css">
-        table a {color: #525f7f}
-        table tr { display: none; }
-        table tr.active { display: table-row; }
-      </style>
-
-      <style type="text/css">
-        .header {
-          background-image: url("https://i.pinimg.com/originals/cc/d4/09/ccd409e4173f80a4f39f69aa29a5e150.gif") !important;
-          background-size: 60% !important;
-          background-repeat: no-repeat !important;
-          background-color: #ABE6DA !important;
-         /* background-image: url("https://nsec-dz.com/images/proactif.gif") !important;*/
-         /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22) !important;*/
-        }
-        .card, textarea {
-          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
-          transition: all 0.3s cubic-bezier(.25,.8,.25,1) !important;
-        }
-
-        .card:hover, textarea:hover {
-          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
-        }
-      </style>
+  <style type="text/css">
+    table a {color: #525f7f}
+    table tr { display: none; }
+    table tr.active { display: table-row; }
+  </style>
 
 @endsection

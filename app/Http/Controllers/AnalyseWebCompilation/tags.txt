@@ -53,7 +53,7 @@
 <meta name="DC.Description" lang="fr-FR" content="Avec ses 28 460 &eacute;tudiants et ses 12 composantes, l'Universit&eacute; de Rouen Normandie est une universit&eacute; pluridisciplinaire." />
 <meta name="DC.Publisher" content="Clement Chertier" />
 <meta name="DC.Date.created" scheme="W3CDTF" content="20130726" />
-<meta name="DC.Date.modified" scheme="W3CDTF" content="20190318" />
+<meta name="DC.Date.modified" scheme="W3CDTF" content="20190320" />
 <meta name="DC.Language" scheme="RFC3066" content="fr-FR" />
 <meta name="DC.Rights" content="Copyright &copy; Site institutionnel" />
 
@@ -63,7 +63,7 @@
 <meta name="keywords" content="Universit&eacute; de Rouen Normandie, univ rouen, ent rouen" />
 <meta name="description" content="Avec ses 28 460 &eacute;tudiants et ses 12 composantes, l'Universit&eacute; de Rouen Normandie est une universit&eacute; pluridisciplinaire." />
 <meta name="Date-Creation-yyyymmdd" content="20130726" />
-<meta name="Date-Revision-yyyymmdd" content="20190318" />
+<meta name="Date-Revision-yyyymmdd" content="20190320" />
 <meta name="copyright" content="Copyright &copy; Site institutionnel" />
 <meta name="reply-to" content="webanim@univ-rouen.fr" />
 <meta name="category" content="Internet" />
@@ -608,15 +608,15 @@ li.parite_0 {
   <div id="main-slider" class="flexslider">
 <ul class="slides">
 <li style="position: relative;">
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/elections-des-representants-des-etudiants-et-des-personnels-aux-conseils-de-normandie-universite-627665.kjsp?RH=1374833262562">
-<img src="http://www.univ-rouen.fr/medias/photo/elections-comue-2019_1551956160822-jpg" alt="" />
-<em>Élections des représentants des étudiants et des personnels aux conseils de Normandie Université</em>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/appel-a-candidature-pour-une-mobilite-en-2019-2020-495132.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/bandeau-2e-appel_1552986076666-jpg" alt="" />
+<em>Appel à candidature pour une mobilité en 2019-2020</em>
 </a>
 </li>
 <li style="position: relative;">
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/conference-br-de-monia-ben-jemia--628061.kjsp?RH=1374833262562">
-<img src="http://www.univ-rouen.fr/medias/photo/2019-carroussel-monia-ben-jemia_1552321460964-jpg" alt="" />
-<em>Conférence </br/> de Monia Ben Jemia </em>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/conferences-utlc-mars-626074.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/0-utlc-18-19-couv-livret_1543503086931-jpg" alt="" />
+<em>Conférences UTLC - Mars</em>
 </a>
 </li>
 <li style="position: relative;">
@@ -626,9 +626,21 @@ li.parite_0 {
 </a>
 </li>
 <li style="position: relative;">
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/conferences-utlc-mars-626074.kjsp?RH=1374833262562">
-<img src="http://www.univ-rouen.fr/medias/photo/0-utlc-18-19-couv-livret_1543503086931-jpg" alt="" />
-<em>Conférences UTLC - Mars</em>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/festival-a-l-asso-du-campus-629325.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/alassoducampus-carrousel_1552853527720-jpg" alt="" />
+<em>Festival à l'Asso du Campus</em>
+</a>
+</li>
+<li style="position: relative;">
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/lutte-contre-le-changement-br-climatique-627993.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/image-carrousel-v2_1553264094030-png" alt="" />
+<em>Lutte contre le changement<br /> climatique</em>
+</a>
+</li>
+<li style="position: relative;">
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/journee-d-etude-625655.kjsp?RH=1374833262562">
+<img src="http://www.univ-rouen.fr/medias/photo/visuel-ksup_1550591800291-jpg" alt="" />
+<em>Journée d'étude</em>
 </a>
 </li>
 </ul>
@@ -821,44 +833,48 @@ li.parite_0 {
   <div id="secondary-slider" class="flexslider">
 <ul class="slides">
 <li>
-<span class="date-liste">7 janvier 2019 - 21 mars 2019</span>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/venez-participer-aux-br-ateliers-cuisine--617728.kjsp?RH=1374833262562">Venez participer aux<br/>ATELIERS Cuisine...</a>
+<span class="date-liste">14 février 2019 - 27 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/concours-normands-autour-du-monde-2--630822.kjsp?RH=1374833262562">Concours "Normands autour du Monde #2"</a>
 </li>
 <li>
 <span class="date-liste">15 février 2019 - 31 décembre 2019</span>
 <a href="http://www.univ-rouen.fr/version-francaise/navigation/performance-de-l-artiste-johanna-rocard-a-l-esitech-626591.kjsp?RH=1374833262562">Performance de l'artiste Johanna Rocard à l'ESITech</a>
 </li>
 <li>
-<span class="date-liste">19 février 2019 - 25 mars 2019</span>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/volontariat-franco-allemand-520406.kjsp?RH=1374833262562">Volontariat franco-allemand</a>
-</li>
-<li>
 <span class="date-liste">27 février 2019 - 5 avril 2019</span>
 <a href="http://www.univ-rouen.fr/version-francaise/navigation/exposition-permeables--625849.kjsp?RH=1374833262562">Exposition - Perméables !</a>
-</li>
-<li>
-<span class="date-liste">1 mars 2019 - 24 mars 2019</span>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/exposition-logopolis-enseignant-626226.kjsp?RH=1374833262562">Exposition Logopolis Enseignant</a>
 </li>
 <li>
 <span class="date-liste">7 mars 2019 - 6 avril 2019</span>
 <a href="http://www.univ-rouen.fr/version-francaise/navigation/les-zazimuts-printemps-2019-625949.kjsp?RH=1374833262562">Les Zazimuts - Printemps 2019</a>
 </li>
 <li>
-<span class="date-liste">19 mars 2019 - 4 juin 2019</span>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/elections-des-representants-des-etudiants-et-des-personnels-aux-conseils-de-normandie-universite-627665.kjsp?RH=1374833262562">Élections des représentants des étudiants et des personnels aux conseils de Normandie Université</a>
+<span class="date-liste">15 mars 2019 - 14 avril 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/festival-a-l-asso-du-campus-629325.kjsp?RH=1374833262562">Festival à l'Asso du Campus</a>
 </li>
 <li>
-<span class="date-liste">19 mars 2019</span>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/conference-br-de-monia-ben-jemia--628061.kjsp?RH=1374833262562">Conférence </br/> de Monia Ben Jemia </a>
-</li>
-<li>
-<span class="date-liste">21 mars 2019</span>
-<a href="http://www.univ-rouen.fr/version-francaise/navigation/table-ronde-blockchain-loisir-pour-les-jeunes-ou-solution-industrielle--625729.kjsp?RH=1374833262562">Table ronde - BlockChain : loisir pour les jeunes ou solution industrielle ?</a>
+<span class="date-liste">25 mars 2019 - 27 mars 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/colloque-international-624843.kjsp?RH=1374833262562">Colloque international</a>
 </li>
 <li>
 <span class="date-liste">27 mars 2019</span>
 <a href="http://www.univ-rouen.fr/version-francaise/navigation/lan-party-626540.kjsp?RH=1374833262562">LAN Party</a>
+</li>
+<li>
+<span class="date-liste">1 avril 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/journee-d-etude-625655.kjsp?RH=1374833262562">Journée d'étude</a>
+</li>
+<li>
+<span class="date-liste">2 avril 2019 - 4 avril 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/festival-br-multi-culturel-629352.kjsp?RH=1374833262562">Festival <br /> Multi culturel</a>
+</li>
+<li>
+<span class="date-liste">4 avril 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/les-jeudis-du-sport-professionnel-conference-avec-m-sebastien-vandame-630903.kjsp?RH=1374833262562">Les jeudis du sport professionnel : Conférence avec M.Sébastien Vandame</a>
+</li>
+<li>
+<span class="date-liste">23 avril 2019 - 15 mai 2019</span>
+<a href="http://www.univ-rouen.fr/version-francaise/navigation/selection-en-master-br-candidatez-du-23-avril-au-15-mai-626677.kjsp?RH=1374833262562">Sélection en master: <br/> Candidatez du 23 avril au 15 mai</a>
 </li>
 <li>
 <span class="date-liste">29 avril 2019</span>

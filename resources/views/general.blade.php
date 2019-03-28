@@ -7,6 +7,7 @@
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
   <title> Analyse Web </title>
+  <link href="/css/css1.css" rel="stylesheet">
   <!-- Favicon -->
   <link href="/assets/img/brand/favicon.png" rel="icon" type="image/png">
   <!-- Fonts -->
@@ -16,12 +17,14 @@
   <link href="/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="/assets/css/argon.css?v=1.0.0" rel="stylesheet">
-  <script src="/js/sweetalert2.all.js"></script>
 
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <script src="/js/sweetalert2.all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous">
+  </script>
 </head>
 
 <body>
@@ -178,34 +181,46 @@
     @endif
     <!-- Page content -->
    @yield("content") 
-    <!-- <footer class="footer">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2019 <a href="/" class="font-weight-bold ml-1">Analyse Web</a>
-            </div>
-          </div>
-          <div class="col-xl-6">
-            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-              <li class="nav-item">
-                <a href="/" class="nav-link" >Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a href="./user" class="nav-link">Profil</a>
-              </li>
-              <li class="nav-item">
-                <a onclick="logout();" href="#" class="nav-link">Deconnexion</a>
-                <form id="logout_form" action="" method="POST">
-                    {{csrf_field()}}
-                  </form>
-              </li>
-            </ul>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+    @if (Auth::user())
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-12 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <footer class="footer">
+              <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                  <div class="copyright text-center text-xl-left text-muted">
+                    &copy; 2019 <a href="/" class="font-weight-bold ml-1">Analyse Web</a>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+                    <li class="nav-item">
+                      <a href="/" class="nav-link" >Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./user" class="nav-link">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a onclick="logout();" href="#" class="nav-link">Deconnexion</a>
+                      <form id="logout_form" action="" method="POST">
+                          {{csrf_field()}}
+                        </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </footer>
           </div>
         </div>
-      </footer> -->
-      <br/>
+      </div>
     </div>
-  </div>
+    @endif
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
@@ -215,6 +230,7 @@
   <script src="/assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="/assets/js/argon.js?v=1.0.0"></script>
+  <script src="/js/script1.js"></script>
 
   <script type="text/javascript">
     function logout() {
@@ -223,6 +239,10 @@
       form.submit();
     }
   </script>
+  @if (Auth::user())
+  <!-- our css-->
+  <link href="/css/css1.css" rel="stylesheet">
+  @endif
 </body>
 
 </html>

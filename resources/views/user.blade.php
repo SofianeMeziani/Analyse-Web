@@ -65,64 +65,9 @@
           </div>
         </div>
       </div>
-    
+    </div>
 
     <script type="text/javascript">
-      function validatePassword() {
-        var pass = document.getElementById("password_1");
-        var confirm = document.getElementById("password_2");
-        if (pass.value==""){
-          return 2;
-        } else {
-          if (pass.value != confirm.value) {
-            pass.style.border = "1px solid red";
-            confirm.style.border = "1px solid red";
-            return 1;
-          } else if (pass.value.length < 6){
-            return 0;
-          }}
-        }
-
-      function validatePersonalInfo() {
-        errors = 0;
-        var name = document.getElementById("name");
-        if (name.value == "") {
-          fname.style.border = "1px solid red";
-          errors = 1;
-        }
-        return errors;
-      }
-
-
-      function updatePersonalInfo()
-      {
-        var errors = validatePersonalInfo();
-        var errors_2 = validatePassword();
-        var pass_old = document.getElementById('password_old'); 
-        if (errors_2 == 2) {
-          if (errors == 1) {
-            swal.fire("","Merci de remplir tous les champs obligatoirs !", "warning");
-          } else {
-            var form = document.getElementById("personalinfo_form");
-            form.action = "/update-personal-info";
-            form.submit();
-          }
-        } else if (errors_2 == 0) {
-            swal.fire("","Veuillez entrer un mot de passe >= 6", "error");
-        } else {
-            if (pass_old.value==""){
-              swal.fire("","Veuillez entrer votre mot de passe actuel correct", "error");
-            } else if (errors_2 == 1) {
-                swal.fire("","Votre mot de passe de confirmation n'est pas correct !", "error");
-                } else {
-                    var form = document.getElementById("personalinfo_form");
-                    form.action = "/update-password";
-                    form.submit();
-                }
-        }
-        
-      }
-
       @if (Session::has("message") && Session::get("message")=="updated")
               swal.fire("", "Votre mot de passe a bien été mis à jour.", "success");
       @elseif (Session::has("message") && Session::get("message")=="notupdated")
