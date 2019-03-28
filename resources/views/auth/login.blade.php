@@ -37,11 +37,6 @@
                             </div>
                             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="E-Mail">
 
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
                         </div>
                     </div>
 
@@ -94,4 +89,10 @@
     </div>
   </div>
 </body>
+
+@if ($errors->has('email'))
+    <script type="text/javascript">
+      swal.fire("","mot de passe ou nom d'utilisateur incorrect", "error");
+    </script>
+@endif
 @endsection
