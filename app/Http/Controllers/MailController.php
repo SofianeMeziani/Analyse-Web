@@ -14,15 +14,11 @@ class MailController extends Controller
     public function sendmail(Request $request)
         {
         	$data = $request->all();
-            $name= Auth::user()->name;
+            $name = Auth::user()->name;
 
-        	$mailto = "rani-tk@hotmail.com";
-        	$mailfrom =  Auth::user()->email;
+        	$mailto = Auth::user()->email;
+        	$mailfrom =  "analysis@Analyse.com";
         	$subject = "subject";
-        	
-        	// $message = "Vous avez reçu un message via le formulaire de contact \n\r";
-
-            // Mail::sendMail($mailto, $mailfrom, $name, $subject, $message);
         	
             $pdfname = 'analysis_' . $data["name"] .'.pdf';
 
@@ -45,9 +41,6 @@ class MailController extends Controller
             $analysis['message'] = "sent" ;
 
             return view("historydetails", $analysis);
-        	
-            //return redirect("/getHistory")->with(['message'=>'sent']);
-            // return redirect()->route('profile', ['id' => 1]);
         	
         }
 

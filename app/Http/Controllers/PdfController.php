@@ -30,8 +30,7 @@ class PdfController extends Controller
         }
         chdir(substr(getcwd(), 0,strpos(getcwd(), 'AnalyseWeb'))."AnalyseWeb/vendor/");
 
-        require_once 'autoload.php';    
-        // dd($analysis);
+        require_once 'autoload.php';
         $pdf = new \Mpdf\Mpdf();
   
         $email=Auth::user()->email;
