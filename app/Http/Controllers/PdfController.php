@@ -81,9 +81,10 @@ class PdfController extends Controller
         $autre = $analysis["nb_broken"]-$analysis["nb_broken404"];
         $valid_rsc = count($analysis["r_links"])-$analysis["nb_r_broken"];
         $percent_valid_rsc = round($valid_rsc/count($analysis["r_links"])*100, 2);
+        $date1 = date('d/m/Y h:i:s a', time());
         $html = '
             <h1>Rapport de l\'analyse</h1>
-            <p class="breadcrumb">PDF généré le : Mardi, le 19 mars 2019 </p>
+            <p class="breadcrumb">PDF généré le : '.$date1.' </p>
 
 
             <h3>Détails de l\'analyse</h3>

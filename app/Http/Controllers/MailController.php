@@ -18,7 +18,7 @@ class MailController extends Controller
 
         	$mailto = Auth::user()->email;
         	$mailfrom =  "analysis@Analyse.com";
-        	$subject = "subject";
+        	$subject = "Rapport de votre analyse";
         	
             $pdfname = 'analysis_' . $data["name"] .'.pdf';
 

@@ -110,7 +110,7 @@
 <style type="text/css" media="screen">
 
 	body {
-		background-image: url(http://www.univ-rouen.fr/medias/photo/5_1384425742051-jpg);
+		background-image: url(http://www.univ-rouen.fr/medias/photo/8_1384425643440-jpg);
 	}
 
 
